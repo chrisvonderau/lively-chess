@@ -143,11 +143,19 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
 #tQ .lnk { background: none; border: 0; padding: 0; color: var(--gold); text-decoration: underline; font: inherit; cursor: pointer; }
 #tutor p.tQA { font-size: 15px; }
 @media (max-width: 760px) { #tutor { top: auto; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 74px); left: max(10px, env(safe-area-inset-left)); right: max(10px, env(safe-area-inset-right)); width: auto; max-height: 40vh; } }
+
+/* v8 CONTROLLERS */
+.padfocus{outline:3px solid #ffc83c!important;outline-offset:3px;box-shadow:0 0 0 6px rgba(255,200,60,.28),0 0 18px rgba(255,200,60,.55)!important;position:relative;z-index:2}
+.sw.padfocus{outline-offset:4px}
+#padBadge{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 74px);z-index:60;pointer-events:none;
+  font:600 13px/1 system-ui,-apple-system,sans-serif;color:#fff6dc;background:rgba(30,22,12,.72);border:1px solid rgba(255,214,140,.35);
+  padding:7px 12px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
 </style>
 </head>
 <body>
 <canvas id="c" tabindex="0" aria-label="Chess board"></canvas>
 <div id="fx" aria-live="polite"></div>
+<div id="padBadge" class="hidden" aria-live="polite"></div>
 <div id="rcam" class="hidden" aria-hidden="true"><div class="rc"><b></b></div><div class="rc"><b></b></div></div>
 <div id="hud" class="hidden">
   <div id="topbar">
@@ -174,7 +182,7 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
     </div>
     <div class="row"><button class="btn" id="mSettings">⚙ Settings</button></div>
     <div class="foot">Original art, sound and music. Plays offline. No accounts, no ads.</div>
-    <div class="ver">Version 7 · now with Tutor Mode</div>
+    <div class="ver">Version 8 · Tutor Mode · Xbox controllers</div>
   </div>
 </div>
 <div id="setupAI" class="overlay hidden"><div class="card">
@@ -11866,7 +11874,7 @@ roughnessFactor = mix(roughnessFactor, 0.55, inkA);`).replace("#include <lights_
           map:c,transparent:!0,depthWrite:!1,blending:u?jr:Oi,toneMapped:!1
         }),h);return f.frustumCulled=!1,f.renderOrder=d,f.count=0,this.scene.add(f),f
       };this.hl={
-        last:s(n("rgba(255,214,120,A)",.32),2),sel:s(n("rgba(255,236,160,A)",.55),1),hover:s(n("rgba(255,255,255,A)",.18),1),dot:s(Ji([[0,"rgba(30,22,10,0.62)"],[.55,"rgba(30,22,10,0.55)"],[.7,"rgba(30,22,10,0)"]],64),32,!1,3),cap:s(e(.62,.86,"rgba(30,22,10,0.55)"),16,!1,3),check:s(Ji([[0,"rgba(255,40,20,0.95)"],[.5,"rgba(255,40,20,0.5)"],[1,"rgba(255,40,20,0)"]],128),1),threat:s(Ji([[0,"rgba(255,140,40,0.0)"],[.45,"rgba(255,140,40,0.35)"],[.72,"rgba(255,140,40,0)"]],128),16),hint:s(n("rgba(90,255,150,A)",.4),2),target:s(n("rgba(120,200,255,A)",.35),1)
+        last:s(n("rgba(255,214,120,A)",.32),2),sel:s(n("rgba(255,236,160,A)",.55),1),hover:s(n("rgba(255,255,255,A)",.18),1),dot:s(Ji([[0,"rgba(30,22,10,0.62)"],[.55,"rgba(30,22,10,0.55)"],[.7,"rgba(30,22,10,0)"]],64),32,!1,3),cap:s(e(.62,.86,"rgba(30,22,10,0.55)"),16,!1,3),check:s(Ji([[0,"rgba(255,40,20,0.95)"],[.5,"rgba(255,40,20,0.5)"],[1,"rgba(255,40,20,0)"]],128),1),threat:s(Ji([[0,"rgba(255,140,40,0.0)"],[.45,"rgba(255,140,40,0.35)"],[.72,"rgba(255,140,40,0)"]],128),16),hint:s(n("rgba(90,255,150,A)",.4),2),target:s(n("rgba(120,200,255,A)",.35),1),pad1:s(lcPadTex("255,200,60"),1,!1,4),pad2:s(lcPadTex("90,190,255"),1,!1,4)
       },this.hlState={
       },this.pulse=0;let r=600,o=new ge;this.pPos=new Float32Array(r*3),this.pCol=new Float32Array(r*3),this.pSize=new Float32Array(r),o.setAttribute("position",new Qt(this.pPos,3)),o.setAttribute("color",new Qt(this.pCol,3)),o.setAttribute("size",new Qt(this.pSize,1));let a=Ji([[0,"rgba(255,255,255,1)"],[.4,"rgba(255,255,255,0.5)"],[1,"rgba(255,255,255,0)"]],64),l=new sn({
         uniforms:{
@@ -13573,7 +13581,7 @@ roughnessFactor = mix(roughnessFactor, 0.55, inkA);`).replace("#include <lights_
     };let e=vt.pick($0(i,t),vt.camera);if(e.hits&&e.hits.length>1&&Ei()){
       let n=r=>D.sel>=0?D.targets.some(o=>xe(o)===r.sq):r.color===Te()&&D.game.legalFrom(r.sq).length>0,s=e.hits.find(r=>r.sq===e.boardSq&&n(r))||e.hits.find(n);s&&!(D.sel>=0&&D.targets.some(r=>xe(r)===e.piece.sq))&&(e.piece=s,e.sq=s.sq)
     }return e
-  }var kr=i=>i&&!i.trayed&&i.color===Te();new pl(Ti,{
+  }var kr=i=>i&&!i.trayed&&i.color===Te();new pl(Ti,LCH={
     pick:xb,canGrab:i=>Ei()&&kr(i.piece),tap(i){
       if(!D.coach&&!Ei()&&D.mode!=="menu"&&i.piece&&ke.on("poke",{
         p:i.piece
@@ -13816,6 +13824,223 @@ async function tqAsk(){
 }
 window.__tutor={TUT,TQ,tqPrompt,tqKey,tutWhyMine,tutWhyTheirs,tutAmt};
 /* ===== end v7 TUTOR MODE ===== */
+
+var LCH;
+function lcPadTex(rgb){let u=document.createElement("canvas");u.width=u.height=128;let d=u.getContext("2d");
+  d.fillStyle=`rgba(${rgb},0.2)`;d.fillRect(10,10,108,108);d.lineJoin="round";
+  d.strokeStyle=`rgba(${rgb},0.35)`;d.lineWidth=22;d.strokeRect(13,13,102,102);
+  d.strokeStyle=`rgba(${rgb},1)`;d.lineWidth=11;d.strokeRect(13,13,102,102);
+  let g=new Tn(u);return g.colorSpace=ve,g}
+/* ===== v8 CONTROLLERS: Xbox Wireless (Gamepad API), one or two pads, menus and board ===== */
+var LCP=(()=>{
+  const A=0,Bb=1,X=2,Y=3,LB=4,RB=5,LT=6,RT=7,VIEW=8,MENU=9,R3=11,UP=12,DOWN=13,LEFT=14,RIGHT=15;
+  const NB=17,DEAD=.5,FIRST=260,REP=110;
+  const LAYERS=["coach","promo","tKeyBox","speakOffer","settings","pause","over","setupAI","setup2P","menu"];
+  const P={slots:[],vis:!0,focus:null,focusLayer:null,last:0,raf:0,game:null,mode:null,helped:!1,lastTick:0};
+  const sqName=s=>s>=0?"abcdefgh"[s&7]+((s>>4)+1):"-";
+  const sqOf=n=>n.charCodeAt(0)-97+(n.charCodeAt(1)-49)*16;
+  const shown=el=>!!el&&!el.classList.contains("hidden")&&el.getClientRects().length>0;
+  const sideName=s=>s===1?"White":"Black";
+  function pads(){
+    let l=[];try{l=navigator.getGamepads?Array.from(navigator.getGamepads()||[]):[]}catch{l=[]}
+    return l.filter(p=>p&&p.connected!==!1)
+  }
+  function layer(){
+    for(let id of LAYERS){let el=xt(id);if(shown(el))return id}
+    let t=xt("toast");if(shown(t)&&t.querySelector("button")&&D.mode!=="menu"&&!Ei())return"toast";
+    return D.mode==="ai"||D.mode==="2p"?"board":"none"
+  }
+  function focusables(root){
+    return[...root.querySelectorAll("button,input[type=range],select")].filter(e=>!e.disabled&&e.getClientRects().length>0&&getComputedStyle(e).visibility!=="hidden"&&!e.closest(".hidden"))
+  }
+  function setFocus(el){
+    if(P.focus===el)return;P.focus&&P.focus.classList.remove("padfocus");P.focus=el;
+    if(el){el.classList.add("padfocus");try{el.scrollIntoView({block:"nearest",inline:"nearest"})}catch{}}
+  }
+  function ensureFocus(L){
+    let root=xt(L);if(!root)return null;let list=focusables(root);
+    if(P.focusLayer!==L||!P.focus||!list.includes(P.focus)){
+      P.focusLayer=L;setFocus(list.find(e=>e.classList.contains("gold"))||list.find(e=>e.classList.contains("sel"))||list[0]||null)
+    }return list
+  }
+  function clearFocus(){setFocus(null);P.focusLayer=null}
+  function moveFocus(L,dx,dy){
+    let list=ensureFocus(L);if(!list||!P.focus)return;let f=P.focus;
+    if(dx&&(f.tagName==="INPUT"||f.tagName==="SELECT")){nudge(f,dx);return}
+    let a=f.getBoundingClientRect(),ax=a.left+a.width/2,ay=a.top+a.height/2,best=null,bs=1e9;
+    for(let e of list){if(e===f)continue;let r=e.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,ddx=cx-ax,ddy=cy-ay,
+      along=dx?ddx*dx:ddy*dy,ortho=dx?Math.abs(ddy):Math.abs(ddx);
+      if(dy){let ov=Math.min(a.bottom,r.bottom)-Math.max(a.top,r.top);if(ov>a.height*.5)continue}
+      if(dx){let ov=Math.min(a.right,r.right)-Math.max(a.left,r.left);if(ov>a.width*.5)continue}
+      if(along<=2)continue;let sc=along+ortho*2.5;sc<bs&&(bs=sc,best=e)}
+    best&&(setFocus(best),Xt("select"))
+  }
+  function nudge(el,d){
+    if(el.tagName==="INPUT"){let st=+(el.step||1)||1,mn=+(el.min||0),mx=+(el.max||100),v=Math.max(mn,Math.min(mx,+el.value+d*st*5));el.value=v;el.dispatchEvent(new Event("input",{bubbles:!0}));el.dispatchEvent(new Event("change",{bubbles:!0}))}
+    else if(el.tagName==="SELECT"&&el.options.length){el.selectedIndex=(el.selectedIndex+d+el.options.length)%el.options.length;el.dispatchEvent(new Event("change",{bubbles:!0}))}
+  }
+  function press(el){
+    if(!el||el.disabled)return;if(el.tagName==="INPUT"||el.tagName==="SELECT")return;
+    if(typeof el.onpointerdown=="function"){try{el.onpointerdown({type:"pointerdown",target:el,currentTarget:el,preventDefault(){},stopPropagation(){}})}catch(e){console.warn(e)}return}
+    el.click()
+  }
+  function back(L){
+    let root=xt(L);if(!root)return;
+    if(L==="pause"){press(xt("pResume"));return}
+    if(L==="coach"){press(xt("cSkip"));return}
+    if(L==="tKeyBox"){press(xt("tKeyClose"));return}
+    if(L==="speakOffer"){press(xt("offerNo"));return}
+    let b=root.querySelector("[data-back]");b&&shown(b)&&press(b)
+  }
+  // ----- board cursor -----
+  function camBasis(){
+    let e=vt.camera.matrixWorld.elements,fx=-e[8],fz=-e[10];return[fx,fz]
+  }
+  function stepDir(dx,dy){ // dx: +1 right, dy: +1 up (away from viewer) -> [dfile, drank]
+    let[fx,fz]=camBasis(),rx=-fz,rz=fx,vx=dx*rx+dy*fx,vz=dx*rz+dy*fz;
+    return Math.abs(vx)>=Math.abs(vz)?[Math.sign(vx),0]:[0,-Math.sign(vz)]
+  }
+  function attached(){return P.slots.filter(s=>s.id!=null)}
+  function controls(s){
+    if(D.mode==="ai")return D.human===Te();
+    if(D.mode==="2p")return attached().length<2||s.side===Te();
+    return!1
+  }
+  function homeSq(side){return side===-1?100:20}
+  function slotSide(s){return D.mode==="ai"?D.human:D.mode==="2p"&&attached().length>=2?s.side:Te()}
+  function pickAt(sq){let p=be(sq);return{piece:p||null,sq:p?p.sq:sq,boardSq:sq}}
+  function moveCursor(s,dx,dy){
+    let[df,dr]=stepDir(dx,dy),f=(s.sq&7)+df,r=(s.sq>>4)+dr;if(f<0||f>7||r<0||r>7)return;
+    s.sq=r*16+f;P.vis=!0;controls(s)&&!D.coach&&LCH.hover(-1,-1,pickAt(s.sq));Xt("select",{pan:(f-3.5)/4})
+  }
+  function rumble(pad,ms,s){try{pad&&pad.vibrationActuator&&pad.vibrationActuator.playEffect("dual-rumble",{duration:ms,strongMagnitude:s,weakMagnitude:s*.6})}catch{}}
+  function boardButton(s,b,pad){
+    if(b===A){
+      if(!controls(s)){D.mode==="2p"&&!xt("toast").querySelector("button")&&uf(`It's ${sideName(Te())}'s move`,[],1400);return}
+      let before=D.sel;LCH.tap(pickAt(s.sq));D.sel!==before&&rumble(pad,40,.25);return
+    }
+    if(b===Bb){if(D.sel>=0&&controls(s)){LCH.tap(pickAt(D.sel));return}xt("bSkip").click();return}
+    if(b===X){let ta=xt("tAsk"),tu=xt("tutor");shown(tu)&&shown(ta)?press(ta):press(xt("bHint"));return}
+    if(b===Y){press(xt("bUndo"));return}
+    if(b===VIEW){press(xt("bFlip"));return}
+    if(b===R3){press(xt("bView"));return}
+    if(b===MENU){LCH.key("Escape",{});return}
+  }
+  function uiButton(L,b){
+    if(L==="toast"){let root=xt("toast"),list=focusables(root);if(!list.length)return;(!P.focus||!list.includes(P.focus))&&(P.focusLayer="toast",setFocus(list[list.length-1]))}
+    else ensureFocus(L);
+    if(b===A){press(P.focus);return}
+    if(b===Bb){back(L);return}
+    if(b===MENU){L==="pause"?press(xt("pResume")):back(L);return}
+    if(b===UP)moveFocus(L,0,-1);else if(b===DOWN)moveFocus(L,0,1);else if(b===LEFT)moveFocus(L,-1,0);else if(b===RIGHT)moveFocus(L,1,0)
+  }
+  function dirOf(b){return b===UP?[0,1]:b===DOWN?[0,-1]:b===LEFT?[-1,0]:b===RIGHT?[1,0]:null}
+  // ----- slots and connection -----
+  function badge(){
+    let el=xt("padBadge"),a=attached();if(!el)return"";
+    let txt=a.map((s,i)=>`🎮 ${i+1}`+(s.connected?(D.mode==="2p"&&a.length>1?" "+sideName(s.side):""):" reconnecting…")).join(" · ");
+    el.textContent!==txt&&(el.textContent=txt);el.classList.toggle("hidden",!txt);return txt
+  }
+  function bind(pad,s,fresh){
+    s.index=pad.index;s.id=pad.id;s.connected=!0;s.prev=Array.from({length:NB},(_,i)=>fresh?!!(pad.buttons[i]&&pad.buttons[i].pressed):!1);s.ax=fresh?axDir(pad):null;s.rep=null;
+  }
+  function axDir(pad){let x=pad.axes[0]||0,y=pad.axes[1]||0;return Math.abs(x)<DEAD&&Math.abs(y)<DEAD?null:Math.abs(x)>Math.abs(y)?(x>0?RIGHT:LEFT):(y>0?DOWN:UP)}
+  function anyPressed(pad){return pad.buttons.some(b=>b&&(b.pressed||b.value>.5))||pad.axes.some(a=>Math.abs(a)>.6)}
+  function newSlot(pad){
+    let n=P.slots.length,s={n,index:null,id:null,connected:!1,side:n===0?1:-1,sq:homeSq(n===0?1:-1),prev:[],ax:null,rep:null};
+    if(D.mode==="ai")s.sq=homeSq(D.human);else if(D.mode==="2p"&&n===0)s.sq=homeSq(Te());
+    P.slots.push(s);bind(pad,s,!0);P.vis=!0;
+    let side=D.mode==="2p"&&attached().length>1?` (${sideName(s.side)})`:"";
+    !shown(xt("toast"))&&uf(`Controller ${n+1} connected${side}`,[],1600);
+    if(!P.helped){P.helped=!0;setTimeout(()=>{shown(xt("toast"))&&xt("toast").querySelector("button")||uf("Controller: D-pad or stick moves, A picks up and puts down, B drops, X hint, Y undo, Menu pauses.",[],4200)},1700)}
+    rumble(pad,120,.4)
+  }
+  function syncPads(){
+    let list=pads(),used=new Set;
+    for(let s of P.slots){
+      let p=s.index!=null?list.find(q=>q.index===s.index):null;
+      if(p&&p.id===s.id){s.pad=p;s.connected=!0;used.add(p)}
+      else if(s.connected){s.connected=!1;s.pad=null;s.index=null}
+    }
+    for(let p of list){
+      if(used.has(p))continue;
+      let free=P.slots.find(s=>!s.connected&&s.id===p.id)||P.slots.find(s=>!s.connected);
+      if(free){bind(p,free,!1);free.pad=p;used.add(p);!shown(xt("toast"))&&uf(`Controller ${free.n+1} reconnected`,[],1400);continue}
+      if(P.slots.length<2&&anyPressed(p)){newSlot(p);P.slots[P.slots.length-1].pad=p;used.add(p);P.swallow=!0}
+    }
+  }
+  function gameWatch(){
+    let g=D.game||null;if(g!==P.game||D.mode!==P.mode){
+      P.game=g;P.mode=D.mode;for(let s of P.slots)s.sq=homeSq(D.mode==="ai"?D.human:D.mode==="2p"&&attached().length>=2?s.side:1);
+      if(D.mode==="2p"&&attached().length<2)for(let s of P.slots)s.sq=homeSq(Te())
+    }
+  }
+  function handle(s,b){
+    let L=layer();P.vis=!0;
+    if(L==="board"){let d=dirOf(b);if(d){moveCursor(s,d[0],d[1]);return}clearFocus();boardButton(s,b,s.pad);return}
+    if(L==="none")return;uiButton(L,b)
+  }
+  function tick(now){
+    now=now??performance.now();let dt=Math.min(.1,Math.max(0,(now-(P.lastTick||now))/1e3));P.lastTick=now;
+    try{
+      syncPads();gameWatch();
+      let L=layer();
+      if(L==="board"||L==="none")P.focusLayer&&clearFocus();
+      else if(P.vis&&P.slots.some(s=>s.connected)){
+        if(L==="toast"){let list=focusables(xt("toast"));(!P.focus||!list.includes(P.focus))&&(P.focusLayer="toast",setFocus(list[list.length-1]||null))}
+        else ensureFocus(L)
+      }
+      for(let s of P.slots){
+        let pad=s.pad;if(!s.connected||!pad)continue;
+        for(let i=0;i<NB;i++){
+          let bt=pad.buttons[i],on=!!(bt&&(bt.pressed||bt.value>.5)),was=!!s.prev[i];s.prev[i]=on;
+          if(!on||was)continue;
+          if(i>=UP&&i<=RIGHT){s.rep={b:i,next:now+FIRST}}
+          if(i===LT||i===RT||i===LB||i===RB)continue;
+          handle(s,i)
+        }
+        // held d-pad repeat
+        if(s.rep&&s.rep.b>=UP){let bt=pad.buttons[s.rep.b];if(!(bt&&bt.pressed))s.rep=null;else if(now>=s.rep.next){s.rep.next=now+REP;handle(s,s.rep.b)}}
+        // left stick: edge + repeat
+        let ad=axDir(pad);
+        if(ad!==s.ax){s.ax=ad;ad!=null&&(handle(s,ad),s.axNext=now+FIRST)}
+        else if(ad!=null&&now>=s.axNext){s.axNext=now+REP;handle(s,ad)}
+        // camera: right stick, bumpers, triggers (continuous)
+        if(D.mode==="ai"||D.mode==="2p"){
+          let rx=pad.axes[2]||0,ry=pad.axes[3]||0;Math.abs(rx)<.15&&(rx=0);Math.abs(ry)<.15&&(ry=0);
+          let lb=pad.buttons[LB]&&pad.buttons[LB].pressed,rb=pad.buttons[RB]&&pad.buttons[RB].pressed;
+          let orb=rx*2.2+(rb?1.6:0)-(lb?1.6:0);(orb||ry)&&LCH.orbit(orb*dt,ry*1.4*dt);
+          let lt=pad.buttons[LT]?pad.buttons[LT].value:0,rt=pad.buttons[RT]?pad.buttons[RT].value:0;
+          (lt>.1||rt>.1)&&LCH.zoom(Math.exp((lt-rt)*1.3*dt))
+        }
+      }
+      draw(now,L)
+    }catch(e){console.warn("controller",e)}
+  }
+  function draw(now,L){
+    badge();
+    let show=P.vis&&L==="board"&&!D.coach;
+    for(let i=0;i<2;i++){let s=P.slots[i],k="pad"+(i+1);
+      if(!vt.hl[k])continue;
+      if(show&&s&&s.connected&&(D.mode==="ai"||D.mode==="2p")){let a=controls(s)?1:.82;vt.setHL(k,[{sq:s.sq,scale:a*(1+.05*Math.sin(now/170))}])}
+      else vt.hlState[k]&&vt.hlState[k].length&&vt.setHL(k,[])}
+  }
+  function loop(t){tick(t);P.raf=requestAnimationFrame(loop)}
+  P.raf=requestAnimationFrame(loop);
+  setInterval(()=>{performance.now()-P.lastTick>90&&tick()},50);
+  addEventListener("pointerdown",()=>{P.vis=!1;P.focus&&clearFocus()},!0);
+  addEventListener("gamepadconnected",()=>tick());
+  addEventListener("gamepaddisconnected",()=>tick());
+  window.__lcPad={
+    state(){let L=layer();return{layer:L,focus:P.focus?{id:P.focus.id||"",text:(P.focus.textContent||"").trim().slice(0,40)}:null,
+      slots:P.slots.map(s=>({slot:s.n,index:s.index,id:s.id,side:slotSide(s),sq:s.sq,sqName:sqName(s.sq),connected:!!s.connected})),badge:badge(),cursorsVisible:!!(P.vis&&L==="board")}},
+    game(){return{mode:D.mode,sel:D.sel,selName:sqName(D.sel),turn:Te(),plies:D.game?D.game.history.length:0,over:!!D.over,canMove:!!Ei(),human:D.human}},
+    camFwd:camBasis,sq:sqOf,name:sqName,tick:()=>tick(performance.now())
+  };
+  return P
+})();
+/* ===== end v8 CONTROLLERS ===== */
+
 
 Lr();hf();
 })();
