@@ -150,10 +150,59 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
 #padBadge{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 74px);z-index:60;pointer-events:none;
   font:600 13px/1 system-ui,-apple-system,sans-serif;color:#fff6dc;background:rgba(30,22,12,.72);border:1px solid rgba(255,214,140,.35);
   padding:7px 12px;border-radius:999px;letter-spacing:.02em;white-space:nowrap}
+
+/* v9 THE ACADEMY */
+#acArrows { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; }
+#acPanel { position: absolute; right: max(10px, env(safe-area-inset-right)); top: calc(max(10px, env(safe-area-inset-top)) + 62px); width: min(360px, calc(100vw - 20px)); max-height: calc(100% - 210px); overflow-y: auto; padding: 12px 14px; border-radius: 16px; background: var(--panel); border: 1px solid var(--edge); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-family: var(--serif); color: var(--ink); box-shadow: 0 8px 30px rgba(0,0,0,.45); }
+#acPanel .btn.acWait { opacity: .6; cursor: progress; }
+#acPanel .tHead { display: flex; align-items: center; gap: 8px; }
+#acPanel .tHead .grow { flex: 1; }
+#acPanel .tHead b { font-size: 18px; color: var(--gold); }
+#acPanel .tHead small { display: block; font-family: var(--sans); font-size: 12px; color: var(--dim); }
+#acPanel .tHead .icon { width: 40px; min-height: 40px; }
+#acPanel p { margin: 8px 0 0; font-size: 15px; line-height: 1.4; }
+#acPanel #acGoal { font-weight: 600; color: #f6e2b8; }
+#acPanel p.dim, #acPanel .dim { color: var(--dim); font-family: var(--sans); font-size: 13px; }
+#acPanel p.warn { color: #ffb38a; }
+#acPanel p.q.good { color: #c3e6a6; } #acPanel p.q.meh { color: #f2d48a; } #acPanel p.q.bad { color: #ffa08c; }
+#acPanel .acQuip { font-style: italic; color: #e9d3a3; }
+#acPanel .acBtns { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+#acPanel .acBtns .btn { min-height: 40px; font-size: 14px; padding: 0 8px; }
+#acPanel .acBtns .btn.hidden { display: none; }
+#acPanel .tOpt { margin-top: 10px; padding: 10px; border-radius: 12px; border: 1px solid var(--edge); background: rgba(0,0,0,.2); }
+#acPanel .tTop { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 17px; }
+#acPanel .tTag { font-family: var(--sans); font-size: 11px; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--edge); color: var(--dim); white-space: nowrap; }
+#acPanel .tTag.best { background: linear-gradient(#e9c983, #b98a3e); color: #2a1709; border-color: #f4dca4; }
+#acPanel .tTag.weak { color: #ffa08c; }
+#acPanel .tBtns { display: flex; gap: 6px; margin-top: 8px; }
+#acPanel .tBtns .btn { flex: 1; min-height: 40px; font-size: 14px; }
+#acPanel .acThen { display: block; margin-top: 4px; color: #bcd9f2; font-size: 14px; }
+#acPanel ol.acLine { margin: 8px 0 0; padding-left: 4px; list-style: none; }
+#acPanel ol.acLine li { padding: 3px 0; font-size: 15px; } #acPanel ol.acLine li.me b { color: #ffd36b; } #acPanel ol.acLine li.them b { color: #8fcaff; }
+#acPanel ul.acAlt { margin: 6px 0 0; padding-left: 18px; font-size: 14px; line-height: 1.4; }
+#acPanel .acRow { margin-top: 8px; padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(232,194,122,.16); background: rgba(0,0,0,.18); }
+#acPanel .acRow.focus { border-color: #e9c983; box-shadow: 0 0 0 1px rgba(233,201,131,.35); }
+#acPanel .acRow.up .acNums { color: #c3e6a6; } #acPanel .acRow.down .acNums { color: #ffa08c; }
+#acPanel .acRH { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+#acPanel .acRH b { font-size: 15px; } #acPanel .acNums { margin-left: auto; font-family: var(--sans); font-size: 12px; color: var(--dim); }
+#acPanel .acRow p { margin-top: 4px; font-size: 14px; }
+#acPanel.min #acGoal, #acPanel.min #acSay, #acPanel.min .acBtns, #acPanel.min #acOut { display: none; }
+.acVs { font-family: var(--sans); font-size: 13px; color: var(--dim); }
+.big .btn.gold .acVs { color: #4a2f12; }
+#acLessons .btn.done:not(.gold) { border-color: rgba(195,230,166,.45); }
+#acLessons .btn.done .k { color: #c3e6a6; }
+.acSparWrap { margin-top: 12px; }
+.acBody p { font-family: var(--serif); font-size: 17px; line-height: 1.45; margin: 0 0 10px; }
+.acBody .acGrad { color: var(--gold); font-style: italic; }
+.acTags { display: flex; gap: 6px; flex-wrap: wrap; }
+.acTags span { font-family: var(--sans); font-size: 12px; padding: 3px 10px; border-radius: 10px; border: 1px solid var(--edge); color: var(--gold); }
+.acGoalBox { font-family: var(--serif); font-size: 17px; padding: 10px 12px; border-radius: 12px; background: rgba(233,201,131,.12); border: 1px solid rgba(233,201,131,.35); margin: 6px 0 0; }
+@media (max-width: 760px) { #acPanel { top: auto; bottom: calc(max(10px, env(safe-area-inset-bottom)) + 74px); left: max(10px, env(safe-area-inset-left)); right: max(10px, env(safe-area-inset-right)); width: auto; max-height: 42vh; } }
 </style>
 </head>
 <body>
 <canvas id="c" tabindex="0" aria-label="Chess board"></canvas>
+<canvas id="acArrows" aria-hidden="true"></canvas>
 <div id="fx" aria-live="polite"></div>
 <div id="padBadge" class="hidden" aria-live="polite"></div>
 <div id="rcam" class="hidden" aria-hidden="true"><div class="rc"><b></b></div><div class="rc"><b></b></div></div>
@@ -164,6 +213,7 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
     <div class="grp"><button class="btn icon" id="bHint" title="Hint" aria-label="Hint">💡</button><button class="btn icon" id="bUndo" title="Undo (Z)" aria-label="Undo">↶</button><button class="btn icon" id="bFlip" title="Flip board (F)" aria-label="Flip board">⇅</button></div>
   </div>
   <div id="toast" class="hidden"></div>
+  <div id="acPanel" class="hidden" aria-label="Academy coach"><div class="tHead"><span class="grow"><b>🎓 Professor Knightley</b><small id="acSub"></small></span><button class="btn icon" id="acMin" title="Hide or show the Professor" aria-label="Hide or show the Professor">–</button></div><p id="acGoal"></p><div id="acSay" aria-live="polite"></div><div class="acBtns"><button class="btn gold" id="acBest">Best move</button><button class="btn" id="acLook">Look ahead</button><button class="btn" id="acWeigh">What to weigh</button><button class="btn" id="acThreat">Their threat</button><button class="btn" id="acHint">Nudge</button><button class="btn" id="acRestart">Restart lesson</button><button class="btn hidden" id="acGrade">Grade my moves: on</button></div><div id="acOut" aria-live="polite"></div></div>
   <div id="tutor" class="hidden" aria-label="Tutor"><div class="tHead"><span class="grow"><b>🎓 Tutor</b><small id="tLvl"></small></span><button class="btn icon" id="tMin" title="Hide or show the tutor" aria-label="Hide or show the tutor">–</button></div><button class="btn gold" id="tAsk">What should I do?</button><div id="tNote" aria-live="polite"></div><div id="tOpts"></div><div id="tQ"><div id="tQHas" class="hidden"><p class="tQH">Ask the tutor anything</p><textarea id="tQIn" rows="2" maxlength="500" placeholder="e.g. Why shouldn't I move my queen out yet?"></textarea><div class="tBtns"><button class="btn gold" id="tQGo">Ask</button><button class="btn" id="tKeyBtn">Key</button></div><div id="tQOut" aria-live="polite"></div></div><p id="tQNo" class="dim">Want to type your own questions? <button class="lnk" id="tKeyAdd">Add your Claude API key</button></p><div id="tKeyBox" class="hidden"><p class="dim">Typed questions are answered by Claude using your own Anthropic API key, which Anthropic bills per question. The key is saved only on this device, in this browser, and is sent only to Anthropic.</p><input id="tKeyIn" type="password" autocomplete="off" spellcheck="false" placeholder="Paste your API key"><div class="tBtns"><button class="btn gold" id="tKeySave">Save key</button><button class="btn" id="tKeyDel">Remove key</button><button class="btn" id="tKeyClose">Close</button></div></div></div></div>
   <!-- v5 SETTINGS: one-time speech offer (shown only when a British voice exists; answer remembered in settings) -->
   <div id="speakOffer" class="hidden" role="dialog" aria-label="Spoken comments"><p>Want the pieces to talk?<small>British voices, off by default</small></p><button class="btn" id="offerNo">No thanks</button><button class="btn gold" id="offerYes">Turn on</button></div>
@@ -177,12 +227,13 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
       <button class="btn hidden" id="mContinue"><span class="k">▶</span><div>Continue<small id="mContinueSub">Pick up where you left off</small></div></button>
       <button class="btn gold" id="mAI"><span class="k">♞</span><div>Play the Computer<small>Four house guests and a butler, from Pip to the Duchess</small></div></button>
       <button class="btn" id="mTutor"><span class="k">🎓</span><div>Tutor Mode<small>Play the computer with a tutor at your elbow</small></div></button>
+      <button class="btn" id="mAcad"><span class="k">🏛</span><div>The Academy<small>Lessons, a witty professor, five opponents from Beginner to Champion</small></div></button>
       <button class="btn" id="m2P"><span class="k">♔</span><div>Two Players<small>Pass and play on one screen</small></div></button>
       <button class="btn" id="mLearn"><span class="k">?</span><div>How to Play<small>A 30-second tour</small></div></button>
     </div>
     <div class="row"><button class="btn" id="mSettings">⚙ Settings</button></div>
     <div class="foot">Original art, sound and music. Plays offline. No accounts, no ads.</div>
-    <div class="ver">Version 8 · Tutor Mode · Xbox controllers</div>
+    <div class="ver">Version 9 · The Academy · Tutor Mode · Xbox controllers</div>
   </div>
 </div>
 <div id="setupAI" class="overlay hidden"><div class="card">
@@ -198,6 +249,30 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
   <div class="toggle"><span>Turn the board for each player<small>The camera swings round after every move</small></span><button class="sw" data-set="autoFlip"></button></div>
   <div class="field"><label>Clock</label><div class="seg clockSeg"></div></div>
   <div class="row"><button class="btn" data-back>Back</button><button class="btn gold" id="go2P">Begin</button></div>
+</div></div>
+<div id="academy" class="overlay hidden"><div class="card">
+  <h2>The Academy</h2>
+  <p class="sub">Professor Knightley will see you now. He has read your file.</p>
+  <div class="big" id="acLevels"></div>
+  <div class="row"><button class="btn" data-back>Back</button></div>
+</div></div>
+<div id="acTrack" class="overlay hidden"><div class="card">
+  <h2 id="acTrackName"></h2>
+  <p class="sub" id="acTrackBlurb"></p>
+  <div class="big acList" id="acLessons"></div>
+  <div class="big acSparWrap"><button class="btn" id="acSpar"></button></div>
+  <div class="row"><button class="btn" data-back>Back</button><button class="btn" id="acReset">Reset progress</button></div>
+</div></div>
+<div id="acIntro" class="overlay hidden"><div class="card">
+  <h2 id="acIntroTitle"></h2>
+  <div id="acIntroBody" class="acBody"></div>
+  <p class="acGoalBox"><b>Your task:</b> <span id="acIntroGoal"></span></p>
+  <div class="row"><button class="btn" data-back>Back</button><button class="btn gold" id="acIntroGo">Let’s go</button></div>
+</div></div>
+<div id="acDone" class="overlay hidden"><div class="card">
+  <h2 id="acDoneTitle"></h2>
+  <div id="acDoneBody" class="acBody"></div>
+  <div class="row"><button class="btn" id="acToTrack" data-back>Lesson list</button><button class="btn" id="acPlayOn">Play on</button><button class="btn gold" id="acNext">Next lesson</button></div>
 </div></div>
 <div id="settings" class="overlay hidden"><div class="card scroll">
   <h2>Settings</h2>
@@ -532,7 +607,8 @@ input[type=range]::-moz-range-track { height: 6px; border-radius: 3px; backgroun
       {id:"agatha",name:"Aunt Agatha",maxDepth:2,timeMs:300,random:.03,window:60,noise:50},
       {id:"colonel",name:"Colonel Fortescue",maxDepth:6,timeMs:800,random:0,window:14,noise:10},
       {id:"duchess",name:"The Dowager Duchess",maxDepth:64,timeMs:3e3,random:0,window:0,noise:0},
-      {id:"butler",name:"The Butler",maxDepth:64,timeMs:700,random:0,window:30,noise:20}
+      {id:"butler",name:"The Butler",maxDepth:64,timeMs:700,random:0,window:30,noise:20},
+      {id:"bishop",name:"The Bishop of Bath",maxDepth:64,timeMs:1400,random:0,window:6,noise:4}
     ],T_=["e2e4 e7e5 g1f3 b8c6 f1b5 a7a6 b5a4 g8f6","e2e4 e7e5 g1f3 b8c6 f1c4 f8c5 c2c3 g8f6","e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6","e2e4 c7c5 g1f3 b8c6 d2d4 c5d4 f3d4 g8f6","e2e4 e7e6 d2d4 d7d5 b1c3 g8f6","e2e4 c7c6 d2d4 d7d5 b1c3 d5e4 c3e4 c8f5","d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7","d2d4 g8f6 c2c4 e7e6 g1f3 b7b6","d2d4 g8f6 c2c4 g7g6 b1c3 f8g7 e2e4 d7d6","c2c4 e7e5 b1c3 g8f6 g1f3 b8c6","g1f3 d7d5 g2g3 g8f6 f1g2 e7e6","e2e4 e7e5 g1f3 g8f6 f3e5 d7d6 e5f3 f6e4","d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4","e2e4 d7d5 e4d5 d8d5 b1c3 d5a5"]
   });var c0={
   };tm(c0,{
@@ -12161,7 +12237,7 @@ roughnessFactor = mix(roughnessFactor, 0.55, inkA);`).replace("#include <lights_
         this.h.zoom(Math.exp(Math.sign(n)*.12));return
       }this.h.orbit(e*.004,n*.003)
     }
-  };var o0='(()=>{\n  var Ft="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",lt=[33,31,18,14,-33,-31,-18,-14],at=[17,15,-17,-15],ut=[16,-16,1,-1],X=[17,15,-17,-15,16,-16,1,-1],I=r=>"abcdefgh"[r&7]+((r>>4)+1),Y=r=>r.charCodeAt(0)-97+(r.charCodeAt(1)-49)*16,P=r=>r&127,C=r=>r>>7&127,q=r=>r>>14&7,S=r=>r>>17,x=(r,t,e,s)=>r|t<<7|e<<14|s<<17,H=2654435769,K=()=>(H^=H<<13,H^=H>>>17,H^=H<<5,H|0),N=[new Int32Array(1664),new Int32Array(1664)];for(let r=0;r<1664;r++)N[0][r]=K(),N[1][r]=K();var T=[new Int32Array(16),new Int32Array(16)];for(let r=0;r<16;r++)T[0][r]=K(),T[1][r]=K();var E=[new Int32Array(128),new Int32Array(128)];for(let r=0;r<128;r++)E[0][r]=K(),E[1][r]=K();var R=[K(),K()],L=new Uint8Array(128).fill(15);L[0]=13;L[7]=14;L[4]=12;L[112]=7;L[119]=11;L[116]=3;var W=" pnbrqk",B=class{\n    constructor(t=Ft){\n      this.board=new Int8Array(128),this.stack=[],this.load(t)\n    }load(t){\n      let[e,s,i,h,n,c]=t.trim().split(/\\s+/);this.board.fill(0);let o=7,f=0;for(let l of e)if(l==="/")o--,f=0;else if(/\\d/.test(l))f+=+l;else{\n        let a=W.indexOf(l.toLowerCase());this.board[o*16+f]=l===l.toUpperCase()?a:-a,f++\n      }if(this.turn=s==="b"?-1:1,this.castle=0,i&&i!=="-")for(let l of i)this.castle|={\n        K:1,Q:2,k:4,q:8\n      }[l]||0;this.ep=h&&h!=="-"?Y(h):-1,this.half=+(n||0),this.full=+(c||1),this.stack.length=0,this.kings=[0,0];for(let l=0;l<128;l++)l&136||(this.board[l]===6&&(this.kings[0]=l),this.board[l]===-6&&(this.kings[1]=l));this.rehash()\n    }rehash(){\n      let t=0,e=0;for(let s=0;s<128;s++)if(!(s&136)&&this.board[s]){\n        let i=(this.board[s]+6)*128+s;t^=N[0][i],e^=N[1][i]\n      }t^=T[0][this.castle],e^=T[1][this.castle],this.ep>=0&&(t^=E[0][this.ep],e^=E[1][this.ep]),this.turn===-1&&(t^=R[0],e^=R[1]),this.h0=t,this.h1=e\n    }fen(){\n      let t="";for(let s=7;s>=0;s--){\n        let i=0;for(let h=0;h<8;h++){\n          let n=this.board[s*16+h];if(!n){\n            i++;continue\n          }i&&(t+=i,i=0);let c=W[Math.abs(n)];t+=n>0?c.toUpperCase():c\n        }i&&(t+=i),s&&(t+="/")\n      }let e="";return this.castle&1&&(e+="K"),this.castle&2&&(e+="Q"),this.castle&4&&(e+="k"),this.castle&8&&(e+="q"),`${t} ${this.turn===1?"w":"b"} ${e||"-"} ${this.ep>=0?I(this.ep):"-"} ${this.half} ${this.full}`\n    }repKey(){\n      let t=this.fen().split(" "),e="-";return this.ep>=0&&this.legalMoves().some(s=>S(s)&4)&&(e=t[3]),t[0]+" "+t[1]+" "+t[2]+" "+e\n    }attacked(t,e){\n      let s=this.board,i=e===1?t-15:t+15,h=e===1?t-17:t+17;if(!(i&136)&&s[i]===e*1||!(h&136)&&s[h]===e*1)return!0;for(let n of lt){\n        let c=t+n;if(!(c&136)&&s[c]===e*2)return!0\n      }for(let n of X){\n        let c=t+n;if(!(c&136)&&s[c]===e*6)return!0\n      }for(let n of at){\n        let c=t+n;for(;!(c&136);){\n          let o=s[c];if(o){\n            if(o===e*3||o===e*5)return!0;break\n          }c+=n\n        }\n      }for(let n of ut){\n        let c=t+n;for(;!(c&136);){\n          let o=s[c];if(o){\n            if(o===e*4||o===e*5)return!0;break\n          }c+=n\n        }\n      }return!1\n    }inCheck(t=this.turn){\n      return this.attacked(this.kings[t===1?0:1],-t)\n    }pseudo(t=[],e=!1){\n      let s=this.board,i=this.turn;t.length=0;for(let h=0;h<128;h++){\n        if(h&136){\n          h+=7;continue\n        }let n=s[h]*i;if(!(n<=0))if(n===1){\n          let c=h+16*i,o=i===1?7:0,f=i===1?1:6,l=c>>4===o;if(!(c&136)&&!s[c]&&(!e||l))if(l)for(let a of[5,4,3,2])t.push(x(h,c,a,16));else{\n            t.push(x(h,c,0,0));let a=c+16*i;h>>4===f&&!s[a]&&t.push(x(h,a,0,2))\n          }for(let a of[15,17]){\n            let k=h+a*i;if(!(k&136))if(s[k]*i<0)if(k>>4===o)for(let p of[5,4,3,2])t.push(x(h,k,p,17));else t.push(x(h,k,0,1));else k===this.ep&&t.push(x(h,k,0,5))\n          }\n        }else if(n===2||n===6){\n          for(let c of n===2?lt:X){\n            let o=h+c;if(o&136)continue;let f=s[o]*i;f>0||(f<0?t.push(x(h,o,0,1)):e||t.push(x(h,o,0,0)))\n          }n===6&&!e&&(i===1&&h===4?(this.castle&1&&!s[5]&&!s[6]&&s[7]===4&&!this.attacked(4,-1)&&!this.attacked(5,-1)&&!this.attacked(6,-1)&&t.push(x(4,6,0,8)),this.castle&2&&!s[3]&&!s[2]&&!s[1]&&s[0]===4&&!this.attacked(4,-1)&&!this.attacked(3,-1)&&!this.attacked(2,-1)&&t.push(x(4,2,0,8))):i===-1&&h===116&&(this.castle&4&&!s[117]&&!s[118]&&s[119]===-4&&!this.attacked(116,1)&&!this.attacked(117,1)&&!this.attacked(118,1)&&t.push(x(116,118,0,8)),this.castle&8&&!s[115]&&!s[114]&&!s[113]&&s[112]===-4&&!this.attacked(116,1)&&!this.attacked(115,1)&&!this.attacked(114,1)&&t.push(x(116,114,0,8))))\n        }else for(let c of n===3?at:n===4?ut:X){\n          let o=h+c;for(;!(o&136);){\n            let f=s[o]*i;if(f>0)break;if(f<0){\n              t.push(x(h,o,0,1));break\n            }e||t.push(x(h,o,0,0)),o+=c\n          }\n        }\n      }return t\n    }xorP(t,e){\n      let s=(t+6)*128+e;this.h0^=N[0][s],this.h1^=N[1][s]\n    }make(t){\n      let e=this.board,s=t&127,i=t>>7&127,h=t>>17,n=this.turn,c=e[s],o=e[i],f=i;h&4&&(f=i-16*n,o=e[f]),this.stack.push([t,o,this.castle,this.ep,this.half,this.h0,this.h1]),this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.h0^=T[0][this.castle],this.h1^=T[1][this.castle],o&&(this.xorP(o,f),e[f]=0),this.xorP(c,s),e[s]=0;let l=h&16?(t>>14&7)*n:c;if(e[i]=l,this.xorP(l,i),h&8){\n        let[a,k]=i===s+2?[s+3,s+1]:[s-4,s-1],p=e[a];this.xorP(p,a),e[a]=0,e[k]=p,this.xorP(p,k)\n      }return c*n===6&&(this.kings[n===1?0:1]=i),this.castle&=L[s]&L[i],this.ep=h&2?s+16*n:-1,this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.h0^=T[0][this.castle]^R[0],this.h1^=T[1][this.castle]^R[1],this.half=o||c*n===1?0:this.half+1,n===-1&&this.full++,this.turn=-n,this.attacked(this.kings[n===1?0:1],-n)?(this.unmake(),!1):!0\n    }unmake(){\n      let[t,e,s,i,h,n,c]=this.stack.pop(),o=this.board,f=t&127,l=t>>7&127,a=t>>17;this.turn=-this.turn;let k=this.turn,p=a&16?1*k:o[l];if(o[f]=p,o[l]=0,a&4?o[l-16*k]=e:o[l]=e,a&8){\n        let[m,M]=l===f+2?[f+3,f+1]:[f-4,f-1];o[m]=o[M],o[M]=0\n      }p*k===6&&(this.kings[k===1?0:1]=f),this.castle=s,this.ep=i,this.half=h,this.h0=n,this.h1=c,k===-1&&this.full--\n    }makeNull(){\n      this.stack.push([0,0,this.castle,this.ep,this.half,this.h0,this.h1]),this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.ep=-1,this.h0^=R[0],this.h1^=R[1],this.turn=-this.turn\n    }unmakeNull(){\n      let[,,t,e,s,i,h]=this.stack.pop();this.turn=-this.turn,this.castle=t,this.ep=e,this.half=s,this.h0=i,this.h1=h\n    }legalMoves(){\n      let t=this.pseudo([]),e=[];for(let s of t)this.make(s)&&(this.unmake(),e.push(s));return e\n    }perft(t){\n      if(t===0)return 1;let e=this.pseudo([]),s=0;for(let i of e)this.make(i)&&(s+=t===1?1:this.perft(t-1),this.unmake());return s\n    }insufficient(){\n      let t=[];for(let e=0;e<128;e++){\n        if(e&136)continue;let s=Math.abs(this.board[e]);if(!(!s||s===6)){\n          if(s===1||s===4||s===5)return!1;t.push([s,(e>>4)+(e&7)&1])\n        }\n      }return t.length<=1?!0:t.every(e=>e[0]===3)?t.every(e=>e[1]===t[0][1]):!1\n    }san(t,e=this.legalMoves()){\n      let s=P(t),i=C(t),h=S(t),n=Math.abs(this.board[s]),c;if(h&8)c=i>s?"O-O":"O-O-O";else{\n        if(c=n===1?"":W[n].toUpperCase(),n!==1){\n          let o=e.filter(f=>f!==t&&C(f)===i&&Math.abs(this.board[P(f)])===n&&P(f)!==s);if(o.length){\n            let f=o.some(a=>(P(a)&7)===(s&7)),l=o.some(a=>P(a)>>4===s>>4);c+=f?l?I(s):I(s)[1]:I(s)[0]\n          }\n        }h&1&&(c+=(n===1?I(s)[0]:"")+"x"),c+=I(i),h&16&&(c+="="+W[q(t)].toUpperCase())\n      }return this.make(t),this.inCheck()&&(c+=this.legalMoves().length?"+":"#"),this.unmake(),c\n    }moveFromSan(t,e=this.legalMoves()){\n      let s=t.replace(/[+#!?]/g,"");return e.find(i=>this.san(i,e).replace(/[+#]/g,"")===s)??null\n    }moveFromUci(t,e=this.legalMoves()){\n      let s=Y(t.slice(0,2)),i=Y(t.slice(2,4)),h=t[4]?W.indexOf(t[4]):0;return e.find(n=>P(n)===s&&C(n)===i&&(!h||q(n)===h))??null\n    }\n  },O=r=>I(P(r))+I(C(r))+(S(r)&16?W[q(r)]:"");var v=3e4,y=32e3,dt=[0,82,337,365,477,1025,0],mt=[0,94,281,297,512,936,0],_t=[0,0,1,1,2,4,0],A=r=>r.trim().split(/\\s+/).map(Number),Z={\n    1:[A("0 0 0 0 0 0 0 0  -6 -2 -8 -14 -14 12 18 -8  -10 -4 0 -2 4 2 14 -4  -12 0 4 14 18 8 6 -12  -6 6 10 22 24 14 10 -8  4 12 24 30 34 32 18 2  60 70 50 60 54 70 40 20  0 0 0 0 0 0 0 0"),A("0 0 0 0 0 0 0 0  10 8 8 10 12 6 4 0  6 6 2 4 4 2 2 0  12 10 4 0 0 2 6 4  26 20 14 8 8 10 16 18  60 60 50 40 40 40 56 58  120 120 110 100 100 100 110 120  0 0 0 0 0 0 0 0")],2:[A("-60 -20 -34 -20 -16 -26 -20 -50  -30 -40 -10 0 0 -6 -30 -22  -24 -6 10 12 16 14 18 -16  -12 4 16 14 22 20 22 -8  -8 16 18 44 34 54 18 20  -40 50 30 56 72 110 60 40  -60 -36 60 30 20 50 6 -14  -140 -70 -30 -40 50 -80 -12 -90"),A("-30 -40 -20 -14 -20 -16 -40 -50  -36 -18 -8 -2 0 -16 -20 -40  -20 -2 0 12 10 2 -16 -18  -16 -4 16 22 16 18 6 -16  -16 4 20 22 22 12 8 -16  -20 -18 10 10 0 -8 -16 -36  -24 -6 -22 0 -8 -22 -22 -50  -50 -36 -12 -24 -28 -24 -60 -90")],3:[A("-30 -4 -14 -20 -12 -12 -36 -20  4 14 16 0 8 20 32 2  0 16 14 14 14 26 18 10  -6 12 12 26 32 12 10 4  -4 4 18 48 36 36 6 -2  -16 36 42 40 34 48 36 -2  -26 16 -18 -12 30 58 18 -46  -28 4 -80 -36 -24 -42 6 -8"),A("-22 -10 -22 -4 -8 -16 -4 -16  -14 -18 -6 0 4 -8 -14 -26  -12 -2 8 10 14 2 -6 -14  -6 2 12 18 6 10 -4 -8  -4 8 12 8 12 10 2 2  2 -8 0 0 -2 6 0 4  -8 -4 6 -12 -2 -12 -4 -14  -14 -20 -10 -8 -6 -8 -16 -24")],4:[A("-18 -12 0 16 16 6 -36 -26  -44 -16 -20 -8 0 10 -6 -70  -44 -24 -16 -16 4 0 -4 -32  -36 -26 -12 0 8 -6 6 -22  -24 -10 6 26 24 34 -8 -20  -4 18 26 36 16 44 60 16  26 32 58 62 80 66 26 44  32 42 32 50 62 8 30 42"),A("-8 2 4 0 -4 -12 4 -20  -6 -6 0 2 -8 -8 -10 -2  -4 0 -4 -2 -6 -12 -8 -16  4 4 8 4 -4 -6 -8 -10  4 2 12 2 2 0 -2 2  8 8 8 4 4 -2 -4 -2  12 14 14 10 -4 4 8 4  14 10 18 16 12 12 8 6")],5:[A("-2 -18 -10 10 -14 -24 -30 -50  -34 -8 10 2 8 14 -4 2  -14 2 -10 -2 -4 2 14 6  -10 -26 -10 -10 -2 -4 4 -4  -26 -26 -16 -16 -2 18 -2 2  -12 -16 6 8 30 56 48 56  -24 -38 -6 2 -16 56 28 54  -28 0 30 12 60 44 44 44"),A("-32 -28 -22 -42 -4 -32 -20 -40  -22 -22 -30 -16 -16 -22 -36 -32  -16 -26 14 6 8 16 10 4  -18 28 18 46 30 34 38 22  2 22 24 44 56 40 56 36  -20 6 8 48 46 34 18 8  -16 20 32 40 58 24 30 0  -10 22 22 26 26 18 10 20")],6:[A("-14 36 12 -54 8 -28 24 14  2 6 -8 -64 -44 -16 8 8  -14 -14 -22 -46 -44 -30 -16 -28  -50 0 -28 -40 -46 -44 -34 -52  -18 -20 -12 -28 -30 -26 -14 -36  -10 24 2 -16 -20 6 22 -22  28 0 -20 -8 -8 -4 -38 -30  -66 22 16 -16 -56 -34 2 12"),A("-54 -34 -22 -12 -28 -14 -24 -44  -28 -12 4 12 14 4 -6 -18  -20 -4 22 24 28 16 6 -10  -18 -4 22 24 28 24 10 -12  -8 22 24 28 26 34 26 4  10 18 24 16 20 44 44 14  -12 18 14 18 18 38 24 10  -74 -36 -18 -18 -10 16 4 -18")]\n  },kt=r=>(r>>4)*8+(r&7),rt=new Int16Array(1664),ot=new Int16Array(1664);for(let r=1;r<=6;r++)for(let t=0;t<128;t++){\n    if(t&136)continue;let e=kt(t),s=kt(t^112);rt[(r+6)*128+t]=dt[r]+Z[r][0][e],ot[(r+6)*128+t]=mt[r]+Z[r][1][e],rt[(-r+6)*128+t]=-(dt[r]+Z[r][0][s]),ot[(-r+6)*128+t]=-(mt[r]+Z[r][1][s])\n  }\n  // --- evaluation ---------------------------------------------------------\n  // Everything below is scored from white\'s point of view and only flipped to\n  // the moving side on the way out. Middlegame and endgame terms are kept apart\n  // and blended by the material phase, so the same code covers both.\n  var TROPISM=[0,0,2,2,3,5,0],                // per piece type, scaled by nearness\n    PASSED_MG=[0,2,6,12,20,32,48,0],          // by rank, from white\'s side\n    PASSED_EG=[0,10,18,30,50,80,120,0],\n    SHIELD=[18,0,10,22,30,30,30,30];          // by shield pawn\'s distance ahead of its king\n  function gt(r){\n    let board=r.board,mg=0,eg=0,phase=0,mgAdj=0,egAdj=0,\n      wBishops=0,bBishops=0,wPawns=0,bPawns=0,wMaterial=0,bMaterial=0,\n      wCount=new Int8Array(8),bCount=new Int8Array(8),          // pawns per file\n      wTop=new Int8Array(8).fill(-1),wBottom=new Int8Array(8).fill(9),\n      bBottom=new Int8Array(8).fill(9),bTop=new Int8Array(8).fill(-1),\n      wKing=r.kings[0],bKing=r.kings[1],wDanger=0,bDanger=0;\n    for(let sq=0;sq<128;sq++){\n      if(sq&136){\n        sq+=7;continue\n      }\n      let piece=board[sq];\n      if(!piece)continue;\n      let type=piece<0?-piece:piece,file=sq&7,rank=sq>>4,idx=(piece+6)*128+sq;\n      mg+=rt[idx],eg+=ot[idx],phase+=_t[type];\n      if(type===1){\n        // Pawns side by side, or defending each other, are worth more than loose\n        // ones. Off-board squares always read 0, so no wrap-around checks needed.\n        if(piece>0){\n          wPawns++,wCount[file]++;\n          if(rank>wTop[file])wTop[file]=rank;\n          if(rank<wBottom[file])wBottom[file]=rank;\n          if(board[sq-1]===1||board[sq+1]===1)mgAdj+=6,egAdj+=4;\n          if(board[sq-15]===1||board[sq-17]===1)mgAdj+=8,egAdj+=6\n        }else{\n          bPawns++,bCount[file]++;\n          if(rank<bBottom[file])bBottom[file]=rank;\n          if(rank>bTop[file])bTop[file]=rank;\n          if(board[sq-1]===-1||board[sq+1]===-1)mgAdj-=6,egAdj-=4;\n          if(board[sq+15]===-1||board[sq+17]===-1)mgAdj-=8,egAdj-=6\n        }\n      }else if(type!==6){\n        type===3&&(piece>0?wBishops++:bBishops++),piece>0?wMaterial+=dt[type]:bMaterial+=dt[type];\n        // King tropism: pieces loitering near the enemy king are dangerous even\n        // before we work out exactly what they attack.\n        let king=piece>0?bKing:wKing,\n          dist=Math.max(Math.abs(rank-(king>>4)),Math.abs(file-(king&7)));\n        if(dist<=3){\n          let threat=TROPISM[type]*(4-dist);piece>0?bDanger+=threat:wDanger+=threat\n        }\n      }\n    }\n    for(let file=0;file<8;file++){\n      wCount[file]>1&&(mgAdj-=10,egAdj-=20),bCount[file]>1&&(mgAdj+=10,egAdj+=20);\n      let wl=file>0?wCount[file-1]:0,wr=file<7?wCount[file+1]:0,\n        bl=file>0?bCount[file-1]:0,br=file<7?bCount[file+1]:0;\n      if(wCount[file]&&!wl&&!wr)mgAdj-=10,egAdj-=12;\n      if(bCount[file]&&!bl&&!br)mgAdj+=10,egAdj+=12;\n      if(wCount[file]){\n        let rank=wTop[file],passed=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)bCount[f]&&bTop[f]>rank&&(passed=!1);\n        passed&&(mgAdj+=PASSED_MG[rank],egAdj+=PASSED_EG[rank])\n      }\n      if(bCount[file]){\n        let rank=bBottom[file],passed=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)wCount[f]&&wBottom[f]<rank&&(passed=!1);\n        passed&&(mgAdj-=PASSED_MG[7-rank],egAdj-=PASSED_EG[7-rank])\n      }\n    }\n    for(let sq=0;sq<128;sq++){\n      if(sq&136){\n        sq+=7;continue\n      }\n      let piece=board[sq];\n      if(!piece)continue;\n      let file=sq&7,rank=sq>>4;\n      if(piece===4||piece===-4){\n        let own=piece>0?wCount[file]:bCount[file],foe=piece>0?bCount[file]:wCount[file],\n          bonus=own?0:foe?10:22;\n        // A rook on the seventh cuts the enemy king off and eats loose pawns.\n        (piece>0?rank===6:rank===1)&&(bonus+=20),piece>0?(mgAdj+=bonus,egAdj+=bonus/2):(mgAdj-=bonus,egAdj-=bonus/2)\n      }else if(piece===2&&rank>=3&&rank<=5&&(board[sq-15]===1||board[sq-17]===1)){\n        // Outpost: a pawn-defended square that no enemy pawn can ever challenge.\n        let safe=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)f!==file&&bCount[f]&&bTop[f]>rank&&(safe=!1);\n        safe&&(mgAdj+=22,egAdj+=14)\n      }else if(piece===-2&&rank>=2&&rank<=4&&(board[sq+15]===-1||board[sq+17]===-1)){\n        let safe=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)f!==file&&wCount[f]&&wBottom[f]<rank&&(safe=!1);\n        safe&&(mgAdj-=22,egAdj-=14)\n      }\n    }\n    // King shelter: missing shield pawns and open files beside the king.\n    for(let f=Math.max(0,(wKing&7)-1);f<=Math.min(7,(wKing&7)+1);f++){\n      if(wCount[f]){\n        let ahead=wBottom[f]-(wKing>>4);wDanger+=SHIELD[ahead<0?0:ahead>7?7:ahead]\n      }else wDanger+=22;\n      wCount[f]||bCount[f]||(wDanger+=12)\n    }\n    for(let f=Math.max(0,(bKing&7)-1);f<=Math.min(7,(bKing&7)+1);f++){\n      if(bCount[f]){\n        let ahead=(bKing>>4)-bTop[f];bDanger+=SHIELD[ahead<0?0:ahead>7?7:ahead]\n      }else bDanger+=22;\n      wCount[f]||bCount[f]||(bDanger+=12)\n    }\n    wBishops>=2&&(mgAdj+=30,egAdj+=50),bBishops>=2&&(mgAdj-=30,egAdj-=50);\n    // King danger is a middlegame concern; once the pieces are gone the king\n    // stops being a liability and becomes a piece, so barely count it.\n    mgAdj-=wDanger-bDanger,egAdj-=(wDanger-bDanger)/6|0;\n    mg+=mgAdj,eg+=egAdj,phase>24&&(phase=24);\n    let score=(mg*phase+eg*(24-phase))/24|0;\n    if(phase<=6){\n      let edge=sq=>Math.max(3-(sq>>4),(sq>>4)-4)+Math.max(3-(sq&7),(sq&7)-4),\n        apart=Math.abs((wKing>>4)-(bKing>>4))+Math.abs((wKing&7)-(bKing&7));\n      score>200?score+=edge(bKing)*10+(14-apart)*4:score<-200&&(score-=edge(wKing)*10+(14-apart)*4)\n    }\n    // A material edge without pawns is usually not a win. Knowing that stops the\n    // engine from happily trading down into a dead-drawn ending.\n    if(score>0&&!wPawns&&wMaterial-bMaterial<450||score<0&&!bPawns&&bMaterial-wMaterial<450)score=score/8|0;\n    return(score+10*r.turn)*r.turn\n  }var st=[0,100,320,330,500,900,2e3],Ct=20,Q=1<<Ct,et=Q-1,U,G,ht,j,ct;function vt(){\n    U||(U=new Int32Array(Q),G=new Int32Array(Q),ht=new Int16Array(Q),j=new Int8Array(Q),ct=new Int8Array(Q))\n  }\n  // --- static exchange evaluation ---------------------------------------\n  // Exchange-only values. The king is enormous so it is always treated as the\n  // last resort recapture.\n  var SEE_VAL=[0,100,320,330,500,900,1e4],\n    PAWN_FROM=[[-15,-17],[15,17]],\n    SLIDERS=[[3,at],[4,ut],[5,X]];\n  // Square of the cheapest `side` piece attacking `to`, or -1.\n  function leastAttacker(board,to,side){\n    for(let d of PAWN_FROM[side===1?0:1]){\n      let s=to+d;if(!(s&136)&&board[s]===side)return s\n    }\n    for(let d of lt){\n      let s=to+d;if(!(s&136)&&board[s]===side*2)return s\n    }\n    for(let[piece,dirs]of SLIDERS)for(let d of dirs){\n      let s=to+d;\n      for(;!(s&136);s+=d){\n        let p=board[s];\n        if(p){if(p===side*piece)return s;break}\n      }\n    }\n    for(let d of X){\n      let s=to+d;if(!(s&136)&&board[s]===side*6)return s\n    }\n    return-1\n  }\n  function seeTo(board,to,side){\n    let from=leastAttacker(board,to,side);\n    if(from<0)return 0;\n    let attacker=board[from],victim=board[to];\n    board[to]=attacker,board[from]=0;\n    let gain=SEE_VAL[Math.abs(victim)]-seeTo(board,to,-side);\n    return board[from]=attacker,board[to]=victim,gain>0?gain:0\n  }\n  // Net material swing of a capture if both sides keep recapturing with their\n  // cheapest piece. Negative means the capture loses material.\n  function see(pos,move){\n    let flags=S(move);\n    if(flags&4)return 0;                               // en passant is close enough to even\n    let board=pos.board,from=P(move),to=C(move),attacker=board[from],victim=board[to],\n      side=attacker>0?1:-1,gain=SEE_VAL[Math.abs(victim)],placed=attacker;\n    if(flags&16){\n      let promo=q(move);gain+=SEE_VAL[promo]-SEE_VAL[1],placed=side*promo\n    }\n    board[to]=placed,board[from]=0;\n    let net=gain-seeTo(board,to,-side);\n    return board[from]=attacker,board[to]=victim,net\n  }\n  // Late move reduction table indexed [depth][moveNumber]: reduce harder as\n  // both the remaining depth and the move\'s lateness grow.\n  var REDUCE=(()=>{\n    let table=[];\n    for(let d=0;d<64;d++){\n      let row=new Int8Array(64);\n      for(let m=0;m<64;m++)row[m]=d<3||m<3?0:Math.min(d-2,.8+Math.log(d)*Math.log(m)/2.2|0);\n      table.push(row)\n    }\n    return table\n  })();\n  var z=class{\n    constructor(){\n      vt(),this.killers=new Int32Array(256),this.hist=new Int32Array(16384)\n    }search(t,{\n      maxDepth:e=64,timeMs:s=1e3,gameHashes:i=[],onInfo:h=null,rootScores:n=!1\n    }={\n    }){\n      let c=this.pos=new B(t);this.nodes=0,this.stop=!1,this.t0=D(),\n      // Reserve time to return a move, but never reserve so much that there is\n      // nothing left to think with: small budgets would otherwise expire instantly.\n      this.deadline=this.t0+Math.max(s*.5,s-Math.max(40,s*.05)),this.rep=i.slice(),this.killers.fill(0);for(let p=0;p<this.hist.length;p++)this.hist[p]>>=2;let o=c.legalMoves();if(!o.length)return{\n        move:0,score:c.inCheck()?-v:0,depth:0,nodes:0,pv:[]\n      };\n      // Seed with a legal move from *this* position: a search cut short before\n      // depth 1 completes must never hand back a leftover from the last one.\n      let f=o[0],l=0,a=0,k=null;this.rootBest=o[0];for(let p=1;p<=e;p++){\n        let m=-y,M=y,delta=24,u=0,fails=0;\n        if(p>=4&&!n)m=l-delta,M=l+delta;\n        for(;;){\n          u=this.root(p,m,M,o,n);\n          if(this.stop)break;\n          if(u>m&&u<M||m<=-y&&M>=y)break;\n          // Widen gradually at first — one fail does not make the whole estimate\n          // worthless — but give up on the guess rather than re-search forever.\n          if(++fails>2)m=-y,M=y;\n          else if(u<=m)delta*=3,m=u-delta<-y?-y:u-delta;\n          else delta*=3,M=u+delta>y?y:u+delta\n        }\n        if(this.stop&&p>1)break;\n        f=this.rootBest,l=u,a=p,n&&(k=this.rootList.slice());\n        if(h)h({\n          depth:p,score:u,move:O(f),nodes:this.nodes,ms:D()-this.t0\n        });\n        if(Math.abs(u)>v-100||D()-this.t0>s*.55)break\n      }return{\n        move:f,uci:O(f),score:l,depth:a,nodes:this.nodes,ms:Math.round(D()-this.t0),scores:k\n      }\n    }root(t,e,s,i,h){\n      let n=this.pos,c=this.probeMove(),o=this.order(i,c,0),f=-y,l=o[0],a=0,k=[];for(let p of o){\n        n.make(p),this.rep.push(n.h0);let m;if(h?m=-this.ab(t-1,-y,y,1,!0):a===0?m=-this.ab(t-1,-s,-e,1,!0):(m=-this.ab(t-1,-e-1,-e,1,!0),m>e&&m<s&&(m=-this.ab(t-1,-s,-e,1,!0))),this.rep.pop(),n.unmake(),a++,this.stop||(k.push([p,m]),m>f&&(f=m,l=p,m>e&&(e=m),!h&&e>=s)))break\n      }return(!this.stop||a>1)&&(this.rootBest=l,this.store(t,f,0,l)),this.rootList=k,f\n    }probeMove(){\n      let t=this.pos.h1&et;return U[t]===this.pos.h0?G[t]:0\n    }store(t,e,s,i){\n      let h=this.pos.h1&et;U[h]===this.pos.h0&&j[h]>t&&s!==0||(U[h]=this.pos.h0,G[h]=i,ht[h]=e,j[h]=t,ct[h]=s)\n    }order(t,e,s){\n      let board=this.pos.board,k1=this.killers[s*2],k2=this.killers[s*2+1],score=t.map(mv=>{\n        if(mv===e)return 1e9;\n        let flags=S(mv),v;\n        if(flags&1){\n          let victim=Math.abs(board[C(mv)])||1,attacker=Math.abs(board[P(mv)]);\n          v=1e7+st[victim]*10-st[attacker]/10;\n          // Only pay for SEE where MVV/LVA already smells like a losing trade.\n          // A confirmed loser sorts below every quiet move.\n          if(st[victim]<st[attacker]){\n            let net=see(this.pos,mv);\n            if(net<0)v=-1e6+net\n          }\n        }else if(mv===k1)v=9e6;\n        else if(mv===k2)v=8e6;\n        else v=this.hist[P(mv)*128+C(mv)];\n        return flags&16&&(v+=q(mv)===5?2e7:-1e7),v\n      });return t.map((f,l)=>l).sort((f,l)=>score[l]-score[f]).map(f=>t[f])\n    }isRep(){\n      let t=this.pos.h0,e=this.rep.length,s=Math.min(e-1,this.pos.half+1);for(let i=e-3;i>=e-1-s&&i>=0;i-=2)if(this.rep[i]===t)return!0;return!1\n    }ab(t,e,s,i,h){\n      if((++this.nodes&255)===0&&D()>this.deadline&&(this.stop=!0),this.stop)return 0;let n=this.pos;if(n.half>=100||this.isRep())return 0;let c=n.inCheck();\n      // Extend on check, but not without limit: a long checking sequence deep in\n      // the tree must not stall the whole iteration.\n      if(c&&i<48&&t++,t<=0)return this.qs(e,s,i,0);if(e=Math.max(e,-v+i),s=Math.min(s,v-i),e>=s)return e;let o=n.h1&et,f=0,l=s-e>1;if(U[o]===n.h0&&(f=G[o],j[o]>=t&&!l)){\n        let d=ht[o],b=ct[o];if(b===0||b===1&&d>=s||b===2&&d<=e)return d\n      }let a=0;if(c||(a=gt(n)),!l&&!c&&t<=3&&a-120*t>=s)return a;\n      // Razoring: shallow and far below alpha, let the capture search confirm it.\n      if(!l&&!c&&t<=2&&a+220<=e){\n        let d=this.qs(e,s,i,0);if(d<=e)return d\n      }\n      if(h&&!l&&!c&&t>=3&&a>=s&&this.hasPieces()){\n        let R=3+(t/6|0);\n        n.makeNull(),this.rep.push(n.h0);let d=-this.ab(t-R,-s,-s+1,i+1,!1);if(this.rep.pop(),n.unmakeNull(),this.stop)return 0;if(d>=s)return d>=v-200?s:d\n      }\n      // Internal iterative deepening: with no table move to lead on, a shallow\n      // search finds one more cheaply than guessing does.\n      // The flag stops the shallow search from launching shallow searches of its\n      // own, which compounds into more work than it saves.\n      if(!f&&l&&t>=5&&!this.inIid){\n        this.inIid=!0,this.ab(t-2,e,s,i,!1),this.inIid=!1;if(this.stop)return 0;f=this.probeMove()\n      }\n      let k=this.order(n.pseudo([]),f,i),p=-y,m=0,M=0,u=e;for(let d of k){\n        if(!n.make(d))continue;M++,this.rep.push(n.h0);let b=!(S(d)&17),g;if(M===1)g=-this.ab(t-1,-s,-e,i+1,!0);else{\n          let w=0;\n          if(b&&!c&&t>=3&&!n.inCheck()){\n            w=REDUCE[t<64?t:63][M<64?M:63];\n            if(l)w--;                                  // the principal variation keeps its depth\n            w=w<0?0:w>t-2?t-2:w\n          }\n          g=-this.ab(t-1-w,-e-1,-e,i+1,!0),g>e&&w&&(g=-this.ab(t-1,-e-1,-e,i+1,!0)),g>e&&g<s&&(g=-this.ab(t-1,-s,-e,i+1,!0))\n        }if(this.rep.pop(),n.unmake(),this.stop)return 0;if(g>p&&(p=g,m=d,g>e&&(e=g,g>=s))){\n          b&&(this.killers[i*2]!==d&&(this.killers[i*2+1]=this.killers[i*2],this.killers[i*2]=d),this.hist[P(d)*128+C(d)]+=t*t);break\n        }\n      }return M?(this.store(t,p,p>=s?1:p<=u?2:0,m),p):c?-v+i:0\n    }hasPieces(){\n      let t=this.pos.board,e=this.pos.turn;for(let s=0;s<128;s++){\n        if(s&136)continue;let i=t[s]*e;if(i>1&&i<6)return!0\n      }return!1\n    }qs(t,e,s,i){\n      if((++this.nodes&255)===0&&D()>this.deadline&&(this.stop=!0),this.stop)return 0;let h=this.pos,n=gt(h);if(n>=e||(n>t&&(t=n),i>8))return n;let c=h.board,o=this.order(h.pseudo([],!0),0,0);for(let f of o){\n        let l=S(f)&4?1:Math.abs(c[C(f)]);if(n+st[l]+200<t&&!(S(f)&16))continue;\n        // Captures that static exchange says lose material are not worth nodes.\n        if(!(S(f)&16)&&see(h,f)<0)continue;\n        if(!h.make(f))continue;let a=-this.qs(-e,-t,s+1,i+1);if(h.unmake(),this.stop)return 0;if(a>t&&(t=a,a>=e))return a\n      }return t\n    }\n  },D=()=>typeof performance<"u"?performance.now():Date.now(),Mt=[\n    // The country-house cast. Mistakes at the low end are human-shaped rather\n    // than random: "blind" is the chance per move of judging moves only by what\n    // they grab right now (missing the reply), "greed" is a bonus for captures,\n    // "book" is how many plies of opening theory they know.\n    {id:"pip",name:"Young Master Pip",maxDepth:1,timeMs:150,blind:.6,greed:140,window:90,noise:80,book:0},\n    {id:"agatha",name:"Aunt Agatha",maxDepth:2,timeMs:300,blind:.22,greed:45,window:35,noise:40,book:4},\n    {id:"colonel",name:"Colonel Fortescue",maxDepth:6,timeMs:800,blind:0,greed:0,window:14,noise:10,book:10},\n    {id:"duchess",name:"The Dowager Duchess",maxDepth:64,timeMs:3e3,blind:0,greed:0,window:0,noise:0,book:10},\n    // The Butler matches you: he plays well when behind and quietly gives a\n    // little back when ahead, so the game stays close.\n    {id:"butler",name:"The Butler",maxDepth:64,timeMs:700,adaptive:!0,book:6}\n  ],It=["e2e4 e7e5 g1f3 b8c6 f1b5 a7a6 b5a4 g8f6","e2e4 e7e5 g1f3 b8c6 f1c4 f8c5 c2c3 g8f6","e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6","e2e4 c7c5 g1f3 b8c6 d2d4 c5d4 f3d4 g8f6","e2e4 e7e6 d2d4 d7d5 b1c3 g8f6","e2e4 c7c6 d2d4 d7d5 b1c3 d5e4 c3e4 c8f5","d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7","d2d4 g8f6 c2c4 e7e6 g1f3 b7b6","d2d4 g8f6 c2c4 g7g6 b1c3 f8g7 e2e4 d7d6","c2c4 e7e5 b1c3 g8f6 g1f3 b8c6","g1f3 d7d5 g2g3 g8f6 f1g2 e7e6","e2e4 e7e5 g1f3 g8f6 f3e5 d7d6 e5f3 f6e4","d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4","e2e4 d7d5 e4d5 d8d5 b1c3 d5a5"];function Tt(r,t=Math.random){\n    let e=r.length,s=new Set;for(let h of It){\n      let n=h.split(" ");n.length>e&&r.every((c,o)=>n[o]===c)&&s.add(n[e])\n    }let i=[...s];return i.length?i[Math.floor(t()*i.length)]:null\n  }function wt(r,t,{\n    level:e=2,historyUci:s=[],gameHashes:i=[],timeScale:h=1,rand:n=Math.random,useBook:c=!0\n  }={\n  }){\n    let o=Mt[Math.max(0,Math.min(Mt.length-1,e))],f=new B(t),l=f.legalMoves();if(!l.length)return null;\n    if(c&&s.length<(o.book??10)){\n      let p=Tt(s,n),m=p&&f.moveFromUci(p,l);if(m)return{\n        move:m,uci:p,book:!0,score:0,depth:0,nodes:0,ms:0,level:o.id\n      }\n    }\n    let pick=(list)=>{let p=list.map(([d,b])=>[d,b+(n()*2-1)*(o.noise||0)]);p.sort((d,b)=>b[1]-d[1]);let m=p[0][1],M=p.filter(d=>d[1]>=m-(o.window||0));return M[Math.floor(n()*M.length)][0]},\n    grab=m=>S(m)&1?st[Math.abs(f.board[C(m)])||1]:0,res=(k,m)=>({...k,move:m,uci:O(m),level:o.id});\n    // A "blind" move: judge each move by the position straight after it, as if\n    // the opponent will not reply. That is how real beginners hang pieces and\n    // grab defended pawns, rather than playing a random move.\n    if(o.blind&&n()<o.blind){\n      let sc=l.map(m=>{f.make(m);let v=-gt(f)+(f.inCheck()?30:0);return f.unmake(),[m,v+grab(m)*(o.greed||0)/100]});\n      return res({score:0,depth:0,nodes:0,ms:0,blind:!0},pick(sc))\n    }\n    let k=r.search(t,{\n      maxDepth:o.maxDepth,timeMs:o.timeMs*h,gameHashes:i,rootScores:!!(o.window||o.greed)\n    });\n    if(o.adaptive){\n      // The Butler sizes you up: after each of your moves he measures how much\n      // it cost you (his score now vs. his score straight after his own move),\n      // keeps a running average, and imitates the house guest who plays like\n      // that. The score only nudges him one rung easier, to reel in a runaway game;\n      // he never jumps to full strength just because he is losing.\n      let ply=(f.full-1)*2+(f.turn<0?1:0),St=BUT6;if(!(ply>St.ply))BUT6=St={ply:-1,loss:60,n:0,after:null};\n      let now=xt(k.score);if(St.after!==null&&ply===St.ply+2){let x=Math.max(0,Math.min(600,now-St.after));St.loss=St.n<1?(St.loss+x)/2:St.loss*.75+x*.25,St.n++}\n      let L=St.loss,as=L>=220?0:L>=110?1:L>=50?2:-1;\n      if(now>=350)as=as<0?2:Math.max(0,as-1);\n      let out=as<0?{...k,level:o.id}:{...wt(r,t,{level:as,historyUci:s,gameHashes:i,timeScale:h,rand:n,useBook:!1}),level:o.id},mv=f.moveFromUci(out.uci,l);\n      if(mv&&f.make(mv)){let a2=r.search(f.fen(),{maxDepth:64,timeMs:150*h,gameHashes:i});St.after=-xt(a2.score),f.unmake()}else St.after=null;\n      return St.ply=ply,{...out,butler:{loss:Math.round(L),as}}\n    }\n    if(!k.scores||!k.scores.length)return{\n      ...k,level:o.id\n    };\n    if(o.greed)k.scores=k.scores.map(([m,v])=>[m,v+grab(m)*o.greed/100]);\n    return o.window>0?res(k,pick(k.scores)):{...k,level:o.id}\n  }var J=new z,BUT6={ply:1e9};\n  // Why is this the best move? Picks the single most useful reason a person\n  // would give, from the position before the move (p) and the move (m).\n  function why(p,m,score){\n    let bd=p.board,T=p.turn,fr=P(m),to=C(m),fl=S(m),pc=Math.abs(bd[fr]),out={piece:W[pc],from:I(fr),to:I(to)};\n    if(score>=v-200)return{...out,kind:"mate",n:Math.ceil((v-score)/2)};\n    // Biggest piece of ours the opponent could win right now.\n    let hang=null;for(let q=0;q<128;q++){if(q&136||bd[q]*T<=0||Math.abs(bd[q])===6)continue;let g=seeTo(bd,q,-T);g>=100&&(!hang||g>hang.g)&&(hang={q,g})}\n    let victim=fl&1?Math.abs(fl&4?1:bd[to]):0,gain=fl&1?see(p,m):0;\n    if(!p.make(m))return{...out,kind:"improve"};\n    let check=p.inCheck(),stillHang=hang&&(hang.q===fr?seeTo(p.board,to,-T)>=100:seeTo(p.board,hang.q,-T)>=100),threat=null;\n    for(let q=0;q<128;q++){if(q&136||p.board[q]*T>=0)continue;let g=Math.abs(p.board[q])===6?0:seeTo(p.board,q,T);g>=200&&(!threat||g>threat.g)&&(threat={q,g})}\n    p.unmake();\n    if(victim&&gain>=100)return{...out,kind:"win",victim:W[victim],at:I(to),free:gain>=st[victim]-20};\n    if(hang&&!stillHang)return{...out,kind:"save",saved:W[Math.abs(bd[hang.q])],at:I(hang.q)};\n    if(check)return{...out,kind:"check"};\n    if(fl&8)return{...out,kind:"castle"};\n    if(threat)return{...out,kind:"threat",target:W[Math.abs(p.board[threat.q])],at:I(threat.q)};\n    if(fl&16)return{...out,kind:"promote"};\n    if(p.full<=12&&(pc===2||pc===3)&&(fr>>4)===(T>0?0:7))return{...out,kind:"develop"};\n    return{...out,kind:"improve"}\n  }function ft(r,t){\n    let e=new B(r),s=[e.h0];for(let i of t){\n      let h=e.moveFromUci(i,e.legalMoves());if(!h)break;e.make(h),s.push(e.h0)\n    }return{\n      pos:e,hashes:s\n    }\n  }var xt=r=>r>=v-500?2e3:r<=-v+500?-2e3:Math.max(-2e3,Math.min(2e3,r));function St(r,t){\n    let{\n      type:e,id:s\n    }=r;try{\n      if(e==="think"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),n=wt(J,i.fen(),{\n          level:r.level,historyUci:r.startFen===r.stdFen?r.ucis:["x"],gameHashes:h,timeScale:r.timeScale||1\n        });t({\n          type:e,id:s,uci:n?n.uci:null,score:n?n.score:0,depth:n?n.depth:0,nodes:n?n.nodes:0,ms:n?n.ms:0,book:!!(n&&n.book)\n        })\n      }else if(e==="hint"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),n=J.search(i.fen(),{\n          maxDepth:64,timeMs:r.timeMs||700,gameHashes:h\n        });t({\n          type:e,id:s,uci:n.move?O(n.move):null,score:n.score,why:n.move?why(i,n.move,n.score):null\n        })\n      }else if(e==="blunder"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),c=(J.search(i.fen(),{\n          maxDepth:5,timeMs:r.timeMs||350,gameHashes:h,rootScores:!0\n        }).scores||[]).map(([l,a])=>[O(l),xt(a)]),o=c.reduce((l,a)=>a[1]>l[1]?a:l,["",-1e9]),f=c.find(l=>l[0]===r.played);t({\n          type:e,id:s,best:o[0],bestScore:o[1],playedScore:f?f[1]:o[1]\n        })\n      }else if(e==="tutor"){let{pos:i,hashes:h}=ft(r.startFen,r.ucis),T=i.turn,TH=(bd,side)=>{let b=null;for(let q=0;q<128;q++){if(q&136||bd[q]*side<=0||Math.abs(bd[q])===6)continue;let g=seeTo(bd,q,-side);g>=100&&(!b||g>b.g)&&(b={q,g})}return b?{piece:W[Math.abs(bd[b.q])],at:I(b.q),g:b.g}:null};if(!i.legalMoves().length)t({type:e,id:s,moves:[],best:0,hang:null,check:i.inCheck(),prev:null});else{let res=J.search(i.fen(),{maxDepth:r.depth||6,timeMs:r.timeMs||800,gameHashes:h,rootScores:!0}),raw=(res.scores||[]).slice().sort((l,a)=>a[1]-l[1]);raw.length||(raw=[[res.move,res.score]]);let best=xt(raw[0][1]),top=raw.slice(0,3).map(([l,a])=>{let w=why(i,l,a),rk=null;if(i.make(l)){rk=TH(i.board,T);i.unmake()}return{uci:O(l),score:xt(a),loss:best-xt(a),why:w,risk:rk}}),prev=null;if(r.ucis.length){let q=ft(r.startFen,r.ucis.slice(0,-1)).pos,pm=q.moveFromUci(r.ucis[r.ucis.length-1],q.legalMoves());pm&&(prev=why(q,pm,0))}t({type:e,id:s,moves:top,best,hang:TH(i.board,T),check:i.inCheck(),prev})}}else if(e==="analyze"){\n        let i=new B(r.startFen),h=[],n=[i.h0],c=()=>{\n          if(!i.legalMoves().length)return i.inCheck()?i.turn===1?-2e3:2e3:0;let f=J.search(i.fen(),{\n            maxDepth:64,timeMs:r.timeMs||40,gameHashes:n.slice()\n          });return xt(f.score)*i.turn\n        };h.push(c());for(let o=0;o<r.ucis.length;o++){\n          let f=i.moveFromUci(r.ucis[o],i.legalMoves());if(!f)break;i.make(f),n.push(i.h0),h.push(c()),o%4===3&&t({\n            type:"progress",id:s,done:o+1,total:r.ucis.length\n          })\n        }t({\n          type:e,id:s,evals:h\n        })\n      }\n    }catch(i){\n      t({\n        type:e,id:s,error:String(i&&i.message||i)\n      })\n    }\n  }typeof self<"u"&&typeof window>"u"&&(self.onmessage=r=>St(r.data,t=>self.postMessage(t)));\n})();\n';var gl=class{
+  };var o0='(()=>{\n  var Ft="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",lt=[33,31,18,14,-33,-31,-18,-14],at=[17,15,-17,-15],ut=[16,-16,1,-1],X=[17,15,-17,-15,16,-16,1,-1],I=r=>"abcdefgh"[r&7]+((r>>4)+1),Y=r=>r.charCodeAt(0)-97+(r.charCodeAt(1)-49)*16,P=r=>r&127,C=r=>r>>7&127,q=r=>r>>14&7,S=r=>r>>17,x=(r,t,e,s)=>r|t<<7|e<<14|s<<17,H=2654435769,K=()=>(H^=H<<13,H^=H>>>17,H^=H<<5,H|0),N=[new Int32Array(1664),new Int32Array(1664)];for(let r=0;r<1664;r++)N[0][r]=K(),N[1][r]=K();var T=[new Int32Array(16),new Int32Array(16)];for(let r=0;r<16;r++)T[0][r]=K(),T[1][r]=K();var E=[new Int32Array(128),new Int32Array(128)];for(let r=0;r<128;r++)E[0][r]=K(),E[1][r]=K();var R=[K(),K()],L=new Uint8Array(128).fill(15);L[0]=13;L[7]=14;L[4]=12;L[112]=7;L[119]=11;L[116]=3;var W=" pnbrqk",B=class{\n    constructor(t=Ft){\n      this.board=new Int8Array(128),this.stack=[],this.load(t)\n    }load(t){\n      let[e,s,i,h,n,c]=t.trim().split(/\\s+/);this.board.fill(0);let o=7,f=0;for(let l of e)if(l==="/")o--,f=0;else if(/\\d/.test(l))f+=+l;else{\n        let a=W.indexOf(l.toLowerCase());this.board[o*16+f]=l===l.toUpperCase()?a:-a,f++\n      }if(this.turn=s==="b"?-1:1,this.castle=0,i&&i!=="-")for(let l of i)this.castle|={\n        K:1,Q:2,k:4,q:8\n      }[l]||0;this.ep=h&&h!=="-"?Y(h):-1,this.half=+(n||0),this.full=+(c||1),this.stack.length=0,this.kings=[0,0];for(let l=0;l<128;l++)l&136||(this.board[l]===6&&(this.kings[0]=l),this.board[l]===-6&&(this.kings[1]=l));this.rehash()\n    }rehash(){\n      let t=0,e=0;for(let s=0;s<128;s++)if(!(s&136)&&this.board[s]){\n        let i=(this.board[s]+6)*128+s;t^=N[0][i],e^=N[1][i]\n      }t^=T[0][this.castle],e^=T[1][this.castle],this.ep>=0&&(t^=E[0][this.ep],e^=E[1][this.ep]),this.turn===-1&&(t^=R[0],e^=R[1]),this.h0=t,this.h1=e\n    }fen(){\n      let t="";for(let s=7;s>=0;s--){\n        let i=0;for(let h=0;h<8;h++){\n          let n=this.board[s*16+h];if(!n){\n            i++;continue\n          }i&&(t+=i,i=0);let c=W[Math.abs(n)];t+=n>0?c.toUpperCase():c\n        }i&&(t+=i),s&&(t+="/")\n      }let e="";return this.castle&1&&(e+="K"),this.castle&2&&(e+="Q"),this.castle&4&&(e+="k"),this.castle&8&&(e+="q"),`${t} ${this.turn===1?"w":"b"} ${e||"-"} ${this.ep>=0?I(this.ep):"-"} ${this.half} ${this.full}`\n    }repKey(){\n      let t=this.fen().split(" "),e="-";return this.ep>=0&&this.legalMoves().some(s=>S(s)&4)&&(e=t[3]),t[0]+" "+t[1]+" "+t[2]+" "+e\n    }attacked(t,e){\n      let s=this.board,i=e===1?t-15:t+15,h=e===1?t-17:t+17;if(!(i&136)&&s[i]===e*1||!(h&136)&&s[h]===e*1)return!0;for(let n of lt){\n        let c=t+n;if(!(c&136)&&s[c]===e*2)return!0\n      }for(let n of X){\n        let c=t+n;if(!(c&136)&&s[c]===e*6)return!0\n      }for(let n of at){\n        let c=t+n;for(;!(c&136);){\n          let o=s[c];if(o){\n            if(o===e*3||o===e*5)return!0;break\n          }c+=n\n        }\n      }for(let n of ut){\n        let c=t+n;for(;!(c&136);){\n          let o=s[c];if(o){\n            if(o===e*4||o===e*5)return!0;break\n          }c+=n\n        }\n      }return!1\n    }inCheck(t=this.turn){\n      return this.attacked(this.kings[t===1?0:1],-t)\n    }pseudo(t=[],e=!1){\n      let s=this.board,i=this.turn;t.length=0;for(let h=0;h<128;h++){\n        if(h&136){\n          h+=7;continue\n        }let n=s[h]*i;if(!(n<=0))if(n===1){\n          let c=h+16*i,o=i===1?7:0,f=i===1?1:6,l=c>>4===o;if(!(c&136)&&!s[c]&&(!e||l))if(l)for(let a of[5,4,3,2])t.push(x(h,c,a,16));else{\n            t.push(x(h,c,0,0));let a=c+16*i;h>>4===f&&!s[a]&&t.push(x(h,a,0,2))\n          }for(let a of[15,17]){\n            let k=h+a*i;if(!(k&136))if(s[k]*i<0)if(k>>4===o)for(let p of[5,4,3,2])t.push(x(h,k,p,17));else t.push(x(h,k,0,1));else k===this.ep&&t.push(x(h,k,0,5))\n          }\n        }else if(n===2||n===6){\n          for(let c of n===2?lt:X){\n            let o=h+c;if(o&136)continue;let f=s[o]*i;f>0||(f<0?t.push(x(h,o,0,1)):e||t.push(x(h,o,0,0)))\n          }n===6&&!e&&(i===1&&h===4?(this.castle&1&&!s[5]&&!s[6]&&s[7]===4&&!this.attacked(4,-1)&&!this.attacked(5,-1)&&!this.attacked(6,-1)&&t.push(x(4,6,0,8)),this.castle&2&&!s[3]&&!s[2]&&!s[1]&&s[0]===4&&!this.attacked(4,-1)&&!this.attacked(3,-1)&&!this.attacked(2,-1)&&t.push(x(4,2,0,8))):i===-1&&h===116&&(this.castle&4&&!s[117]&&!s[118]&&s[119]===-4&&!this.attacked(116,1)&&!this.attacked(117,1)&&!this.attacked(118,1)&&t.push(x(116,118,0,8)),this.castle&8&&!s[115]&&!s[114]&&!s[113]&&s[112]===-4&&!this.attacked(116,1)&&!this.attacked(115,1)&&!this.attacked(114,1)&&t.push(x(116,114,0,8))))\n        }else for(let c of n===3?at:n===4?ut:X){\n          let o=h+c;for(;!(o&136);){\n            let f=s[o]*i;if(f>0)break;if(f<0){\n              t.push(x(h,o,0,1));break\n            }e||t.push(x(h,o,0,0)),o+=c\n          }\n        }\n      }return t\n    }xorP(t,e){\n      let s=(t+6)*128+e;this.h0^=N[0][s],this.h1^=N[1][s]\n    }make(t){\n      let e=this.board,s=t&127,i=t>>7&127,h=t>>17,n=this.turn,c=e[s],o=e[i],f=i;h&4&&(f=i-16*n,o=e[f]),this.stack.push([t,o,this.castle,this.ep,this.half,this.h0,this.h1]),this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.h0^=T[0][this.castle],this.h1^=T[1][this.castle],o&&(this.xorP(o,f),e[f]=0),this.xorP(c,s),e[s]=0;let l=h&16?(t>>14&7)*n:c;if(e[i]=l,this.xorP(l,i),h&8){\n        let[a,k]=i===s+2?[s+3,s+1]:[s-4,s-1],p=e[a];this.xorP(p,a),e[a]=0,e[k]=p,this.xorP(p,k)\n      }return c*n===6&&(this.kings[n===1?0:1]=i),this.castle&=L[s]&L[i],this.ep=h&2?s+16*n:-1,this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.h0^=T[0][this.castle]^R[0],this.h1^=T[1][this.castle]^R[1],this.half=o||c*n===1?0:this.half+1,n===-1&&this.full++,this.turn=-n,this.attacked(this.kings[n===1?0:1],-n)?(this.unmake(),!1):!0\n    }unmake(){\n      let[t,e,s,i,h,n,c]=this.stack.pop(),o=this.board,f=t&127,l=t>>7&127,a=t>>17;this.turn=-this.turn;let k=this.turn,p=a&16?1*k:o[l];if(o[f]=p,o[l]=0,a&4?o[l-16*k]=e:o[l]=e,a&8){\n        let[m,M]=l===f+2?[f+3,f+1]:[f-4,f-1];o[m]=o[M],o[M]=0\n      }p*k===6&&(this.kings[k===1?0:1]=f),this.castle=s,this.ep=i,this.half=h,this.h0=n,this.h1=c,k===-1&&this.full--\n    }makeNull(){\n      this.stack.push([0,0,this.castle,this.ep,this.half,this.h0,this.h1]),this.ep>=0&&(this.h0^=E[0][this.ep],this.h1^=E[1][this.ep]),this.ep=-1,this.h0^=R[0],this.h1^=R[1],this.turn=-this.turn\n    }unmakeNull(){\n      let[,,t,e,s,i,h]=this.stack.pop();this.turn=-this.turn,this.castle=t,this.ep=e,this.half=s,this.h0=i,this.h1=h\n    }legalMoves(){\n      let t=this.pseudo([]),e=[];for(let s of t)this.make(s)&&(this.unmake(),e.push(s));return e\n    }perft(t){\n      if(t===0)return 1;let e=this.pseudo([]),s=0;for(let i of e)this.make(i)&&(s+=t===1?1:this.perft(t-1),this.unmake());return s\n    }insufficient(){\n      let t=[];for(let e=0;e<128;e++){\n        if(e&136)continue;let s=Math.abs(this.board[e]);if(!(!s||s===6)){\n          if(s===1||s===4||s===5)return!1;t.push([s,(e>>4)+(e&7)&1])\n        }\n      }return t.length<=1?!0:t.every(e=>e[0]===3)?t.every(e=>e[1]===t[0][1]):!1\n    }san(t,e=this.legalMoves()){\n      let s=P(t),i=C(t),h=S(t),n=Math.abs(this.board[s]),c;if(h&8)c=i>s?"O-O":"O-O-O";else{\n        if(c=n===1?"":W[n].toUpperCase(),n!==1){\n          let o=e.filter(f=>f!==t&&C(f)===i&&Math.abs(this.board[P(f)])===n&&P(f)!==s);if(o.length){\n            let f=o.some(a=>(P(a)&7)===(s&7)),l=o.some(a=>P(a)>>4===s>>4);c+=f?l?I(s):I(s)[1]:I(s)[0]\n          }\n        }h&1&&(c+=(n===1?I(s)[0]:"")+"x"),c+=I(i),h&16&&(c+="="+W[q(t)].toUpperCase())\n      }return this.make(t),this.inCheck()&&(c+=this.legalMoves().length?"+":"#"),this.unmake(),c\n    }moveFromSan(t,e=this.legalMoves()){\n      let s=t.replace(/[+#!?]/g,"");return e.find(i=>this.san(i,e).replace(/[+#]/g,"")===s)??null\n    }moveFromUci(t,e=this.legalMoves()){\n      let s=Y(t.slice(0,2)),i=Y(t.slice(2,4)),h=t[4]?W.indexOf(t[4]):0;return e.find(n=>P(n)===s&&C(n)===i&&(!h||q(n)===h))??null\n    }\n  },O=r=>I(P(r))+I(C(r))+(S(r)&16?W[q(r)]:"");var v=3e4,y=32e3,dt=[0,82,337,365,477,1025,0],mt=[0,94,281,297,512,936,0],_t=[0,0,1,1,2,4,0],A=r=>r.trim().split(/\\s+/).map(Number),Z={\n    1:[A("0 0 0 0 0 0 0 0  -6 -2 -8 -14 -14 12 18 -8  -10 -4 0 -2 4 2 14 -4  -12 0 4 14 18 8 6 -12  -6 6 10 22 24 14 10 -8  4 12 24 30 34 32 18 2  60 70 50 60 54 70 40 20  0 0 0 0 0 0 0 0"),A("0 0 0 0 0 0 0 0  10 8 8 10 12 6 4 0  6 6 2 4 4 2 2 0  12 10 4 0 0 2 6 4  26 20 14 8 8 10 16 18  60 60 50 40 40 40 56 58  120 120 110 100 100 100 110 120  0 0 0 0 0 0 0 0")],2:[A("-60 -20 -34 -20 -16 -26 -20 -50  -30 -40 -10 0 0 -6 -30 -22  -24 -6 10 12 16 14 18 -16  -12 4 16 14 22 20 22 -8  -8 16 18 44 34 54 18 20  -40 50 30 56 72 110 60 40  -60 -36 60 30 20 50 6 -14  -140 -70 -30 -40 50 -80 -12 -90"),A("-30 -40 -20 -14 -20 -16 -40 -50  -36 -18 -8 -2 0 -16 -20 -40  -20 -2 0 12 10 2 -16 -18  -16 -4 16 22 16 18 6 -16  -16 4 20 22 22 12 8 -16  -20 -18 10 10 0 -8 -16 -36  -24 -6 -22 0 -8 -22 -22 -50  -50 -36 -12 -24 -28 -24 -60 -90")],3:[A("-30 -4 -14 -20 -12 -12 -36 -20  4 14 16 0 8 20 32 2  0 16 14 14 14 26 18 10  -6 12 12 26 32 12 10 4  -4 4 18 48 36 36 6 -2  -16 36 42 40 34 48 36 -2  -26 16 -18 -12 30 58 18 -46  -28 4 -80 -36 -24 -42 6 -8"),A("-22 -10 -22 -4 -8 -16 -4 -16  -14 -18 -6 0 4 -8 -14 -26  -12 -2 8 10 14 2 -6 -14  -6 2 12 18 6 10 -4 -8  -4 8 12 8 12 10 2 2  2 -8 0 0 -2 6 0 4  -8 -4 6 -12 -2 -12 -4 -14  -14 -20 -10 -8 -6 -8 -16 -24")],4:[A("-18 -12 0 16 16 6 -36 -26  -44 -16 -20 -8 0 10 -6 -70  -44 -24 -16 -16 4 0 -4 -32  -36 -26 -12 0 8 -6 6 -22  -24 -10 6 26 24 34 -8 -20  -4 18 26 36 16 44 60 16  26 32 58 62 80 66 26 44  32 42 32 50 62 8 30 42"),A("-8 2 4 0 -4 -12 4 -20  -6 -6 0 2 -8 -8 -10 -2  -4 0 -4 -2 -6 -12 -8 -16  4 4 8 4 -4 -6 -8 -10  4 2 12 2 2 0 -2 2  8 8 8 4 4 -2 -4 -2  12 14 14 10 -4 4 8 4  14 10 18 16 12 12 8 6")],5:[A("-2 -18 -10 10 -14 -24 -30 -50  -34 -8 10 2 8 14 -4 2  -14 2 -10 -2 -4 2 14 6  -10 -26 -10 -10 -2 -4 4 -4  -26 -26 -16 -16 -2 18 -2 2  -12 -16 6 8 30 56 48 56  -24 -38 -6 2 -16 56 28 54  -28 0 30 12 60 44 44 44"),A("-32 -28 -22 -42 -4 -32 -20 -40  -22 -22 -30 -16 -16 -22 -36 -32  -16 -26 14 6 8 16 10 4  -18 28 18 46 30 34 38 22  2 22 24 44 56 40 56 36  -20 6 8 48 46 34 18 8  -16 20 32 40 58 24 30 0  -10 22 22 26 26 18 10 20")],6:[A("-14 36 12 -54 8 -28 24 14  2 6 -8 -64 -44 -16 8 8  -14 -14 -22 -46 -44 -30 -16 -28  -50 0 -28 -40 -46 -44 -34 -52  -18 -20 -12 -28 -30 -26 -14 -36  -10 24 2 -16 -20 6 22 -22  28 0 -20 -8 -8 -4 -38 -30  -66 22 16 -16 -56 -34 2 12"),A("-54 -34 -22 -12 -28 -14 -24 -44  -28 -12 4 12 14 4 -6 -18  -20 -4 22 24 28 16 6 -10  -18 -4 22 24 28 24 10 -12  -8 22 24 28 26 34 26 4  10 18 24 16 20 44 44 14  -12 18 14 18 18 38 24 10  -74 -36 -18 -18 -10 16 4 -18")]\n  },kt=r=>(r>>4)*8+(r&7),rt=new Int16Array(1664),ot=new Int16Array(1664);for(let r=1;r<=6;r++)for(let t=0;t<128;t++){\n    if(t&136)continue;let e=kt(t),s=kt(t^112);rt[(r+6)*128+t]=dt[r]+Z[r][0][e],ot[(r+6)*128+t]=mt[r]+Z[r][1][e],rt[(-r+6)*128+t]=-(dt[r]+Z[r][0][s]),ot[(-r+6)*128+t]=-(mt[r]+Z[r][1][s])\n  }\n  // --- evaluation ---------------------------------------------------------\n  // Everything below is scored from white\'s point of view and only flipped to\n  // the moving side on the way out. Middlegame and endgame terms are kept apart\n  // and blended by the material phase, so the same code covers both.\n  var TROPISM=[0,0,2,2,3,5,0],                // per piece type, scaled by nearness\n    PASSED_MG=[0,2,6,12,20,32,48,0],          // by rank, from white\'s side\n    PASSED_EG=[0,10,18,30,50,80,120,0],\n    SHIELD=[18,0,10,22,30,30,30,30];          // by shield pawn\'s distance ahead of its king\n  function gt(r){\n    let board=r.board,mg=0,eg=0,phase=0,mgAdj=0,egAdj=0,\n      wBishops=0,bBishops=0,wPawns=0,bPawns=0,wMaterial=0,bMaterial=0,\n      wCount=new Int8Array(8),bCount=new Int8Array(8),          // pawns per file\n      wTop=new Int8Array(8).fill(-1),wBottom=new Int8Array(8).fill(9),\n      bBottom=new Int8Array(8).fill(9),bTop=new Int8Array(8).fill(-1),\n      wKing=r.kings[0],bKing=r.kings[1],wDanger=0,bDanger=0;\n    for(let sq=0;sq<128;sq++){\n      if(sq&136){\n        sq+=7;continue\n      }\n      let piece=board[sq];\n      if(!piece)continue;\n      let type=piece<0?-piece:piece,file=sq&7,rank=sq>>4,idx=(piece+6)*128+sq;\n      mg+=rt[idx],eg+=ot[idx],phase+=_t[type];\n      if(type===1){\n        // Pawns side by side, or defending each other, are worth more than loose\n        // ones. Off-board squares always read 0, so no wrap-around checks needed.\n        if(piece>0){\n          wPawns++,wCount[file]++;\n          if(rank>wTop[file])wTop[file]=rank;\n          if(rank<wBottom[file])wBottom[file]=rank;\n          if(board[sq-1]===1||board[sq+1]===1)mgAdj+=6,egAdj+=4;\n          if(board[sq-15]===1||board[sq-17]===1)mgAdj+=8,egAdj+=6\n        }else{\n          bPawns++,bCount[file]++;\n          if(rank<bBottom[file])bBottom[file]=rank;\n          if(rank>bTop[file])bTop[file]=rank;\n          if(board[sq-1]===-1||board[sq+1]===-1)mgAdj-=6,egAdj-=4;\n          if(board[sq+15]===-1||board[sq+17]===-1)mgAdj-=8,egAdj-=6\n        }\n      }else if(type!==6){\n        type===3&&(piece>0?wBishops++:bBishops++),piece>0?wMaterial+=dt[type]:bMaterial+=dt[type];\n        // King tropism: pieces loitering near the enemy king are dangerous even\n        // before we work out exactly what they attack.\n        let king=piece>0?bKing:wKing,\n          dist=Math.max(Math.abs(rank-(king>>4)),Math.abs(file-(king&7)));\n        if(dist<=3){\n          let threat=TROPISM[type]*(4-dist);piece>0?bDanger+=threat:wDanger+=threat\n        }\n      }\n    }\n    for(let file=0;file<8;file++){\n      wCount[file]>1&&(mgAdj-=10,egAdj-=20),bCount[file]>1&&(mgAdj+=10,egAdj+=20);\n      let wl=file>0?wCount[file-1]:0,wr=file<7?wCount[file+1]:0,\n        bl=file>0?bCount[file-1]:0,br=file<7?bCount[file+1]:0;\n      if(wCount[file]&&!wl&&!wr)mgAdj-=10,egAdj-=12;\n      if(bCount[file]&&!bl&&!br)mgAdj+=10,egAdj+=12;\n      if(wCount[file]){\n        let rank=wTop[file],passed=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)bCount[f]&&bTop[f]>rank&&(passed=!1);\n        passed&&(mgAdj+=PASSED_MG[rank],egAdj+=PASSED_EG[rank])\n      }\n      if(bCount[file]){\n        let rank=bBottom[file],passed=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)wCount[f]&&wBottom[f]<rank&&(passed=!1);\n        passed&&(mgAdj-=PASSED_MG[7-rank],egAdj-=PASSED_EG[7-rank])\n      }\n    }\n    for(let sq=0;sq<128;sq++){\n      if(sq&136){\n        sq+=7;continue\n      }\n      let piece=board[sq];\n      if(!piece)continue;\n      let file=sq&7,rank=sq>>4;\n      if(piece===4||piece===-4){\n        let own=piece>0?wCount[file]:bCount[file],foe=piece>0?bCount[file]:wCount[file],\n          bonus=own?0:foe?10:22;\n        // A rook on the seventh cuts the enemy king off and eats loose pawns.\n        (piece>0?rank===6:rank===1)&&(bonus+=20),piece>0?(mgAdj+=bonus,egAdj+=bonus/2):(mgAdj-=bonus,egAdj-=bonus/2)\n      }else if(piece===2&&rank>=3&&rank<=5&&(board[sq-15]===1||board[sq-17]===1)){\n        // Outpost: a pawn-defended square that no enemy pawn can ever challenge.\n        let safe=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)f!==file&&bCount[f]&&bTop[f]>rank&&(safe=!1);\n        safe&&(mgAdj+=22,egAdj+=14)\n      }else if(piece===-2&&rank>=2&&rank<=4&&(board[sq+15]===-1||board[sq+17]===-1)){\n        let safe=!0;\n        for(let f=Math.max(0,file-1);f<=Math.min(7,file+1);f++)f!==file&&wCount[f]&&wBottom[f]<rank&&(safe=!1);\n        safe&&(mgAdj-=22,egAdj-=14)\n      }\n    }\n    // King shelter: missing shield pawns and open files beside the king.\n    for(let f=Math.max(0,(wKing&7)-1);f<=Math.min(7,(wKing&7)+1);f++){\n      if(wCount[f]){\n        let ahead=wBottom[f]-(wKing>>4);wDanger+=SHIELD[ahead<0?0:ahead>7?7:ahead]\n      }else wDanger+=22;\n      wCount[f]||bCount[f]||(wDanger+=12)\n    }\n    for(let f=Math.max(0,(bKing&7)-1);f<=Math.min(7,(bKing&7)+1);f++){\n      if(bCount[f]){\n        let ahead=(bKing>>4)-bTop[f];bDanger+=SHIELD[ahead<0?0:ahead>7?7:ahead]\n      }else bDanger+=22;\n      wCount[f]||bCount[f]||(bDanger+=12)\n    }\n    wBishops>=2&&(mgAdj+=30,egAdj+=50),bBishops>=2&&(mgAdj-=30,egAdj-=50);\n    // King danger is a middlegame concern; once the pieces are gone the king\n    // stops being a liability and becomes a piece, so barely count it.\n    mgAdj-=wDanger-bDanger,egAdj-=(wDanger-bDanger)/6|0;\n    mg+=mgAdj,eg+=egAdj,phase>24&&(phase=24);\n    let score=(mg*phase+eg*(24-phase))/24|0;\n    if(phase<=6){\n      let edge=sq=>Math.max(3-(sq>>4),(sq>>4)-4)+Math.max(3-(sq&7),(sq&7)-4),\n        apart=Math.abs((wKing>>4)-(bKing>>4))+Math.abs((wKing&7)-(bKing&7));\n      score>200?score+=edge(bKing)*10+(14-apart)*4:score<-200&&(score-=edge(wKing)*10+(14-apart)*4)\n    }\n    // A material edge without pawns is usually not a win. Knowing that stops the\n    // engine from happily trading down into a dead-drawn ending.\n    if(score>0&&!wPawns&&wMaterial-bMaterial<450||score<0&&!bPawns&&bMaterial-wMaterial<450)score=score/8|0;\n    return(score+10*r.turn)*r.turn\n  }var st=[0,100,320,330,500,900,2e3],Ct=20,Q=1<<Ct,et=Q-1,U,G,ht,j,ct;function vt(){\n    U||(U=new Int32Array(Q),G=new Int32Array(Q),ht=new Int16Array(Q),j=new Int8Array(Q),ct=new Int8Array(Q))\n  }\n  // --- static exchange evaluation ---------------------------------------\n  // Exchange-only values. The king is enormous so it is always treated as the\n  // last resort recapture.\n  var SEE_VAL=[0,100,320,330,500,900,1e4],\n    PAWN_FROM=[[-15,-17],[15,17]],\n    SLIDERS=[[3,at],[4,ut],[5,X]];\n  // Square of the cheapest `side` piece attacking `to`, or -1.\n  function leastAttacker(board,to,side){\n    for(let d of PAWN_FROM[side===1?0:1]){\n      let s=to+d;if(!(s&136)&&board[s]===side)return s\n    }\n    for(let d of lt){\n      let s=to+d;if(!(s&136)&&board[s]===side*2)return s\n    }\n    for(let[piece,dirs]of SLIDERS)for(let d of dirs){\n      let s=to+d;\n      for(;!(s&136);s+=d){\n        let p=board[s];\n        if(p){if(p===side*piece)return s;break}\n      }\n    }\n    for(let d of X){\n      let s=to+d;if(!(s&136)&&board[s]===side*6)return s\n    }\n    return-1\n  }\n  function seeTo(board,to,side){\n    let from=leastAttacker(board,to,side);\n    if(from<0)return 0;\n    let attacker=board[from],victim=board[to];\n    board[to]=attacker,board[from]=0;\n    let gain=SEE_VAL[Math.abs(victim)]-seeTo(board,to,-side);\n    return board[from]=attacker,board[to]=victim,gain>0?gain:0\n  }\n  // Net material swing of a capture if both sides keep recapturing with their\n  // cheapest piece. Negative means the capture loses material.\n  function see(pos,move){\n    let flags=S(move);\n    if(flags&4)return 0;                               // en passant is close enough to even\n    let board=pos.board,from=P(move),to=C(move),attacker=board[from],victim=board[to],\n      side=attacker>0?1:-1,gain=SEE_VAL[Math.abs(victim)],placed=attacker;\n    if(flags&16){\n      let promo=q(move);gain+=SEE_VAL[promo]-SEE_VAL[1],placed=side*promo\n    }\n    board[to]=placed,board[from]=0;\n    let net=gain-seeTo(board,to,-side);\n    return board[from]=attacker,board[to]=victim,net\n  }\n  // Late move reduction table indexed [depth][moveNumber]: reduce harder as\n  // both the remaining depth and the move\'s lateness grow.\n  var REDUCE=(()=>{\n    let table=[];\n    for(let d=0;d<64;d++){\n      let row=new Int8Array(64);\n      for(let m=0;m<64;m++)row[m]=d<3||m<3?0:Math.min(d-2,.8+Math.log(d)*Math.log(m)/2.2|0);\n      table.push(row)\n    }\n    return table\n  })();\n  var z=class{\n    constructor(){\n      vt(),this.killers=new Int32Array(256),this.hist=new Int32Array(16384)\n    }search(t,{\n      maxDepth:e=64,timeMs:s=1e3,gameHashes:i=[],onInfo:h=null,rootScores:n=!1\n    }={\n    }){\n      let c=this.pos=new B(t);this.nodes=0,this.stop=!1,this.t0=D(),\n      // Reserve time to return a move, but never reserve so much that there is\n      // nothing left to think with: small budgets would otherwise expire instantly.\n      this.deadline=this.t0+Math.max(s*.5,s-Math.max(40,s*.05)),this.rep=i.slice(),this.killers.fill(0);for(let p=0;p<this.hist.length;p++)this.hist[p]>>=2;let o=c.legalMoves();if(!o.length)return{\n        move:0,score:c.inCheck()?-v:0,depth:0,nodes:0,pv:[]\n      };\n      // Seed with a legal move from *this* position: a search cut short before\n      // depth 1 completes must never hand back a leftover from the last one.\n      let f=o[0],l=0,a=0,k=null;this.rootBest=o[0];for(let p=1;p<=e;p++){\n        let m=-y,M=y,delta=24,u=0,fails=0;\n        if(p>=4&&!n)m=l-delta,M=l+delta;\n        for(;;){\n          u=this.root(p,m,M,o,n);\n          if(this.stop)break;\n          if(u>m&&u<M||m<=-y&&M>=y)break;\n          // Widen gradually at first — one fail does not make the whole estimate\n          // worthless — but give up on the guess rather than re-search forever.\n          if(++fails>2)m=-y,M=y;\n          else if(u<=m)delta*=3,m=u-delta<-y?-y:u-delta;\n          else delta*=3,M=u+delta>y?y:u+delta\n        }\n        if(this.stop&&p>1)break;\n        f=this.rootBest,l=u,a=p,n&&(k=this.rootList.slice());\n        if(h)h({\n          depth:p,score:u,move:O(f),nodes:this.nodes,ms:D()-this.t0\n        });\n        if(Math.abs(u)>v-100||D()-this.t0>s*.55)break\n      }return{\n        move:f,uci:O(f),score:l,depth:a,nodes:this.nodes,ms:Math.round(D()-this.t0),scores:k\n      }\n    }root(t,e,s,i,h){\n      let n=this.pos,c=this.probeMove(),o=this.order(i,c,0),f=-y,l=o[0],a=0,k=[];for(let p of o){\n        n.make(p),this.rep.push(n.h0);let m;if(h?m=-this.ab(t-1,-y,y,1,!0):a===0?m=-this.ab(t-1,-s,-e,1,!0):(m=-this.ab(t-1,-e-1,-e,1,!0),m>e&&m<s&&(m=-this.ab(t-1,-s,-e,1,!0))),this.rep.pop(),n.unmake(),a++,this.stop||(k.push([p,m]),m>f&&(f=m,l=p,m>e&&(e=m),!h&&e>=s)))break\n      }return(!this.stop||a>1)&&(this.rootBest=l,this.store(t,f,0,l)),this.rootList=k,f\n    }probeMove(){\n      let t=this.pos.h1&et;return U[t]===this.pos.h0?G[t]:0\n    }store(t,e,s,i){\n      let h=this.pos.h1&et;U[h]===this.pos.h0&&j[h]>t&&s!==0||(U[h]=this.pos.h0,G[h]=i,ht[h]=e,j[h]=t,ct[h]=s)\n    }order(t,e,s){\n      let board=this.pos.board,k1=this.killers[s*2],k2=this.killers[s*2+1],score=t.map(mv=>{\n        if(mv===e)return 1e9;\n        let flags=S(mv),v;\n        if(flags&1){\n          let victim=Math.abs(board[C(mv)])||1,attacker=Math.abs(board[P(mv)]);\n          v=1e7+st[victim]*10-st[attacker]/10;\n          // Only pay for SEE where MVV/LVA already smells like a losing trade.\n          // A confirmed loser sorts below every quiet move.\n          if(st[victim]<st[attacker]){\n            let net=see(this.pos,mv);\n            if(net<0)v=-1e6+net\n          }\n        }else if(mv===k1)v=9e6;\n        else if(mv===k2)v=8e6;\n        else v=this.hist[P(mv)*128+C(mv)];\n        return flags&16&&(v+=q(mv)===5?2e7:-1e7),v\n      });return t.map((f,l)=>l).sort((f,l)=>score[l]-score[f]).map(f=>t[f])\n    }isRep(){\n      let t=this.pos.h0,e=this.rep.length,s=Math.min(e-1,this.pos.half+1);for(let i=e-3;i>=e-1-s&&i>=0;i-=2)if(this.rep[i]===t)return!0;return!1\n    }ab(t,e,s,i,h){\n      if((++this.nodes&255)===0&&D()>this.deadline&&(this.stop=!0),this.stop)return 0;let n=this.pos;if(n.half>=100||this.isRep())return 0;let c=n.inCheck();\n      // Extend on check, but not without limit: a long checking sequence deep in\n      // the tree must not stall the whole iteration.\n      if(c&&i<48&&t++,t<=0)return this.qs(e,s,i,0);if(e=Math.max(e,-v+i),s=Math.min(s,v-i),e>=s)return e;let o=n.h1&et,f=0,l=s-e>1;if(U[o]===n.h0&&(f=G[o],j[o]>=t&&!l)){\n        let d=ht[o],b=ct[o];if(b===0||b===1&&d>=s||b===2&&d<=e)return d\n      }let a=0;if(c||(a=gt(n)),!l&&!c&&t<=3&&a-120*t>=s)return a;\n      // Razoring: shallow and far below alpha, let the capture search confirm it.\n      if(!l&&!c&&t<=2&&a+220<=e){\n        let d=this.qs(e,s,i,0);if(d<=e)return d\n      }\n      if(h&&!l&&!c&&t>=3&&a>=s&&this.hasPieces()){\n        let R=3+(t/6|0);\n        n.makeNull(),this.rep.push(n.h0);let d=-this.ab(t-R,-s,-s+1,i+1,!1);if(this.rep.pop(),n.unmakeNull(),this.stop)return 0;if(d>=s)return d>=v-200?s:d\n      }\n      // Internal iterative deepening: with no table move to lead on, a shallow\n      // search finds one more cheaply than guessing does.\n      // The flag stops the shallow search from launching shallow searches of its\n      // own, which compounds into more work than it saves.\n      if(!f&&l&&t>=5&&!this.inIid){\n        this.inIid=!0,this.ab(t-2,e,s,i,!1),this.inIid=!1;if(this.stop)return 0;f=this.probeMove()\n      }\n      let k=this.order(n.pseudo([]),f,i),p=-y,m=0,M=0,u=e;for(let d of k){\n        if(!n.make(d))continue;M++,this.rep.push(n.h0);let b=!(S(d)&17),g;if(M===1)g=-this.ab(t-1,-s,-e,i+1,!0);else{\n          let w=0;\n          if(b&&!c&&t>=3&&!n.inCheck()){\n            w=REDUCE[t<64?t:63][M<64?M:63];\n            if(l)w--;                                  // the principal variation keeps its depth\n            w=w<0?0:w>t-2?t-2:w\n          }\n          g=-this.ab(t-1-w,-e-1,-e,i+1,!0),g>e&&w&&(g=-this.ab(t-1,-e-1,-e,i+1,!0)),g>e&&g<s&&(g=-this.ab(t-1,-s,-e,i+1,!0))\n        }if(this.rep.pop(),n.unmake(),this.stop)return 0;if(g>p&&(p=g,m=d,g>e&&(e=g,g>=s))){\n          b&&(this.killers[i*2]!==d&&(this.killers[i*2+1]=this.killers[i*2],this.killers[i*2]=d),this.hist[P(d)*128+C(d)]+=t*t);break\n        }\n      }return M?(this.store(t,p,p>=s?1:p<=u?2:0,m),p):c?-v+i:0\n    }hasPieces(){\n      let t=this.pos.board,e=this.pos.turn;for(let s=0;s<128;s++){\n        if(s&136)continue;let i=t[s]*e;if(i>1&&i<6)return!0\n      }return!1\n    }qs(t,e,s,i){\n      if((++this.nodes&255)===0&&D()>this.deadline&&(this.stop=!0),this.stop)return 0;let h=this.pos,n=gt(h);if(n>=e||(n>t&&(t=n),i>8))return n;let c=h.board,o=this.order(h.pseudo([],!0),0,0);for(let f of o){\n        let l=S(f)&4?1:Math.abs(c[C(f)]);if(n+st[l]+200<t&&!(S(f)&16))continue;\n        // Captures that static exchange says lose material are not worth nodes.\n        if(!(S(f)&16)&&see(h,f)<0)continue;\n        if(!h.make(f))continue;let a=-this.qs(-e,-t,s+1,i+1);if(h.unmake(),this.stop)return 0;if(a>t&&(t=a,a>=e))return a\n      }return t\n    }\n  },D=()=>typeof performance<"u"?performance.now():Date.now(),Mt=[\n    // The country-house cast. Mistakes at the low end are human-shaped rather\n    // than random: "blind" is the chance per move of judging moves only by what\n    // they grab right now (missing the reply), "greed" is a bonus for captures,\n    // "book" is how many plies of opening theory they know.\n    {id:"pip",name:"Young Master Pip",maxDepth:1,timeMs:150,blind:.6,greed:140,window:90,noise:80,book:0},\n    {id:"agatha",name:"Aunt Agatha",maxDepth:2,timeMs:300,blind:.22,greed:45,window:35,noise:40,book:4},\n    {id:"colonel",name:"Colonel Fortescue",maxDepth:6,timeMs:800,blind:0,greed:0,window:14,noise:10,book:10},\n    {id:"duchess",name:"The Dowager Duchess",maxDepth:64,timeMs:3e3,blind:0,greed:0,window:0,noise:0,book:10},\n    // The Butler matches you: he plays well when behind and quietly gives a\n    // little back when ahead, so the game stays close.\n    {id:"butler",name:"The Butler",maxDepth:64,timeMs:700,adaptive:!0,book:6},{id:"bishop",name:"The Bishop of Bath",maxDepth:64,timeMs:1400,blind:0,greed:0,window:6,noise:4,book:10}\n  ],It=["e2e4 e7e5 g1f3 b8c6 f1b5 a7a6 b5a4 g8f6","e2e4 e7e5 g1f3 b8c6 f1c4 f8c5 c2c3 g8f6","e2e4 c7c5 g1f3 d7d6 d2d4 c5d4 f3d4 g8f6 b1c3 a7a6","e2e4 c7c5 g1f3 b8c6 d2d4 c5d4 f3d4 g8f6","e2e4 e7e6 d2d4 d7d5 b1c3 g8f6","e2e4 c7c6 d2d4 d7d5 b1c3 d5e4 c3e4 c8f5","d2d4 d7d5 c2c4 e7e6 b1c3 g8f6 c1g5 f8e7","d2d4 g8f6 c2c4 e7e6 g1f3 b7b6","d2d4 g8f6 c2c4 g7g6 b1c3 f8g7 e2e4 d7d6","c2c4 e7e5 b1c3 g8f6 g1f3 b8c6","g1f3 d7d5 g2g3 g8f6 f1g2 e7e6","e2e4 e7e5 g1f3 g8f6 f3e5 d7d6 e5f3 f6e4","d2d4 d7d5 c2c4 c7c6 g1f3 g8f6 b1c3 d5c4","e2e4 d7d5 e4d5 d8d5 b1c3 d5a5"];function Tt(r,t=Math.random){\n    let e=r.length,s=new Set;for(let h of It){\n      let n=h.split(" ");n.length>e&&r.every((c,o)=>n[o]===c)&&s.add(n[e])\n    }let i=[...s];return i.length?i[Math.floor(t()*i.length)]:null\n  }function wt(r,t,{\n    level:e=2,historyUci:s=[],gameHashes:i=[],timeScale:h=1,rand:n=Math.random,useBook:c=!0\n  }={\n  }){\n    let o=Mt[Math.max(0,Math.min(Mt.length-1,e))],f=new B(t),l=f.legalMoves();if(!l.length)return null;\n    if(c&&s.length<(o.book??10)){\n      let p=Tt(s,n),m=p&&f.moveFromUci(p,l);if(m)return{\n        move:m,uci:p,book:!0,score:0,depth:0,nodes:0,ms:0,level:o.id\n      }\n    }\n    let pick=(list)=>{let p=list.map(([d,b])=>[d,b+(n()*2-1)*(o.noise||0)]);p.sort((d,b)=>b[1]-d[1]);let m=p[0][1],M=p.filter(d=>d[1]>=m-(o.window||0));return M[Math.floor(n()*M.length)][0]},\n    grab=m=>S(m)&1?st[Math.abs(f.board[C(m)])||1]:0,res=(k,m)=>({...k,move:m,uci:O(m),level:o.id});\n    // A "blind" move: judge each move by the position straight after it, as if\n    // the opponent will not reply. That is how real beginners hang pieces and\n    // grab defended pawns, rather than playing a random move.\n    if(o.blind&&n()<o.blind){\n      let sc=l.map(m=>{f.make(m);let v=-gt(f)+(f.inCheck()?30:0);return f.unmake(),[m,v+grab(m)*(o.greed||0)/100]});\n      return res({score:0,depth:0,nodes:0,ms:0,blind:!0},pick(sc))\n    }\n    let k=r.search(t,{\n      maxDepth:o.maxDepth,timeMs:o.timeMs*h,gameHashes:i,rootScores:!!(o.window||o.greed)\n    });\n    if(o.adaptive){\n      // The Butler sizes you up: after each of your moves he measures how much\n      // it cost you (his score now vs. his score straight after his own move),\n      // keeps a running average, and imitates the house guest who plays like\n      // that. The score only nudges him one rung easier, to reel in a runaway game;\n      // he never jumps to full strength just because he is losing.\n      let ply=(f.full-1)*2+(f.turn<0?1:0),St=BUT6;if(!(ply>St.ply))BUT6=St={ply:-1,loss:60,n:0,after:null};\n      let now=xt(k.score);if(St.after!==null&&ply===St.ply+2){let x=Math.max(0,Math.min(600,now-St.after));St.loss=St.n<1?(St.loss+x)/2:St.loss*.75+x*.25,St.n++}\n      let L=St.loss,as=L>=220?0:L>=110?1:L>=50?2:-1;\n      if(now>=350)as=as<0?2:Math.max(0,as-1);\n      let out=as<0?{...k,level:o.id}:{...wt(r,t,{level:as,historyUci:s,gameHashes:i,timeScale:h,rand:n,useBook:!1}),level:o.id},mv=f.moveFromUci(out.uci,l);\n      if(mv&&f.make(mv)){let a2=r.search(f.fen(),{maxDepth:64,timeMs:150*h,gameHashes:i});St.after=-xt(a2.score),f.unmake()}else St.after=null;\n      return St.ply=ply,{...out,butler:{loss:Math.round(L),as}}\n    }\n    if(!k.scores||!k.scores.length)return{\n      ...k,level:o.id\n    };\n    if(o.greed)k.scores=k.scores.map(([m,v])=>[m,v+grab(m)*o.greed/100]);\n    return o.window>0?res(k,pick(k.scores)):{...k,level:o.id}\n  }var J=new z,BUT6={ply:1e9};\n  // Why is this the best move? Picks the single most useful reason a person\n  // would give, from the position before the move (p) and the move (m).\n  function why(p,m,score){\n    let bd=p.board,T=p.turn,fr=P(m),to=C(m),fl=S(m),pc=Math.abs(bd[fr]),out={piece:W[pc],from:I(fr),to:I(to)};\n    if(score>=v-200)return{...out,kind:"mate",n:Math.ceil((v-score)/2)};\n    // Biggest piece of ours the opponent could win right now.\n    let hang=null;for(let q=0;q<128;q++){if(q&136||bd[q]*T<=0||Math.abs(bd[q])===6)continue;let g=seeTo(bd,q,-T);g>=100&&(!hang||g>hang.g)&&(hang={q,g})}\n    let victim=fl&1?Math.abs(fl&4?1:bd[to]):0,gain=fl&1?see(p,m):0;\n    if(!p.make(m))return{...out,kind:"improve"};\n    let check=p.inCheck(),stillHang=hang&&(hang.q===fr?seeTo(p.board,to,-T)>=100:seeTo(p.board,hang.q,-T)>=100),threat=null;\n    for(let q=0;q<128;q++){if(q&136||p.board[q]*T>=0)continue;let g=Math.abs(p.board[q])===6?0:seeTo(p.board,q,T);g>=200&&(!threat||g>threat.g)&&(threat={q,g})}\n    p.unmake();\n    if(victim&&gain>=100)return{...out,kind:"win",victim:W[victim],at:I(to),free:gain>=st[victim]-20};\n    if(hang&&!stillHang)return{...out,kind:"save",saved:W[Math.abs(bd[hang.q])],at:I(hang.q)};\n    if(check)return{...out,kind:"check"};\n    if(fl&8)return{...out,kind:"castle"};\n    if(threat)return{...out,kind:"threat",target:W[Math.abs(p.board[threat.q])],at:I(threat.q)};\n    if(fl&16)return{...out,kind:"promote"};\n    if(p.full<=12&&(pc===2||pc===3)&&(fr>>4)===(T>0?0:7))return{...out,kind:"develop"};\n    return{...out,kind:"improve"}\n  }function ft(r,t){\n    let e=new B(r),s=[e.h0];for(let i of t){\n      let h=e.moveFromUci(i,e.legalMoves());if(!h)break;e.make(h),s.push(e.h0)\n    }return{\n      pos:e,hashes:s\n    }\n  }var xt=r=>r>=v-500?2e3:r<=-v+500?-2e3:Math.max(-2e3,Math.min(2e3,r));function St(r,t){\n    let{\n      type:e,id:s\n    }=r;try{\n      if(e==="think"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),n=wt(J,i.fen(),{\n          level:r.level,historyUci:r.startFen===r.stdFen?r.ucis:["x"],gameHashes:h,timeScale:r.timeScale||1\n        });t({\n          type:e,id:s,uci:n?n.uci:null,score:n?n.score:0,depth:n?n.depth:0,nodes:n?n.nodes:0,ms:n?n.ms:0,book:!!(n&&n.book)\n        })\n      }else if(e==="hint"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),n=J.search(i.fen(),{\n          maxDepth:64,timeMs:r.timeMs||700,gameHashes:h\n        });t({\n          type:e,id:s,uci:n.move?O(n.move):null,score:n.score,why:n.move?why(i,n.move,n.score):null\n        })\n      }else if(e==="blunder"){\n        let{\n          pos:i,hashes:h\n        }=ft(r.startFen,r.ucis),c=(J.search(i.fen(),{\n          maxDepth:5,timeMs:r.timeMs||350,gameHashes:h,rootScores:!0\n        }).scores||[]).map(([l,a])=>[O(l),xt(a)]),o=c.reduce((l,a)=>a[1]>l[1]?a:l,["",-1e9]),f=c.find(l=>l[0]===r.played);t({\n          type:e,id:s,best:o[0],bestScore:o[1],playedScore:f?f[1]:o[1]\n        })\n      }else if(e==="tutor"){let{pos:i,hashes:h}=ft(r.startFen,r.ucis),T=i.turn,TH=(bd,side)=>{let b=null;for(let q=0;q<128;q++){if(q&136||bd[q]*side<=0||Math.abs(bd[q])===6)continue;let g=seeTo(bd,q,-side);g>=100&&(!b||g>b.g)&&(b={q,g})}return b?{piece:W[Math.abs(bd[b.q])],at:I(b.q),g:b.g}:null};if(!i.legalMoves().length)t({type:e,id:s,moves:[],best:0,hang:null,check:i.inCheck(),prev:null});else{let res=J.search(i.fen(),{maxDepth:r.depth||6,timeMs:r.timeMs||800,gameHashes:h,rootScores:!0}),raw=(res.scores||[]).slice().sort((l,a)=>a[1]-l[1]);raw.length||(raw=[[res.move,res.score]]);let best=xt(raw[0][1]),top=raw.slice(0,3).map(([l,a])=>{let w=why(i,l,a),rk=null;if(i.make(l)){rk=TH(i.board,T);i.unmake()}return{uci:O(l),score:xt(a),loss:best-xt(a),why:w,risk:rk}}),prev=null;if(r.ucis.length){let q=ft(r.startFen,r.ucis.slice(0,-1)).pos,pm=q.moveFromUci(r.ucis[r.ucis.length-1],q.legalMoves());pm&&(prev=why(q,pm,0))}t({type:e,id:s,moves:top,best,hang:TH(i.board,T),check:i.inCheck(),prev})}}else if(e==="acad"){let{pos:i,hashes:h}=ft(r.startFen,r.ucis),T=i.turn,TM=r.timeMs||900,PL=r.plies||4,HG=(bd,side)=>{let out=[];for(let q=0;q<128;q++){if(q&136||bd[q]*side<=0||Math.abs(bd[q])===6)continue;let g=seeTo(bd,q,-side);g>=100&&out.push({piece:W[Math.abs(bd[q])],at:I(q),g})}return out.sort((a,b)=>b.g-a.g)},LN=(fen,hs,n,ms)=>{let p=new B(fen),hh=hs.slice(),out=[];for(let k=0;k<n;k++){if(!p.legalMoves().length)break;let rr=J.search(p.fen(),{maxDepth:64,timeMs:ms,gameHashes:hh});if(!rr.move||!p.make(rr.move))break;out.push(O(rr.move));hh.push(p.h0)}return out},FLIP=p=>{let f=p.fen().split(" ");f[1]=f[1]==="w"?"b":"w";f[3]="-";try{return new B(f.join(" "))}catch(x){return null}},FAC=p=>{let bd=p.board,res={},ctr=[51,52,67,68];for(let side of[1,-1]){let o={mat:0,pieces:0,center:0,centerOcc:0,undev:0,castled:!1,canCastle:!1,shield:0,openNearKing:0,doubled:0,isolated:0,passed:0,mob:0,queenOut:!1},fc=[0,0,0,0,0,0,0,0],ec=[0,0,0,0,0,0,0,0],kq=-1,home=side>0?0:7;for(let q=0;q<128;q++){if(q&136)continue;let v=bd[q];if(!v)continue;let a=Math.abs(v);if(Math.sign(v)===side){a!==6&&(o.mat+=st[a],a>1&&o.pieces++);a===1&&fc[q&7]++;a===6&&(kq=q)}else a===1&&ec[q&7]++}for(let c of ctr){p.attacked(c,side)&&o.center++;bd[c]*side>0&&o.centerOcc++}let hr=home*16;[1,6].forEach(f=>{bd[hr+f]===2*side&&o.undev++});[2,5].forEach(f=>{bd[hr+f]===3*side&&o.undev++});o.queenOut=bd[hr+3]!==5*side&&p.full<=10;if(kq>=0){let kf=kq&7,kr=kq>>4;o.castled=kr===home&&(kf>=6||kf<=2);o.canCastle=side>0?!!(p.castle&3):!!(p.castle&12);for(let f=Math.max(0,kf-1);f<=Math.min(7,kf+1);f++){fc[f]||o.openNearKing++;for(let d=1;d<=2;d++){let rq=(kr+d*side)*16+f;rq>=0&&!(rq&136)&&bd[rq]===side&&o.shield++}}}for(let f=0;f<8;f++){fc[f]>1&&(o.doubled+=fc[f]-1)}for(let q=0;q<128;q++){if(q&136||bd[q]!==side)continue;let f=q&7,rk=q>>4;(f===0||!fc[f-1])&&(f===7||!fc[f+1])&&o.isolated++;let free=!0;for(let ff=Math.max(0,f-1);ff<=Math.min(7,f+1)&&free;ff++)for(let rr=rk+side;rr>=0&&rr<=7;rr+=side)if(bd[rr*16+ff]===-side){free=!1;break}free&&o.passed++}res[side>0?"w":"b"]=o}let a=p.turn===1?p:FLIP(p),b2=p.turn===-1?p:FLIP(p);res.w.mob=a&&!a.inCheck(-1)?a.legalMoves().length:0;res.b.mob=b2&&!b2.inCheck(1)?b2.legalMoves().length:0;res.w.hang=HG(bd,1);res.b.hang=HG(bd,-1);return res};if(!i.legalMoves().length)t({type:e,id:s,moves:[],best:0,pv:[],threat:null,factors:FAC(i),check:i.inCheck(),turn:T,mate:i.inCheck()});else{let res=J.search(i.fen(),{maxDepth:r.depth||64,timeMs:TM,gameHashes:h,rootScores:!0}),raw=(res.scores||[]).slice().sort((l,a)=>a[1]-l[1]);raw.length||(raw=[[res.move,res.score]]);let best=xt(raw[0][1]),top=raw.slice(0,3).map(([l,a])=>{let w=why(i,l,a),rk=null,rp=null;if(i.make(l)){rk=HG(i.board,T)[0]||null;if(i.legalMoves().length){let hh=h.concat([i.h0]),q=J.search(i.fen(),{maxDepth:64,timeMs:r.replyMs||220,gameHashes:hh});q.move&&(rp={uci:O(q.move),why:why(i,q.move,q.score)})}i.unmake()}return{uci:O(l),score:xt(a),loss:best-xt(a),why:w,risk:rk,reply:rp}}),pv=[top[0].uci],thr=null;{let p=new B(i.fen()),m0=p.moveFromUci(top[0].uci,p.legalMoves());m0&&p.make(m0)&&(pv=pv.concat(LN(p.fen(),h.concat([p.h0]),PL-1,r.lineMs||200)))}if(!i.inCheck()){let q=FLIP(i);if(q&&!q.inCheck(T)&&q.legalMoves().length){let rr=J.search(q.fen(),{maxDepth:64,timeMs:r.threatMs||300,gameHashes:[]});if(rr.move){let w=why(q,rr.move,rr.score);thr={uci:O(rr.move),why:w,score:xt(rr.score)}}}}t({type:e,id:s,moves:top,best,pv,threat:thr,factors:FAC(i),check:i.inCheck(),turn:T,hang:HG(i.board,T)[0]||null})}}else if(e==="analyze"){\n        let i=new B(r.startFen),h=[],n=[i.h0],c=()=>{\n          if(!i.legalMoves().length)return i.inCheck()?i.turn===1?-2e3:2e3:0;let f=J.search(i.fen(),{\n            maxDepth:64,timeMs:r.timeMs||40,gameHashes:n.slice()\n          });return xt(f.score)*i.turn\n        };h.push(c());for(let o=0;o<r.ucis.length;o++){\n          let f=i.moveFromUci(r.ucis[o],i.legalMoves());if(!f)break;i.make(f),n.push(i.h0),h.push(c()),o%4===3&&t({\n            type:"progress",id:s,done:o+1,total:r.ucis.length\n          })\n        }t({\n          type:e,id:s,evals:h\n        })\n      }\n    }catch(i){\n      t({\n        type:e,id:s,error:String(i&&i.message||i)\n      })\n    }\n  }typeof self<"u"&&typeof window>"u"&&(self.onmessage=r=>St(r.data,t=>self.postMessage(t)));\n})();\n';var gl=class{
     constructor(){
       this.id=0,this.pending=new Map,this.queue=Promise.resolve();try{
         let t=URL.createObjectURL(new Blob([o0],{
@@ -13835,7 +13911,7 @@ function lcPadTex(rgb){let u=document.createElement("canvas");u.width=u.height=1
 var LCP=(()=>{
   const A=0,Bb=1,X=2,Y=3,LB=4,RB=5,LT=6,RT=7,VIEW=8,MENU=9,R3=11,UP=12,DOWN=13,LEFT=14,RIGHT=15;
   const NB=17,DEAD=.5,FIRST=260,REP=110;
-  const LAYERS=["coach","promo","tKeyBox","speakOffer","settings","pause","over","setupAI","setup2P","menu"];
+  const LAYERS=["coach","promo","acDone","acIntro","acTrack","academy","tKeyBox","speakOffer","settings","pause","over","setupAI","setup2P","menu"];
   const P={slots:[],vis:!0,focus:null,focusLayer:null,last:0,raf:0,game:null,mode:null,helped:!1,lastTick:0};
   const sqName=s=>s>=0?"abcdefgh"[s&7]+((s>>4)+1):"-";
   const sqOf=n=>n.charCodeAt(0)-97+(n.charCodeAt(1)-49)*16;
@@ -13848,6 +13924,7 @@ var LCP=(()=>{
   function layer(){
     for(let id of LAYERS){let el=xt(id);if(shown(el))return id}
     let t=xt("toast");if(shown(t)&&t.querySelector("button")&&D.mode!=="menu"&&!Ei())return"toast";
+    {let ap=window.__acPadLayer&&window.__acPadLayer();if(ap)return ap}
     return D.mode==="ai"||D.mode==="2p"?"board":"none"
   }
   function focusables(root){
@@ -13886,6 +13963,7 @@ var LCP=(()=>{
   }
   function back(L){
     let root=xt(L);if(!root)return;
+    if(L==="acPanel"){window.__acPadExit&&window.__acPadExit();clearFocus();return}
     if(L==="pause"){press(xt("pResume"));return}
     if(L==="coach"){press(xt("cSkip"));return}
     if(L==="tKeyBox"){press(xt("tKeyClose"));return}
@@ -13920,7 +13998,7 @@ var LCP=(()=>{
       let before=D.sel;LCH.tap(pickAt(s.sq));D.sel!==before&&rumble(pad,40,.25);return
     }
     if(b===Bb){if(D.sel>=0&&controls(s)){LCH.tap(pickAt(D.sel));return}xt("bSkip").click();return}
-    if(b===X){let ta=xt("tAsk"),tu=xt("tutor");shown(tu)&&shown(ta)?press(ta):press(xt("bHint"));return}
+    if(b===X){if(window.__acPadEnter&&window.__acPadEnter()){Xt("select");return}let ta=xt("tAsk"),tu=xt("tutor");shown(tu)&&shown(ta)?press(ta):press(xt("bHint"));return}
     if(b===Y){press(xt("bUndo"));return}
     if(b===VIEW){press(xt("bFlip"));return}
     if(b===R3){press(xt("bView"));return}
@@ -13930,7 +14008,7 @@ var LCP=(()=>{
     if(L==="toast"){let root=xt("toast"),list=focusables(root);if(!list.length)return;(!P.focus||!list.includes(P.focus))&&(P.focusLayer="toast",setFocus(list[list.length-1]))}
     else ensureFocus(L);
     if(b===A){press(P.focus);return}
-    if(b===Bb){back(L);return}
+    if(b===Bb||(b===X&&L==="acPanel")){back(L);return}
     if(b===MENU){L==="pause"?press(xt("pResume")):back(L);return}
     if(b===UP)moveFocus(L,0,-1);else if(b===DOWN)moveFocus(L,0,1);else if(b===LEFT)moveFocus(L,-1,0);else if(b===RIGHT)moveFocus(L,1,0)
   }
@@ -14040,6 +14118,763 @@ var LCP=(()=>{
   return P
 })();
 /* ===== end v8 CONTROLLERS ===== */
+// Lively Chess v9 - The Academy: lesson data (Professor Knightley's syllabus).
+// Every FEN, line and mate below is checked by tools/verify_lessons.js against Stockfish.
+var ACAD_TRACKS=[
+{id:"beginner", level:"Beginner", opp:0,
+ blurb:"First principles: what the pieces are worth, how a king is caught, and why nobody leaves a bishop lying about. Young Master Pip awaits, sticky-fingered.",
+ graduate:"You have graduated from the nursery wing. Young Master Pip has been sent to bed without his pudding.",
+ lessons:[
+ {id:"b1", title:"What the pieces are worth",
+  teach:["Count in pawns. A knight or bishop is worth about 3, a rook 5, a queen 9. The king is priceless, which is why nobody ever offers to trade it.",
+   "Before every move, look for anything of theirs you can take for free, and anything of yours they can take for free. Most games at this level are decided by exactly that.",
+   "Pip has marched his queen to h4, where your knight on f3 can reach it. Weigh the choices: the pawn on e5 is worth 1, the queen 9.",
+   "Look ahead: after you capture, ask what Pip can take back. If the answer is nothing, the capture is free."],
+  weigh:["material"],
+  fen:"rnb1kbnr/pppp1ppp/8/4p3/4P2q/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+  goal:"White to move: take the most valuable thing on offer.",
+  kind:"line",
+  steps:[{ok:["f3h4"], reply:null, say:"Nine points, and no change given. Nothing of Pip's can recapture on h4."}],
+  hint:"Your knight on f3 attacks two black things. Which one is worth more?",
+  wrong:"Tempting, but there is a queen standing about unsupervised. Look again.",
+  done:"You won the queen for nothing because nothing guarded h4. Always count what a capture wins and what the opponent can take back."},
+
+ {id:"b2", title:"Check is not checkmate",
+  teach:["Check means the king is attacked. Checkmate means it is attacked and cannot escape: it cannot move, nothing can block, and nothing can capture the attacker. Only checkmate ends the game.",
+   "Your queen on h5 and bishop on c4 both stare at f7, a pawn that only the black king defends. Pip has just developed his knight to f6, ignoring the danger.",
+   "A check the king can walk away from is mere noise. Before you check, look ahead to every reply: can the king step aside, can a piece block, can anything capture?"],
+  weigh:["king","tactics"],
+  fen:"r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+  goal:"White to move: deliver checkmate in one.",
+  kind:"mate", n:1,
+  hint:"Two of your pieces aim at the same black pawn. Which of them should land there?",
+  wrong:"That may be check, but the king is still breathing. Find the square with no way out.",
+  done:"Qxf7 is protected by the bishop, so the king cannot capture it, and every escape square is covered or blocked. Checkmate, the scholar's way."},
+
+ {id:"b3", title:"Don't leave pieces hanging",
+  teach:["A piece is hanging when it can be captured for free. When your piece is attacked, deal with it at once: move it, defend it, or trade it for something of equal value.",
+   "Pip has just played ...a6, attacking your bishop on b5 with a pawn worth 1. Letting a 3-point bishop go for a pawn is poor business.",
+   "Retreating to a4 keeps an eye on the knight; taking on c6 is a fair trade. Look ahead: after your move, check that nothing else of yours is left loose."],
+  weigh:["material","development"],
+  fen:"r1bqkbnr/1ppp1ppp/p1n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+  goal:"White to move: look after your bishop, then keep developing.",
+  kind:"engine", plies:2, tol:60, replyLevel:0,
+  hint:"The bishop is attacked by a pawn. It can step back along its diagonal, or trade itself for the knight.",
+  wrong:"That leaves a piece en prise. Pip may be young, but he can count to three.",
+  done:"On every move you asked: is anything of mine attacked, and is it defended? Make that a habit and half your losses quietly disappear."},
+
+ {id:"b4", title:"Centre and development",
+  teach:["The four centre squares, e4, d4, e5 and d5, are the high ground. Pieces placed there, or aimed there, control the most of the board.",
+   "In the opening, put a pawn or two in the centre, then bring out knights and bishops, ideally one move each. Every move should do some work.",
+   "Avoid rook-pawn moves and early queen excursions; they develop nothing. Look ahead: after each move, ask which of Pip's pieces could come out with an attack on yours."],
+  weigh:["center","development"],
+  fen:"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  goal:"White to move: make three good opening moves.",
+  kind:"engine", plies:3,tol:60, replyLevel:0,
+  hint:"A centre pawn first, then a knight towards the middle, is a respectable start.",
+  wrong:"That does little for the centre or your development. Try a centre pawn or a knight.",
+  done:"Centre pawns first, then knights and bishops: the first principle of every opening. The rest is commentary."},
+
+ {id:"b5", title:"Castle early",
+  teach:["Castling does two jobs in one move: it tucks the king behind a wall of pawns and brings a rook towards the centre. Aim to castle within the first ten moves.",
+   "Pip's knight on g5 and bishop on c4 are both aiming at f7, the weakest square near your king. Count it: two attackers, and only the king defends.",
+   "Castling adds the rook on f8 as a second defender. Look ahead: if Pip captures on f7 anyway, what do you take back, and what is left of his attack?"],
+  weigh:["king","development","tactics"],
+  fen:"r1bqk2r/pppp1ppp/2n2n2/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 7 5",
+  goal:"Black to move: make your king safe.",
+  kind:"line",
+  steps:[{ok:["e8g8"], reply:null, say:"King tucked away, and the rook now guards f7. Pip's raid has run out of road."}],
+  hint:"One special move protects f7 and the king at the same time.",
+  wrong:"Pip's knight is still eyeing f7. Deal with that, and your king's safety with it.",
+  done:"After castling, Nxf7 Rxf7 Bxf7+ Kxf7 hands you two pieces for a rook and pawn. Get the king safe first; the arithmetic usually follows."},
+
+ {id:"b6", title:"Two rooks, one ladder",
+  teach:["Two rooks mate a lone king like a ladder: one rook fences off a rank, the other checks on the next rank, and they leapfrog towards the edge.",
+   "Your rook on a3 already fences White's king out of the third rank. It is confined to the bottom two ranks.",
+   "Check on the second rank with the other rook, then look ahead to where the king can go. The fencing rook then checks on the first rank, and there are no rungs left."],
+  weigh:["king","tactics"],
+  fen:"1r4k1/8/8/8/8/r7/4K3/8 b - - 0 1",
+  goal:"Black to move: checkmate in two.",
+  kind:"mate", n:2,
+  hint:"Use the rook that is not doing the fencing. Check on the second rank.",
+  wrong:"Close, but the king wriggles free. Check on the rank in front of the fence.",
+  done:"...Rb2+ pushed the king to the back rank and ...Ra1 shut the door. The ladder works on any edge, with any two heavy pieces."}
+ ]},
+
+{id:"easy", level:"Easy", opp:1,
+ blurb:"Tactics: forks, pins, skewers and other small crimes against your opponent's pieces. Aunt Agatha plays the way she knits, quietly and with very sharp needles.",
+ graduate:"Tactics track completed. Aunt Agatha concedes you are 'rather sharp, for a lawyer'.",
+ lessons:[
+ {id:"e1", title:"The knight fork",
+  teach:["A fork is one piece attacking two at once. The opponent can only save one. Knights are the champion forkers, because their jumps are easy to overlook.",
+   "The deadliest fork includes a check: the king must move, and the other piece simply falls.",
+   "Your knight on d4 is one hop from a square that touches both White's king and queen. Look ahead: after the check, can White capture the knight or block? If not, collect."],
+  weigh:["tactics","material"],
+  fen:"r2q1rk1/ppp2ppp/8/4p3/3n4/2QP4/PP1B1PPP/R4RK1 b - - 0 1",
+  goal:"Black to move: win the queen with a knight fork.",
+  kind:"line",
+  steps:[{ok:["d4e2"], reply:"g1h1", say:"Check and attack in one. The king must move, and the queen is left to her fate."},
+   {ok:["e2c3"], reply:null, say:"Queen collected. A knight for a queen is a very favourable settlement."}],
+  hint:"Find the knight move that gives check. Then see what else it hits.",
+  wrong:"Sound enough, but there is a bigger fish. Which knight check also lands on the queen?",
+  done:"...Ne2+ attacked king and queen together, and White could only save the king. Before every move, scan the knight jumps around the enemy king and queen."},
+
+ {id:"e2", title:"The pin",
+  teach:["A pin attacks a piece that cannot move without exposing something more valuable behind it. If the piece behind is the king, the pin is absolute and moving is illegal.",
+   "Black's queen on d7 and king on e8 share a diagonal. Your bishop on f1 can reach it in one move, and your knight on c3 already guards the landing square.",
+   "Look ahead at Black's replies: can the queen take your bishop safely, can anything step in between? If not, the queen is lost."],
+  weigh:["tactics","material"],
+  fen:"r1b1kb1r/pp1q1ppp/4pn2/2p5/3P4/2N1P3/PP3PPP/R1BQKB1R w KQkq - 0 8",
+  goal:"White to move: pin and win the black queen.",
+  kind:"line",
+  steps:[{ok:["f1b5"], reply:"a7a6", say:"Pinned. The queen cannot leave the diagonal without exposing her king."},
+   {ok:["b5d7"], reply:null, say:"Collected, with check. The queen asked to be excused; the court declined."}],
+  hint:"Look along the diagonal from b5 to e8. Who is standing on it?",
+  wrong:"Pleasant, but there is a pin waiting to be made. Line up the queen and king.",
+  done:"Bb5 pinned the queen to her king, and the knight on c3 made sure she could not take the bishop. Whenever two enemy pieces share a line, look for a pin."},
+
+ {id:"e3", title:"The skewer",
+  teach:["A skewer is a pin in reverse: you attack the more valuable piece first, it must move, and you take the piece behind it.",
+   "Checks make the best skewers, because the king has no choice. White's king on c4 and queen on g4 share the fourth rank, with nothing between them.",
+   "Your rook on a8 can reach that rank with check. Look ahead: where can the king go, and can anything block? Then the queen is yours."],
+  weigh:["tactics","king"],
+  fen:"r5k1/4qppp/8/8/2K3Q1/8/PPP2PPP/7R b - - 0 1",
+  goal:"Black to move: skewer the king and win the queen.",
+  kind:"line",
+  steps:[{ok:["a8a4"], reply:"c4d3", say:"Check along the fourth rank. The king steps aside, as kings are obliged to."},
+   {ok:["a4g4"], reply:null, say:"And the queen, left standing behind him, is taken into custody."}],
+  hint:"King and queen share a rank. Which rook move checks along it?",
+  wrong:"Not the sharpest line. Look along the fourth rank.",
+  done:"...Ra4+ forced the king off the rank and exposed the queen behind him. When king and queen line up, look for a check along that line."},
+
+ {id:"e4", title:"Discovered check",
+  teach:["A discovered attack happens when one piece moves out of the way and uncovers an attack by the piece behind it. When the hidden attack is on the king, it is a discovered check.",
+   "Your rook on e1 aims at the black king, with only your own knight on e5 in the way. The knight may go wherever it likes, and the check comes free.",
+   "So make the knight's move count: attack something big. Look ahead: Black must answer the check first, so whatever the knight hits is lost."],
+  weigh:["tactics","king"],
+  fen:"r1bqkb1r/pp3ppp/5n2/3pN3/3P4/6P1/PPP2PBP/R1BQR1K1 w kq - 0 9",
+  goal:"White to move: use a discovered check to win the queen.",
+  kind:"line",
+  steps:[{ok:["e5c6"], reply:"c8e6", say:"Discovered check from the rook, and the knight attacks the queen. Black can only deal with one."},
+   {ok:["c6d8"], reply:null, say:"Queen taken. The rook did the shouting while the knight did the pocketing."}],
+  hint:"Which knight move attacks the black queen? The rook supplies the check.",
+  wrong:"The rook on e1 is waiting to be unmasked. Move the knight with a threat of its own.",
+  done:"The knight moved with a threat while the rook gave check. A piece standing between your rook or bishop and their king is a loaded spring."},
+
+ {id:"e5", title:"Removing the defender",
+  teach:["If a piece has only one defender, remove the defender and the piece becomes loose. Capture or chase away the guard, then take what it was guarding.",
+   "White's bishop on e4 is attacked by your knight on f6 and defended only by the knight on c3. Your bishop on b4 is already eyeing that knight.",
+   "Count it: one attacker, one defender, so taking on e4 now wins nothing. Remove the defender first. Look ahead: can the bishop on e4 then escape, or is it stuck?"],
+  weigh:["tactics","material"],
+  fen:"r2q1rk1/pp3ppp/2pp1n2/8/1b2B3/2N5/PPP2PPP/R2Q1RK1 b - - 0 10",
+  goal:"Black to move: remove the defender and win a piece.",
+  kind:"line",
+  steps:[{ok:["b4c3"], reply:"b2c3", say:"The bodyguard is gone. Now count again on e4."},
+   {ok:["f6e4"], reply:null, say:"One bishop, free of charge."}],
+  hint:"Which white piece is protecting the bishop on e4? Can you capture it?",
+  wrong:"The bishop on e4 has one bodyguard. Deal with the bodyguard first.",
+  done:"...Bxc3 removed the only defender, so the bishop on e4 fell. Ask of every enemy piece: what defends it, and can I take that away?"},
+
+ {id:"e6", title:"Count before you capture",
+  teach:["Before capturing on a defended square, count: your attackers against their defenders. If you have more, the exchanges can work, provided you capture with your cheapest piece first.",
+   "Black's pawn on d5 is attacked by your knight, bishop and rook: three. It is defended by the knight on f6 and the bishop on e6: two.",
+   "Lead with your knight, the cheapest attacker, and keep the rook for last, or you trade 5 points for 3. Look ahead through every capture and recapture before you begin."],
+  weigh:["material","tactics"],
+  fen:"2r2rk1/pp3ppp/1q2bn2/3p4/8/2N2B2/PP2QPPP/3R1RK1 w - - 0 1",
+  goal:"White to move: win back the d5 pawn by counting carefully.",
+  kind:"line",
+  steps:[{ok:["c3d5"], reply:null, say:"Three against two, knight first. When the dust settles, the pawn is yours."}],
+  hint:"Count attackers and defenders on d5, then lead with your least valuable attacker: the knight.",
+  wrong:"Steady on. Count attackers and defenders on d5 first, then choose the right piece to lead.",
+  done:"After the exchanges on d5 you regain the pawn and keep the balance. Lead with the rook and the count is the same, but the bill is considerably higher."}
+ ]},
+
+{id:"medium", level:"Medium", opp:2,
+ blurb:"Positional play: development, open files, pawn structure, outposts and king safety. Colonel Fortescue believes in good order and punishes any loose button.",
+ graduate:"Positional track complete. The Colonel has mentioned you in despatches.",
+ lessons:[
+ {id:"m1", title:"Develop, don't wander",
+  teach:["Bringing the queen out early is like sending the general ahead of the army: she gets chased about while the other side develops with every chase.",
+   "The Colonel has done exactly that. His queen on h5 and bishop on c4 threaten Qxf7 mate, so first parry the threat, then develop with gain of time.",
+   "Look ahead: after ...g6 the queen must move, and a knight on f6 may attack her again. Each attack on the queen is a free developing move for you."],
+  weigh:["development","king","tactics"],
+  fen:"r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+  goal:"Black to move: stop the mate threat, then develop with tempo.",
+  kind:"engine", plies:2, tol:40, replyLevel:2,
+  hint:"Something must guard f7 or shut out the queen. A pawn on g6 asks her to leave.",
+  wrong:"Not quite. Make sure f7 is safe, then prefer a move that develops.",
+  done:"You met an early queen sortie with sound development. An early queen is a target, not a threat, if your pieces keep coming."},
+
+ {id:"m2", title:"Rooks on open files",
+  teach:["Rooks need open lines. A file with no pawns on it is a highway into the enemy camp, especially towards the seventh rank.",
+   "The c-file is the only open file, and the Colonel already has a rook on it. If he doubles rooks and lands on c2, your queenside will suffer.",
+   "Contest the file: put a rook opposite his. Look ahead: if he trades rooks on c1, which of your pieces recaptures and keeps control?"],
+  weigh:["mobility","pawns"],
+  fen:"2r2rk1/pp2bppp/4pn2/3p4/3P4/4PN2/PP2BPPP/R4RK1 w - - 0 15",
+  goal:"White to move: challenge Black for the open c-file.",
+  kind:"engine", plies:2, tol:40, replyLevel:2,
+  hint:"A rook from f1 or a1 to c1 meets his rook head on.",
+  wrong:"The c-file is still his. Put a rook on it before he doubles.",
+  done:"Opposing rooks on the open file neutralise his pressure. Whoever owns the open file usually owns the middlegame."},
+
+ {id:"m3", title:"Healthy pawns",
+  teach:["Pawns never move backwards, so structure lasts. Doubled pawns block each other, an isolated pawn has no neighbour to protect it, and a passed pawn has no enemy pawn in its way.",
+   "The Colonel has just captured your knight on f6. You may recapture with the bishop or with the g-pawn.",
+   "Weigh it: ...gxf6 doubles your pawns and opens the shield around your king for nothing. Look ahead to his queen and bishop, which would love those holes."],
+  weigh:["pawns","king"],
+  fen:"rnbq1rk1/ppp1bpp1/4pB1p/3p4/2PP4/2N1PN2/PP3PPP/R2QKB1R b KQ - 0 7",
+  goal:"Black to move: recapture on f6 the right way.",
+  kind:"line",
+  steps:[{ok:["e7f6"], reply:null, say:"The bishop recaptures and the pawn shield stays intact. Dull, sensible and correct."}],
+  hint:"Two pieces can take on f6. One of them is part of the wall around your king.",
+  wrong:"That breaks your pawn shield and leaves doubled pawns. The Colonel's eyebrows have risen.",
+  done:"Recapture with a piece when a pawn recapture would wreck your structure for no gain. Good structures win endgames; bad ones lose them slowly."},
+
+ {id:"m4", title:"Outposts for knights",
+  teach:["An outpost is a square in the enemy half that no enemy pawn can ever attack. A knight planted there is a permanent nuisance.",
+   "Black's pawns stand on d6 and e5, and there is no black c-pawn, so d5 can never be hit by a pawn. It is a hole, and your knight on c3 is one hop away.",
+   "Only a black piece can ever challenge a knight there. Look ahead: which black piece could swap it off? Occupy the square, or remove its future challenger first."],
+  weigh:["pawns","mobility"],
+  fen:"2r2rk1/3nbppp/p2p4/1p2p3/4P3/2N5/PPP1BPPP/3R1RK1 w - - 0 1",
+  goal:"White to move: make use of the d5 outpost.",
+  kind:"line",
+  steps:[{ok:["c3d5","e2g4"], reply:null, say:"Well judged. d5 is the hole in Black's camp: occupy it, or remove the piece that could contest it."}],
+  hint:"Find the square in Black's half that no black pawn can touch. Get a piece there, or prepare to.",
+  wrong:"Respectable, but the hole on d5 is crying out for attention.",
+  done:"A knight on d5 cannot be evicted by a pawn and will dominate Black's bishop. Spot the holes in the enemy pawn structure and move in."},
+
+ {id:"m5", title:"Keep the shield",
+  teach:["The pawns in front of your castled king are its shield. Every push leaves holes that can never be repaired, so move them only for a clear reason.",
+   "The Colonel's queen and bishop line up on h7. Defend calmly: a knight on f6 is the king's best friend, and one modest step such as ...h6 is acceptable luft.",
+   "Avoid lunging with ...g5 or ...f5. Look ahead: after your move, which white piece can reach the newly weakened squares?"],
+  weigh:["king","pawns"],
+  fen:"r1b2rk1/ppqnbppp/2p1p3/3p4/3P4/2PBPN2/PPQB1PPP/R4RK1 b - - 0 10",
+  goal:"Black to move: secure your king without weakening it.",
+  kind:"engine", plies:2, tol:40, replyLevel:2,
+  hint:"Bring a piece to guard h7, or make one small, safe step.",
+  wrong:"That loosens the shield more than it helps. Prefer a piece to a pawn lunge.",
+  done:"Your king stayed snug. Pieces defend a king better than pawn lunges do, and holes are for ever."},
+
+ {id:"m6", title:"Trade when ahead",
+  teach:["When you are ahead in material, trade pieces, not pawns. Every swap makes your extra piece a bigger share of the army and removes the opponent's chances of a swindle.",
+   "You are a whole bishop up. The Colonel's queen and rook are his only hopes of stirring up trouble.",
+   "Offer a queen trade, or neutralise his rook, while keeping every piece protected. Look ahead: after any exchange, is your back rank still safe?"],
+  weigh:["material","king"],
+  fen:"2r3k1/5ppp/p1qb4/1p6/8/1P2Q2P/P4PP1/3R2K1 b - - 0 30",
+  goal:"Black to move: a bishop up, steer for a simple ending.",
+  kind:"engine", plies:3, tol:80, replyLevel:2,
+  hint:"With queens off, he has very little left to play with. Can your queen offer an exchange safely?",
+  wrong:"That hands him counterplay. When ahead, simplify and keep everything defended.",
+  done:"With fewer pieces on the board, your extra bishop counts for more. When your case is strong, do not complicate it."}
+ ]},
+
+{id:"hard", level:"Hard", opp:5,
+ blurb:"Calculation: checks, captures and threats, back ranks, deflections and in-between moves. The Bishop of Bath calculates as he preaches, at length and without mercy.",
+ graduate:"Calculation track complete. The Bishop of Bath was heard to say 'Bless my soul' twice, which from him is a standing ovation.",
+ lessons:[
+ {id:"h1", title:"Checks, captures, threats",
+  teach:["Strong players examine forcing moves first: checks, then captures, then threats. Forcing moves limit the opponent's replies, so you can calculate them to the end.",
+   "Here the black king sits on h8, on an open diagonal, and the bishop on b4 has no defender. A single queen move could attack both.",
+   "Look ahead at every reply to the check: can Black block, move or capture? Make sure your second target is still there afterwards."],
+  weigh:["tactics","king","material"],
+  fen:"r1bq1r1k/ppp2p1p/3p2p1/8/1b2P3/5N2/PPP2PPP/R1BQ1RK1 w - - 0 10",
+  goal:"White to move: find the forcing move that wins material.",
+  kind:"line",
+  steps:[{ok:["d1d4"], reply:"f7f6", say:"Check, and the bishop on b4 is attacked as well. Black cannot answer both."},
+   {ok:["d4b4"], reply:null, say:"The bishop is collected. Checks first, and the sermon writes itself."}],
+  hint:"Start with checks. Which queen check also hits something loose?",
+  wrong:"Quiet moves can wait. Look at every check first.",
+  done:"Qd4+ was a check and an attack at once, so Black could not meet both. Checks, captures, threats: in that order, every move."},
+
+ {id:"h2", title:"Back-rank mate",
+  teach:["A king behind an unmoved row of pawns has no escape squares. If a rook or queen reaches the back rank with check and nothing can block or capture, it is mate.",
+   "White's king on g1 is boxed in by its own pawns, and only the rook on c1 guards the first rank. Your queen and rook are lined up on the e-file.",
+   "Look ahead: if White's only defender is forced to capture on e1, what is left to stop your rook? Sometimes the queen is the bait."],
+  weigh:["king","tactics"],
+  fen:"4r1k1/4qppp/8/8/8/1Q6/5PPP/2R3K1 b - - 0 1",
+  goal:"Black to move: checkmate in two.",
+  kind:"mate", n:2,
+  hint:"Your queen can reach e1 with check. Count what can capture her, and what happens next.",
+  wrong:"That gives White a breath of air. The back rank is the weakness: strike now.",
+  done:"...Qe1+ dragged the rook off its post, and ...Rxe1 was mate. A king with no luft is a client with no alibi."},
+
+ {id:"h3", title:"Deflection",
+  teach:["Deflection lures a defender away from its job. If one piece guards something vital, give it a reason to leave, often with a sacrifice.",
+   "Your pawn on d2 is one step from promotion. Only White's rook on b1 guards d1, along the first rank.",
+   "Find a move that cuts that rook off or forces it to capture. Look ahead: once it leaves the first rank, the queening square is free."],
+  weigh:["tactics","pawns"],
+  fen:"2r5/5pkp/6p1/8/8/6P1/3p1PKP/1R6 b - - 0 1",
+  goal:"Black to move: deflect the rook and promote.",
+  kind:"line",
+  steps:[{ok:["c8c1"], reply:"b1c1", say:"The rook cannot guard d1 and ignore your rook at the same time. It takes the bait."},
+   {ok:["d2c1q"], reply:null, say:"Promoted, collecting the rook on the way. The guard was called away from his post."}],
+  hint:"Put your rook on the first rank, between his rook and the queening square.",
+  wrong:"The d-pawn is the star here. Find a way to remove its only guard.",
+  done:"...Rc1 cut the rook off from d1; capturing let the pawn through, and not capturing let it through too. Ask what each defender guards, then give it a second job."},
+
+ {id:"h4", title:"The in-between move",
+  teach:["An in-between move, or zwischenzug, is a forcing move played before the expected recapture. If you can insert a check or a bigger threat, the recapture will usually still be there afterwards.",
+   "Black's queen has just taken a knight on d4. Recapturing with your queen looks natural, but then ...Rxe1 is mate on your back rank.",
+   "Look ahead at both sides' forcing moves: whose rook strikes first on the e-file? Then recapture at leisure."],
+  weigh:["tactics","king"],
+  fen:"r1b1r1k1/ppp2pp1/7p/8/3q4/8/PPP2PPP/R1BQR1K1 w - - 0 15",
+  goal:"White to move: win material with an in-between move.",
+  kind:"line",
+  steps:[{ok:["e1e8"], reply:"g8h7", say:"Check first. The king must run, and the black queen is still hanging."},
+   {ok:["d1d4"], reply:null, say:"And now the recapture, with interest. The defence rests."}],
+  hint:"Before recapturing, look for a check. Whose rook reaches the back rank first?",
+  wrong:"Careful: recapture now and your own back rank gives way. Is there a check first?",
+  done:"Rxe8+ removed Black's rook with check, so Qxd4 came a move later and twice as profitable. Before any obvious recapture, ask whether a forcing move comes first."},
+
+ {id:"h5", title:"The only move",
+  teach:["Sometimes defence means finding the single move that holds. Panic plays the first plausible move; calculation checks every candidate.",
+   "White threatens Qxh7 mate, backed by the bishop on d3 and the knight on g5. List your defences: ...Nf6, ...h6, ...Bxg5, ...Re8.",
+   "For each one, look ahead at White's most forcing reply. Only one defence survives cross-examination."],
+  weigh:["king","tactics"],
+  fen:"r1bq1rk1/pp1nbppp/2p1p3/6NQ/3P4/2PB4/PP3PPP/R1B2RK1 b - - 0 10",
+  goal:"Black to move: find the only move that avoids disaster.",
+  kind:"line",
+  steps:[{ok:["h7h6"], reply:null, say:"The pawn attacks the knight and gives your king air. Ugly, but it holds."}],
+  hint:"Attack the piece that supports the mate, and give your king a square at the same time.",
+  wrong:"That loses to a forcing line. Test each defence against White's best reply.",
+  done:"...h6 hits the knight and frees a square for the king; ...Nf6 runs into Bxh7+, and the rest lose faster. When defending, examine every candidate before you commit."},
+
+ {id:"h6", title:"What does the opponent want?",
+  teach:["Before each move, ask what your opponent wants to do next. Stopping a threat before it happens is called prophylaxis, and it saves more games than brilliancies win.",
+   "Rc7 looks tempting, hitting the queen and b7. But first ask the Bishop's question: what would ...Qe1+ do to your king?",
+   "Only your rook on c1 guards the back rank. Look ahead: after his check and a rook swap, is anything left to stop mate? Fix that, then pursue your plans."],
+  weigh:["king","tactics"],
+  fen:"4r1k1/pp1bqppp/8/8/8/1N1Q4/PP3PPP/2R3K1 w - - 0 25",
+  goal:"White to move: spot Black's threat and neutralise it.",
+  kind:"engine", plies:2, tol:40, replyLevel:5,
+  hint:"Your king needs a flight square, or e1 needs another guard.",
+  wrong:"Then ...Qe1+ wins. Deal with the back rank first.",
+  done:"Making luft or adding a defender removed Black's only real idea. Look at the board through your opponent's eyes before every move."}
+ ]},
+
+{id:"champion", level:"Champion", opp:3,
+ blurb:"Endgames and conversion: opposition, the square, rooks behind passed pawns, active kings and winning won positions. The Dowager Duchess has never resigned anything, including the 1950s.",
+ graduate:"Champion track complete. The Dowager Duchess has offered you tea, which in her circles amounts to a peerage.",
+ lessons:[
+ {id:"c1", title:"The opposition",
+  teach:["In king and pawn endings the kings often stand face to face with one square between them. The side that does not have to move holds the opposition and keeps the other king out.",
+   "The Duchess wants her king on d6, e6 or f6, the key squares in front of her pawn. If she gets there, the pawn queens.",
+   "Step directly in front of her king so that it is her turn to move. Look ahead: wherever she sidesteps, mirror her and keep the opposition."],
+  weigh:["king","pawns"],
+  fen:"4k3/8/8/4K3/4P3/8/8/8 b - - 0 1",
+  goal:"Black to move: take the opposition and hold the draw.",
+  kind:"line",
+  steps:[{ok:["e8e7"], reply:"e5d5", say:"Face to face, and it is her move. She must give ground or sidestep."},
+   {ok:["e7d7"], reply:null, say:"Mirrored. She cannot get in front of the pawn, and the draw is secure."}],
+  hint:"Put your king directly opposite hers, with one square between.",
+  wrong:"That lets her king reach a key square. Kings face to face, her move: that is the rule.",
+  done:"Keeping the opposition stopped her king escorting the pawn. A lost-looking ending saved is worth as much as a won one, and the fee is the same."},
+
+ {id:"c2", title:"The square of the pawn",
+  teach:["Can your king catch a passed pawn unaided? Picture a square from the pawn to its queening square, as wide as it is long. If your king can step inside, the pawn is caught.",
+   "White's a-pawn has four squares to go, so its square runs from a4 across to e4 and up to e8. Your king on f5 is one file outside.",
+   "Look ahead: one king move puts you inside, and then you can chase the pawn down. After that your two passed pawns will decide."],
+  weigh:["king","pawns"],
+  fen:"8/8/8/5k2/P5pp/8/8/7K b - - 0 1",
+  goal:"Black to move: step into the square and stop the a-pawn.",
+  kind:"line",
+  steps:[{ok:["f5e4","f5e5","f5e6"], reply:null, say:"Inside the square. The pawn can run, but it cannot hide."}],
+  hint:"Count the files: which squares on the e-file lie inside the pawn's square?",
+  wrong:"Outside the square, the pawn wins the race. Head west.",
+  done:"From the e-file your king catches the pawn in time, and White's king cannot hold back your two passers. Draw the square in your head before you push or chase any pawn."},
+
+ {id:"c3", title:"Rooks behind passed pawns",
+  teach:["Tarrasch's rule: rooks belong behind passed pawns, yours or the opponent's. Behind your own pawn, the rook gains power with every step the pawn takes.",
+   "Your b-pawn is passed. Black's rook is beside it on the second rank, and your rook is idling on c1.",
+   "Put your rook behind the pawn so it supports every advance. Look ahead: Black's king is far away, so his rook alone must stop a pawn backed by yours."],
+  weigh:["pawns","mobility"],
+  fen:"6k1/5pp1/7p/1P6/8/8/r4PPP/2R3K1 w - - 0 1",
+  goal:"White to move: put your rook where it best supports the passed pawn.",
+  kind:"line",
+  steps:[{ok:["c1b1"], reply:null, say:"Behind the pawn, where it belongs. Every push now makes your rook stronger."}],
+  hint:"Which file is the passed pawn on? Get behind it.",
+  wrong:"Natural, but your rook should stand behind the pawn, not beside the action.",
+  done:"Rb1 backs the pawn all the way to b8 and ties Black's rook down in front of it. Behind the passed pawn: easy to remember, hard to argue with."},
+
+ {id:"c4", title:"Activate your king",
+  teach:["In the endgame the king stops hiding and becomes a fighting piece, worth roughly a minor piece. March it towards the centre, from where it can go to either wing.",
+   "You have an extra pawn, but kings decide pawn endings. Hers is already on f7; yours is still at home on g1.",
+   "Bring your king up, making a little luft if useful. Look ahead: where is her king heading, and can yours arrive first?"],
+  weigh:["king","pawns"],
+  fen:"8/p4kpp/1p6/8/8/1P6/P4PPP/6K1 w - - 0 1",
+  goal:"White to move: activate your king and keep the extra pawn.",
+  kind:"engine", plies:3, tol:60, replyLevel:3,
+  hint:"Head for e3 and d4. Most pawn moves can wait.",
+  wrong:"That gives her king time. In the endgame, the king comes first.",
+  done:"A central king supports your pawns and attacks hers. In every ending ask: is my king as active as it can be?"},
+
+ {id:"c5", title:"Queen against a far-advanced pawn",
+  teach:["A queen beats a pawn on the seventh rank, but only with technique: checks and pins until the enemy king must stand in front of its own pawn, then one step closer with your king.",
+   "The Duchess's pawn on d2 is one step from queening, guarded by her king on e2. Your king is a long way off on a8.",
+   "Every move must check, pin the pawn or control d1. Look ahead: once her king is forced onto d1, the pawn is blocked and your king gets a free move."],
+  weigh:["king","pawns"],
+  fen:"K7/8/8/8/8/1Q6/3pk3/8 w - - 0 1",
+  goal:"White to move: stop the pawn and begin the technique.",
+  kind:"engine", plies:3, tol:300, replyLevel:3,
+  hint:"Control d1 or check the king. A queen move that does neither may let the pawn through.",
+  wrong:"That lets the pawn queen, and then it is a different case entirely.",
+  done:"Checks and pins drove her king in front of the pawn and bought time for your king. Patient technique wins this; haste does not."},
+
+ {id:"c6", title:"Converting the win",
+  teach:["Winning a won position is a skill of its own. Remove the opponent's counterplay, trade when it helps, and do not give her chances she has not earned.",
+   "You are a bishop up. The Duchess's only asset is her rook on the seventh rank, eyeing b7 and f7.",
+   "Activate your own rook, keep your pawns defended and head for an ending she cannot hold. Look ahead: after each move, what is her most annoying reply?"],
+  weigh:["material","mobility"],
+  fen:"2r3k1/pp1R1ppp/1b6/8/8/7P/PP3PP1/6K1 b - - 0 30",
+  goal:"Black to move: a bishop up, convert without allowing counterplay.",
+  kind:"engine", plies:3, tol:80, replyLevel:3,
+  hint:"Your rook is your most active piece. Use it to invade, or to trade hers off.",
+  wrong:"That gives her rook a feast. Keep things tidy.",
+  done:"Calm, active moves turned the extra piece into a won ending. The game is not over until the order is signed."}
+ ]}
+];
+
+/* ===== v9 THE ACADEMY: lesson tracks, five opponents, a coach who explains only when asked ===== */
+var ACAD={on:!1,mode:null,t:0,l:0,L:null,step:0,made:0,starting:!1,finished:!1,pendingReply:null,await:!1,awaitLen:0,
+  data:null,dkey:"",busy:!1,arrows:[],padPanel:!1,open:!0,lastSay:"",grade:!0,overDone:!1,sayN:0};
+var AC_OPP=[0,1,2,5,3];
+var AC_COACH="Professor Knightley";
+var AC_Q={
+  best:["Since you asked. I shall put it on your tab.","Here is the answer. Do try to look surprised.","The court will allow it.","Giving the game away, but only to you."],
+  good:["Quite right.","Splendid.","Objection overruled. That is correct.","Textbook. I should know, I wrote one.","Exactly what I would have played, only quicker."],
+  wrong:["Ah. Bold. Wrong, but bold.","Let us pretend that never happened.","The jury is unconvinced. Try again.","Interesting. In the sense that it does not work.","Close. In the way that Tuesday is close to Friday."],
+  look:["Chess is mostly asking “and then what?” until someone gets a headache.","Two moves ahead is where the money is.","Let us read the next few pages before we sign anything."],
+  weigh:["Let us weigh the evidence.","Exhibit A: the board.","Every position has a balance sheet. Here is yours."],
+  threat:["Here is what they are plotting. Act natural.","Their next move, if you let them have one."],
+  calm:["They are not threatening anything in particular. Enjoy it while it lasts.","No immediate menace. Suspicious, but there it is."],
+  done:["Lesson complete.","Class dismissed.","Case closed.","Well played."]
+};
+function acPick(a){return a[(ACAD.sayN++)%a.length]}
+function acProg(){try{return JSON.parse(localStorage.getItem("lcAcademy")||"{}")||{}}catch{return{}}}
+function acSaveProg(p){try{localStorage.setItem("lcAcademy",JSON.stringify(p))}catch{}}
+function acMark(id){let p=acProg();p[id]=1;acSaveProg(p)}
+function acTrackDone(T){let p=acProg();return T.lessons.filter(x=>p[x.id]).length}
+function acOppName(t){let l=br[AC_OPP[t]];return l?l.name:"The computer"}
+function acHuman(fen){return(fen.split(" ")[1]||"w")==="b"?-1:1}
+function acSideName(s){return s>0?"White":"Black"}
+function acSanLine(fen,ucis){
+  let out=[];try{let p=new Ke(fen);for(let u of ucis){let lm=p.legalMoves(),m=p.moveFromUci(u,lm);if(!m)break;out.push(p.san(m,lm));if(!p.make(m))break}}catch{}return out
+}
+function acFenNow(){return D.game.pos.fen()}
+
+/* ----- screens ----- */
+function acShow(id){for(let o of["academy","acTrack","acIntro","acDone"])o!==id&&je(o);id&&vn(id)}
+function acLevels(){
+  let box=xt("acLevels");box.innerHTML="";
+  ACAD_TRACKS.forEach((T,k)=>{
+    let n=acTrackDone(T),b=document.createElement("button");b.className="btn"+(k===0?" gold":"");b.dataset.lvl=k;
+    b.innerHTML=`<span class="k">${["♙","♘","♗","♖","♕"][k]}</span><div>${tutEsc(T.level)} <span class="acVs">vs ${tutEsc(acOppName(k))}</span><small>${tutEsc(T.blurb)} · ${n}/${T.lessons.length} lessons${n===T.lessons.length?" ✓":""}</small></div>`;
+    b.onclick=()=>{Xt("ui_click");acOpenTrack(k)};box.appendChild(b)
+  })
+}
+function acOpenAcademy(){je("menu");acLevels();acShow("academy")}
+function acOpenTrack(k){
+  ACAD.t=k;let T=ACAD_TRACKS[k],p=acProg(),n=acTrackDone(T),next=T.lessons.findIndex(x=>!p[x.id]);
+  xt("acTrackName").textContent=`${T.level}: ${acOppName(k)}`;
+  xt("acTrackBlurb").textContent=n===T.lessons.length?T.graduate:T.blurb;
+  let box=xt("acLessons");box.innerHTML="";
+  T.lessons.forEach((L,i)=>{let b=document.createElement("button");b.className="btn"+(p[L.id]?" done":"")+(i===next?" gold":"");b.dataset.lesson=i;
+    b.innerHTML=`<span class="k">${p[L.id]?"✓":i+1}</span><div>${tutEsc(L.title)}<small>${tutEsc(L.goal)}</small></div>`;
+    b.onclick=()=>{Xt("ui_click");acIntro(k,i)};box.appendChild(b)});
+  let sp=xt("acSpar");sp.innerHTML=`<span class="k">⚔</span><div>Sparring match<small>A full game against ${tutEsc(acOppName(k))}, with the Professor at your elbow</small></div>`;
+  next<0&&sp.classList.add("gold"),next>=0&&sp.classList.remove("gold");
+  acShow("acTrack")
+}
+function acIntro(t,l){
+  let T=ACAD_TRACKS[t],L=T.lessons[l];ACAD.t=t;ACAD.l=l;
+  xt("acIntroTitle").textContent=`Lesson ${l+1}: ${L.title}`;
+  xt("acIntroBody").innerHTML=L.teach.map(x=>`<p>${tutEsc(x)}</p>`).join("")+(L.weigh&&L.weigh.length?`<p class="acTags">${L.weigh.map(w=>`<span>${tutEsc(AC_FACT_NAME[w]||w)}</span>`).join("")}</p>`:"");
+  xt("acIntroGoal").textContent=L.goal;
+  acShow("acIntro")
+}
+
+/* ----- starting games ----- */
+function acStart(mode,t,l){
+  let T=ACAD_TRACKS[t],L=mode==="lesson"?T.lessons[l]:null;
+  Object.assign(ACAD,{on:!0,mode,t,l,L,step:0,made:0,finished:!1,pendingReply:null,await:!1,awaitLen:0,data:null,dkey:"",busy:!1,padPanel:!1,overDone:!1});
+  acArrows([]);acOut("");
+  TUT.next=!1;ACAD.starting=!0;
+  try{
+    if(L)Nr("ai",{fen:L.fen,level:AC_OPP[t],human:acHuman(L.fen)});
+    else Nr("ai",{level:AC_OPP[t],human:1})
+  }finally{ACAD.starting=!1}
+  acShow(null);
+  try{window.__lcPad&&__lcPad.state().slots.some(x=>x.connected)&&setTimeout(()=>uf("Controller: X asks the Professor, B goes back to the board.",[],3600),400)}catch{}
+  if(L)acSay(`<b>${tutEsc(L.goal)}</b>`);
+  else acSay(`A full game against ${tutEsc(acOppName(t))}. You play White. Ask me anything with the buttons below; I shall keep quiet otherwise. Mostly.`);
+  acTick()
+}
+function acStartLesson(t,l){acStart("lesson",t,l)}
+function acStartSpar(t){acStart("spar",t,0)}
+function acRestart(){if(!ACAD.on)return;ACAD.mode==="lesson"?acStart("lesson",ACAD.t,ACAD.l):acStart("spar",ACAD.t,0)}
+function acOff(){ACAD.on=!1;ACAD.mode=null;ACAD.padPanel=!1;acArrows([]);acTick()}
+
+/* ----- the coach panel ----- */
+function acSay(h){ACAD.lastSay=h.replace(/<[^>]+>/g,"");let el=xt("acSay");el&&(el.innerHTML=h)}
+function acOut(h){let el=xt("acOut");el&&(el.innerHTML=h)}
+function acTick(){
+  let el=xt("acPanel");if(!el)return;let vis=ACAD.on&&D.mode==="ai";el.classList.toggle("hidden",!vis);
+  vis&&(xt("tutor").classList.add("hidden"),document.body.classList.add("tutorOn"));
+  if(!vis){ACAD.padPanel=!1;return}
+  el.classList.toggle("min",!ACAD.open);xt("acMin").textContent=ACAD.open?"–":"+";
+  let L=ACAD.L,T=ACAD_TRACKS[ACAD.t];
+  xt("acSub").textContent=ACAD.mode==="lesson"&&L?`${T.level} · Lesson ${ACAD.l+1}: ${L.title}`:`${T.level} · Sparring vs ${acOppName(ACAD.t)}`;
+  xt("acGoal").textContent=ACAD.mode==="lesson"&&L?L.goal:"Win the game. Or at least make it interesting.";
+  xt("acRestart").textContent=ACAD.mode==="lesson"?"Restart lesson":"New game";
+  xt("acGrade").classList.toggle("hidden",ACAD.mode!=="spar");xt("acGrade").textContent="Grade my moves: "+(ACAD.grade?"on":"off");
+  let ready=B0()&&!D.over&&!D.busy&&!D.thinking&&!D.pendingNudge&&!D.promoWait&&!ACAD.finished;
+  for(let id of["acBest","acLook","acWeigh","acThreat","acHint"])xt(id).disabled=!ready,xt(id).classList.toggle("acWait",!!ACAD.busy);
+  let key=D.token+":"+D.game.history.length;key!==ACAD.akey&&(ACAD.akey=key,ACAD.padPanel=!1,acArrows([]),ACAD.data&&ACAD.dkey!==key&&acOut(""));
+  // a line lesson whose last step had a reply: done once that reply is on the board
+  if(ACAD.mode==="lesson"&&ACAD.await&&!D.busy&&!D.thinking&&D.game.history.length>=ACAD.awaitLen){ACAD.await=!1;setTimeout(()=>acComplete(L),500)}
+}
+async function acAnalyze(){
+  let g=D.game,key=D.token+":"+g.history.length;if(ACAD.data&&ACAD.dkey===key)return ACAD.data;
+  if(ACAD.pend&&ACAD.pendKey===key)return ACAD.pend;
+  ACAD.busy=!0;acTick();acOut(`<p class="dim">Thinking it over…</p>`);
+  ACAD.pendKey=key;ACAD.pend=tutReq({type:"acad",startFen:g.startFen,ucis:g.history.map(a=>an(a.m)),timeMs:900,plies:4},15e3).then(d=>{
+    ACAD.busy=!1;ACAD.pend=null;let ok=d&&!d.error&&d.moves;if(key===D.token+":"+D.game.history.length&&ok)ACAD.data=d,ACAD.dkey=key;acTick();return ok?d:null});
+  return ACAD.pend
+}
+function acSq(u){return[Ze(u.slice(0,2)),Ze(u.slice(2,4))]}
+function acArrowFor(u,kind,n){let[a,b]=acSq(u);return{a,b,kind,n}}
+async function acBest(){
+  Xt("ui_click");let d=await acAnalyze();if(!d){acOut(`<p class="dim">I could not study this position just now. Try again in a moment.</p>`);return}
+  let g=D.game,pos=g.pos,lm=g.legal(),h=`<p class="acQuip">${tutEsc(acPick(AC_Q.best))}</p>`,ar=[];
+  d.moves.forEach((o,k)=>{
+    let m=pos.moveFromUci(o.uci,lm);if(!m)return;let san=pos.san(m,lm),w=o.why||{kind:"improve",piece:"p"},cap=on(m)&1?pos.board[xe(m)]:0;on(m)&4&&(cap=1);
+    let capName=cap?bi[Math.abs(cap)]:"",l=Math.max(0,o.loss|0),tag=k===0||l<=15?["best","Best"]:l<=50?["","Also good"]:l<=120?["","Playable"]:["weak","Weaker"],
+      txt=tutWhyMine(w,capName,gn(xe(m))),extra="";
+    k>0&&(d.best>=1900&&o.score<1900?extra+=" Good, but it misses the checkmate.":l>=400?extra+=" It gives up a lot compared with the best move.":l>50&&(extra+=` It is ${tutAmt(l)} worse than the best move.`));
+    o.risk&&l>=60&&(extra+=` Careful: afterwards your ${TUT_N[o.risk.piece]||"piece"} on ${o.risk.at} can be captured.`);
+    let rp="";if(o.reply){let s2=acSanLine(pos.fen(),[o.uci,o.reply.uci])[1];s2&&(rp=` <span class="acThen">Then they will likely answer ${tutEsc(s2)}${o.reply.why?": "+tutEsc(acWhyTheirsShort(o.reply.why)):"."}</span>`)}
+    h+=`<div class="tOpt"><div class="tTop"><b>${k+1}. ${tutEsc(san)}</b><span class="tTag ${tag[0]}">${tag[1]}</span></div><p>${tutEsc(txt+extra)}${rp}</p><div class="tBtns"><button class="btn" data-a="show" data-k="${k}">Show me</button><button class="btn gold" data-a="play" data-k="${k}">Play it</button></div></div>`;
+    k===0&&ar.push(acArrowFor(o.uci,"me",0))
+  });
+  acOut(h);acArrows(ar);
+  xt("acOut").querySelectorAll("button[data-a]").forEach(b=>{let o=d.moves[+b.dataset.k],m=pos.moveFromUci(o.uci,lm);
+    b.onclick=b.dataset.a==="show"?()=>{Xt("ui_click");acArrows([acArrowFor(o.uci,"me",0)]);vt.setHL("hint",[Be(m),xe(m)]);let p=be(Be(m));p&&Ri("eager",p.type)}
+      :()=>{if(!Ei())return;Xt("ui_click");acOut("");acArrows([]);k0(Be(m),xe(m))}})
+}
+function acWhyTheirsShort(w){
+  if(!w)return"";let P=TUT_N[w.piece]||"piece";
+  switch(w.kind){case"mate":return"and that is checkmate trouble";case"win":return`winning your ${TUT_N[w.victim]} on ${w.at}`;case"save":return`rescuing their ${TUT_N[w.saved]}`;
+  case"check":return"with check";case"castle":return"castling to safety";case"threat":return`hitting your ${TUT_N[w.target]} on ${w.at}`;case"promote":return"making a new queen";
+  case"develop":return`developing the ${P}`;default:return`improving the ${P}`}
+}
+async function acLook(){
+  Xt("ui_click");let d=await acAnalyze();if(!d){acOut(`<p class="dim">I could not look ahead just now. Try again in a moment.</p>`);return}
+  let fen=acFenNow(),sans=acSanLine(fen,d.pv),me=D.human,ar=[],rows="";
+  d.pv.forEach((u,k)=>{ar.push(acArrowFor(u,k%2?"them":"me",k+1));
+    let who=k%2?"They":"You",s=sans[k]||u;rows+=`<li class="${k%2?"them":"me"}"><b>${k+1}. ${who}: ${tutEsc(s)}</b></li>`});
+  let h=`<p class="acQuip">${tutEsc(acPick(AC_Q.look))}</p><p>Most likely line, best play for both sides. Gold arrows are yours, blue are theirs, numbered in order:</p><ol class="acLine">${rows}</ol>`;
+  let alt=d.moves.slice(1).filter(o=>o.reply).map(o=>{let s=acSanLine(fen,[o.uci,o.reply.uci]);return s.length===2?`<li>If you play <b>${tutEsc(s[0])}</b>, expect <b>${tutEsc(s[1])}</b>${o.reply.why?", "+tutEsc(acWhyTheirsShort(o.reply.why)):""}.</li>`:""}).join("");
+  alt&&(h+=`<p>Other tries, and their likely answers:</p><ul class="acAlt">${alt}</ul>`);
+  h+=`<p class="dim">How to look ahead yourself: for each move you like, ask what their best reply is, especially checks, captures and threats. Then ask what you would do next. If the answer is “panic”, pick another move.</p>`;
+  acOut(h);acArrows(ar)
+}
+var AC_FACT_NAME={material:"Material",center:"Centre",king:"King safety",development:"Development",pawns:"Pawn structure",tactics:"Tactics",mobility:"Activity"};
+function acPawns(n){n=Math.round(n/10)/10;return Math.abs(n)<.15?"level":(n>0?"+":"")+n+" pawns"}
+async function acWeigh(){
+  Xt("ui_click");let d=await acAnalyze();if(!d||!d.factors){acOut(`<p class="dim">I could not weigh this position just now.</p>`);return}
+  let f=d.factors,me=D.human>0?f.w:f.b,th=D.human>0?f.b:f.w,focus=new Set(ACAD.mode==="lesson"&&ACAD.L&&ACAD.L.weigh||[]),rows=[],full=D.game.pos.full;
+  let row=(key,mine,theirs,verdict,tone)=>rows.push(`<div class="acRow ${tone}${focus.has(key)?" focus":""}"><div class="acRH"><b>${AC_FACT_NAME[key]}</b>${focus.has(key)?`<span class="tTag best">This lesson</span>`:""}<span class="acNums">${mine} · ${theirs}</span></div><p>${verdict}</p></div>`);
+  let md=me.mat-th.mat;
+  row("material",`You ${Math.round(me.mat/100)}`,`Them ${Math.round(th.mat/100)}`,md>=80?`You are ahead by about ${tutAmt(md)}. Trade pieces, not pawns, and the ending gets easier.`:md<=-80?`You are behind by about ${tutAmt(-md)}. Look for activity and threats; swapping pieces helps them, not you.`:"Material is level, so the other factors decide.",md>=80?"up":md<=-80?"down":"");
+  let mc=me.center+me.centerOcc,tc=th.center+th.centerOcc;
+  row("center",`You ${mc}`,`Them ${tc}`,`You control ${me.center} of the four centre squares and occupy ${me.centerOcc}; they control ${th.center} and occupy ${th.centerOcc}. ${mc>tc?"The centre is yours. Pieces there reach everywhere.":mc<tc?"They own more of the centre. Challenge it with a pawn or a piece.":"The centre is shared for now."}`,mc>tc?"up":mc<tc?"down":"");
+  if(full<=16)row("development",`${me.undev} home`,`${th.undev} home`,`${me.undev?`You still have ${me.undev} knight${me.undev>1?"s or bishops":" or bishop"} at home. Bring ${me.undev>1?"them":"it"} out before starting adventures.`:"All your knights and bishops are out. Good."}${me.queenOut?" Your queen is out early; she can be chased around, which costs you time.":""}${th.undev>me.undev?" They are behind in development, so open lines favour you.":""}`,me.undev<th.undev?"up":me.undev>th.undev?"down":"");
+  let ks=k=>(k.castled?2:0)+Math.min(k.shield,3)-k.openNearKing,mk=ks(me),tk=ks(th);
+  row("king",me.castled?"Castled":me.canCastle?"Can castle":"Uncastled",th.castled?"Castled":th.canCastle?"Can castle":"Uncastled",`Your king has ${me.shield} shield pawn${me.shield===1?"":"s"} and ${me.openNearKing} open file${me.openNearKing===1?"":"s"} next to him. ${!me.castled&&me.canCastle&&full<=20?"Castling soon would tuck him away.":""}${mk>tk+1?" Their king is the draughtier one.":mk<tk-1?" Yours is the draughtier king; keep pieces near him.":""}`,mk>tk+1?"up":mk<tk-1?"down":"");
+  let pw=k=>`${k.doubled} doubled, ${k.isolated} isolated, ${k.passed} passed`;
+  row("pawns",`You: ${pw(me)}`,`Them: ${pw(th)}`,`${me.passed>th.passed?"You have more passed pawns; in the endgame those are money in the bank.":th.passed>me.passed?"They have more passed pawns. Blockade them with a piece.":""} ${me.doubled+me.isolated>th.doubled+th.isolated?"Your pawns have more weaknesses; avoid trading into a pawn ending.":me.doubled+me.isolated<th.doubled+th.isolated?"Their pawns are the weaker ones. Aim pieces at them.":"Pawn structures are about even."}`,me.doubled+me.isolated<th.doubled+th.isolated?"up":me.doubled+me.isolated>th.doubled+th.isolated?"down":"");
+  row("mobility",`You ${me.mob} moves`,`Them ${th.mob}`,me.mob>th.mob+5?"Your pieces have more room. Active pieces win games.":th.mob>me.mob+5?"Their pieces are freer. Find a better square for your worst piece.":"Both sides have similar room to manoeuvre.",me.mob>th.mob+5?"up":th.mob>me.mob+5?"down":"");
+  let mh=me.hang.map(x=>`${TUT_N[x.piece]} on ${x.at}`),thh=th.hang.map(x=>`${TUT_N[x.piece]} on ${x.at}`);
+  row("tactics",`${mh.length} loose`,`${thh.length} loose`,`${mh.length?`Your ${mh.join(", ")} can be captured. Deal with that first.`:"None of your pieces are hanging."} ${thh.length?`Their ${thh.join(", ")} can be won. Check it is really free before you grab.`:"Nothing of theirs is hanging right now."}`,mh.length?"down":thh.length?"up":"");
+  let ev=d.best,ov=ev>=1900?"You have a forced checkmate.":ev<=-1900?"They have a forced checkmate. Find the best defence.":ev>=150?"Overall you are clearly better.":ev>=40?"Overall you are slightly better.":ev<=-150?"Overall they are clearly better.":ev<=-40?"Overall they are slightly better.":"Overall it is about equal.";
+  acOut(`<p class="acQuip">${tutEsc(acPick(AC_Q.weigh))}</p><p><b>${ov}</b> <span class="dim">(${ev>=1900||ev<=-1900?"mate":acPawns(ev)}, from your side)</span></p>${rows.join("")}<p class="dim">How to use this: the biggest factor wins. Material first, then king safety, then everything else. A loose piece outranks a lovely pawn structure every time.</p>`);
+  acArrows([])
+}
+async function acThreat(){
+  Xt("ui_click");let d=await acAnalyze();if(!d){acOut(`<p class="dim">I could not check their threats just now.</p>`);return}
+  let h="",ar=[];
+  if(d.check)h=`<p class="warn">You are in check. The threat is already here: deal with it first.</p>`;
+  else if(d.threat){let w=d.threat.why,fen=acFenNow().split(" ");fen[1]=fen[1]==="w"?"b":"w";fen[3]="-";let san=acSanLine(fen.join(" "),[d.threat.uci])[0]||d.threat.uci;
+    let serious=w&&["mate","win","check","threat","promote"].includes(w.kind);
+    h=`<p class="acQuip">${tutEsc(acPick(serious?AC_Q.threat:AC_Q.calm))}</p><p>If it were their move, they would play <b>${tutEsc(san)}</b>${w?", "+tutEsc(acWhyTheirsShort(w)):""}.</p>`;
+    serious?h+=`<p>That is a real threat. Your move should stop it, or make a bigger threat of your own.</p>`:h+=`<p>That is not dangerous; you are free to pursue your own plan.</p>`;
+    ar.push(acArrowFor(d.threat.uci,"threat",0))}
+  else h=`<p>${tutEsc(acPick(AC_Q.calm))}</p>`;
+  d.hang&&(h+=`<p class="warn">Also: your ${TUT_N[d.hang.piece]||"piece"} on ${d.hang.at} can be captured.</p>`);
+  acOut(h);acArrows(ar)
+}
+async function acHint(){
+  Xt("ui_click");
+  if(ACAD.mode==="lesson"&&ACAD.L){let st=ACAD.L.kind==="line"&&ACAD.L.steps&&ACAD.L.steps[ACAD.step];acOut(`<p>${tutEsc(st&&st.hint||ACAD.L.hint||"Look for checks, captures and threats first.")}</p>`);return}
+  let d=await acAnalyze();if(!d||!d.moves.length){acOut(`<p class="dim">No hint just now.</p>`);return}
+  let w=d.moves[0].why||{},P=TUT_N[w.piece]||"pieces",k={mate:"There is a checkmate on the board. Hunt for it.",win:"Something of theirs is there for the taking.",save:"One of your pieces is in danger.",check:"A check would be very useful here.",castle:"Your king would like a quieter address.",threat:"You can make a threat they must answer.",promote:"A pawn is close to promotion.",develop:"Get another piece into the game."}[w.kind]||"Improve your worst-placed piece.";
+  acOut(`<p>${k} Have a look at your ${tutEsc(P)}.</p>`)
+}
+
+/* ----- after each of your moves ----- */
+function acAwaitPoll(L){let iv=setInterval(()=>{if(!ACAD.on||ACAD.L!==L||!ACAD.await){clearInterval(iv);return}if(!D.busy&&!D.thinking&&D.game.history.length>=ACAD.awaitLen){clearInterval(iv);ACAD.await=!1;setTimeout(()=>acComplete(L),500)}},300)}
+async function acAfter(rec){
+  let g=D.game,u=g.history.map(a=>an(a.m)),me=u[u.length-1],n=D.token,L=ACAD.L;
+  if(ACAD.mode==="spar"){if(!ACAD.grade)return;return acGradeMove(rec,u,me,n)}
+  if(!L)return;
+  if(L.kind==="line"){
+    let st=L.steps[ACAD.step];if(!st)return;
+    if(st.ok.map(x=>x.toLowerCase()).includes(me)){
+      ACAD.step++;acSay(`<p class="q good">✓ ${tutEsc(st.say||acPick(AC_Q.good))}</p>`);
+      if(st.reply){ACAD.pendingReply=st.reply;ACAD.step>=L.steps.length&&(ACAD.await=!0,ACAD.awaitLen=g.history.length+1,acAwaitPoll(L))}
+      else if(ACAD.step>=L.steps.length)ACAD.finished=!0,setTimeout(()=>acComplete(L),700);
+      return
+    }
+    return acWrong(n,st.hint||L.hint)
+  }
+  D.thinking=!0;Un();acSay(`<p class="dim">Checking your move…</p>`);
+  let s=await tutReq({type:"blunder",startFen:g.startFen,ucis:u.slice(0,-1),played:me,timeMs:L.kind==="mate"?2500:1200},15e3);
+  D.thinking=!1;if(n!==D.token){Un();return}
+  if(!s||s.error){acSay(`<p class="dim">I could not check that one. Carry on.</p>`);Un();return}
+  let loss=Math.max(0,s.bestScore-s.playedScore),bs=tutSan(new Ke(rec.fenBefore),s.best);
+  if(L.kind==="mate"){
+    if(s.playedScore<1900&&s.bestScore>=1900)return acWrong(n,`That lets the king escape the net. ${L.hint||""}`);
+    ACAD.made++;
+    if(ACAD.made>=(L.n||1)&&!D.over){acSay(`<p class="warn">Still no checkmate after ${L.n} move${L.n>1?"s":""}. The king has filed for an extension. Let us reset and find the quicker way.</p>`);Un();setTimeout(()=>ACAD.on&&ACAD.L===L&&acStart("lesson",ACAD.t,ACAD.l),1800);ACAD.finished=!0;return}
+    acSay(`<p class="q good">✓ ${tutEsc(acPick(AC_Q.good))} Keep the net tight.</p>`);Un();return
+  }
+  // kind engine
+  let tol=L.tol??60;
+  if(loss>tol)return acWrong(n,`That costs ${tutAmt(loss)}. ${L.hint||""}`);
+  ACAD.made++;
+  acSay(`<p class="q good">✓ ${s.best===me||loss<=15?tutEsc(acPick(AC_Q.good)):"Good. "+tutEsc(bs)+" was a touch more precise, but this does the job."}</p>`);
+  if(ACAD.made>=(L.plies||1)){ACAD.finished=!0;Un();setTimeout(()=>acComplete(L),700);return}
+  Un()
+}
+async function acWrong(n,hint){
+  let L=ACAD.L,q=L&&L.wrong&&ACAD.sayN%2===0?L.wrong:acPick(AC_Q.wrong);
+  acSay(`<p class="q bad">${tutEsc(q)}</p>${hint?`<p class="dim">${tutEsc(hint)}</p>`:""}`);
+  D.pendingNudge=!0;Un();await new Promise(r=>setTimeout(r,1100));D.pendingNudge=!1;
+  if(n!==D.token){Un();return}af(!0);Un()
+}
+async function acGradeMove(rec,u,me,n){
+  D.thinking=!0;Un();
+  let s=await tutReq({type:"blunder",startFen:D.game.startFen,ucis:u.slice(0,-1),played:me,timeMs:500},8e3);
+  D.thinking=!1;if(n!==D.token||!s||s.error){Un();return}
+  let loss=Math.max(0,s.bestScore-s.playedScore),bs=tutSan(new Ke(rec.fenBefore),s.best),q;
+  if(s.best===me||loss<=15)q=["good",`★ ${rec.san}: excellent. ${acPick(AC_Q.good)}`];
+  else if(s.bestScore>=1900)q=["bad",`You missed a forced checkmate. ${bs} would have started it.`];
+  else if(loss<=50)q=["good",`✓ ${rec.san}: good. ${bs} was very slightly better.`];
+  else if(loss<=120)q=["meh",`${rec.san}: an inaccuracy. ${bs} was better, by ${tutAmt(loss)}.`];
+  else if(loss<=300)q=["bad",`${rec.san}: a mistake. ${bs} was better, by ${tutAmt(loss)}.`];
+  else q=["bad",`${rec.san}: a blunder, I am afraid. It gives away ${tutAmt(loss)}. ${bs} was the move.`];
+  acSay(`<p class="q ${q[0]}">${tutEsc(q[1])}</p>`);Un();
+  if(loss>=200&&!D.over){D.pendingNudge=!0;Un();await new Promise(a=>uf("The Professor raises an eyebrow. Take it back?",[["Take back",()=>{D.pendingNudge=!1,af(!0),a()}],["Play on",()=>{D.pendingNudge=!1,a()}]]));Un()}
+}
+function acComplete(Lx){
+  if(!ACAD.on||ACAD.mode!=="lesson"||!ACAD.L||Lx&&Lx!==ACAD.L)return;let T=ACAD_TRACKS[ACAD.t],L=ACAD.L;ACAD.finished=!0;acMark(L.id);acArrows([]);
+  Xt("ui_click");
+  xt("acDoneTitle").textContent=acPick(AC_Q.done);
+  let last=ACAD.l>=T.lessons.length-1,all=acTrackDone(T)===T.lessons.length;
+  xt("acDoneBody").innerHTML=`<p>${tutEsc(L.done)}</p>`+(all?`<p class="acGrad">${tutEsc(T.graduate)}</p><p class="dim">Every lesson in this track is done. Try the sparring match against ${tutEsc(acOppName(ACAD.t))}.</p>`:"");
+  xt("acNext").innerHTML=last?`Sparring match`:`Next lesson`;
+  xt("acPlayOn").textContent=D.over?"Look at the board":`Play on vs ${acOppName(ACAD.t)}`;
+  vn("acDone");acTick()
+}
+function acLessonOver(){
+  let r=D.game.result||{};
+  if(r.winner===D.human){ACAD.finished=!0;acSay(`<p class="q good">Checkmate! ${tutEsc(acPick(AC_Q.good))}</p>`);let L0=ACAD.L;setTimeout(()=>acComplete(L0),900);return}
+  ACAD.finished=!0;acSay(`<p class="q bad">${r.winner===0||!r.winner?"A draw. The king has taken the Fifth and refuses to be mated. Restart and try again.":"That did not go to plan. Restart and try again."}</p>`);acTick()
+}
+
+/* ----- look-ahead arrows, drawn on the board in perspective ----- */
+var AC_COL={me:"255,200,60",them:"110,190,255",threat:"255,110,90"};
+function acArrows(list){ACAD.arrows=list||[];ACAD.arrowsDirty=!0;list&&list.length&&!ACAD.raf&&(ACAD.raf=requestAnimationFrame(acDrawLoop));list&&list.length||acDrawClear()}
+function acDrawClear(){let c=xt("acArrows");if(!c)return;let x=c.getContext("2d");x.clearRect(0,0,c.width,c.height)}
+function acProj(wx,wy,wz){
+  let cam=vt.camera,V=cam.matrixWorldInverse.elements,P=cam.projectionMatrix.elements;
+  let vx=V[0]*wx+V[4]*wy+V[8]*wz+V[12],vy=V[1]*wx+V[5]*wy+V[9]*wz+V[13],vz=V[2]*wx+V[6]*wy+V[10]*wz+V[14],vw=V[3]*wx+V[7]*wy+V[11]*wz+V[15];
+  let cx=P[0]*vx+P[4]*vy+P[8]*vz+P[12]*vw,cy=P[1]*vx+P[5]*vy+P[9]*vz+P[13]*vw,cw=P[3]*vx+P[7]*vy+P[11]*vz+P[15]*vw;
+  if(cw<=1e-4)return null;let r=Ti.getBoundingClientRect();return[r.left+(cx/cw+1)/2*r.width,r.top+(1-cy/cw)/2*r.height]
+}
+function acW(sq){return[(sq&7)-3.5,3.5-(sq>>4)]}
+function acDrawLoop(){
+  ACAD.raf=0;let c=xt("acArrows");if(!c)return;
+  if(!ACAD.arrows.length||!ACAD.on||D.mode!=="ai"){acDrawClear();return}
+  let dpr=Math.min(2,devicePixelRatio||1),W=innerWidth,H=innerHeight;(c.width!==Math.round(W*dpr)||c.height!==Math.round(H*dpr))&&(c.width=Math.round(W*dpr),c.height=Math.round(H*dpr));
+  let x=c.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,W,H);
+  let Y=.03,cnt={};
+  for(let A of ACAD.arrows){
+    let[ax,az]=acW(A.a),[bx,bz]=acW(A.b),dx=bx-ax,dz=bz-az,len=Math.hypot(dx,dz)||1,ux=dx/len,uz=dz/len,nx=-uz,nz=ux;
+    let k=(cnt[A.a+"-"+A.b]=(cnt[A.a+"-"+A.b]||0)+1)-1,off=k*.12;ax+=nx*off;az+=nz*off;bx+=nx*off;bz+=nz*off;
+    let s0=.3,hw=.09,hl=.36,hh=.24,sx=ax+ux*s0,sz=az+uz*s0,ex=bx-ux*.12,ez=bz-uz*.12,hx=ex-ux*hl,hz=ez-uz*hl;
+    let pts=[[sx+nx*hw,sz+nz*hw],[hx+nx*hw,hz+nz*hw],[hx+nx*hh,hz+nz*hh],[ex,ez],[hx-nx*hh,hz-nz*hh],[hx-nx*hw,hz-nz*hw],[sx-nx*hw,sz-nz*hw]].map(p=>acProj(p[0],Y,p[1]));
+    if(pts.some(p=>!p))continue;let col=AC_COL[A.kind]||AC_COL.me;
+    x.beginPath();pts.forEach((p,i)=>i?x.lineTo(p[0],p[1]):x.moveTo(p[0],p[1]));x.closePath();
+    x.fillStyle=`rgba(${col},.78)`;x.strokeStyle="rgba(20,12,6,.75)";x.lineWidth=1.5;x.fill();x.stroke();
+    if(A.n){let m=acProj(ax+dx*.42,Y,az+dz*.42);if(m){x.beginPath();x.arc(m[0],m[1],11,0,7);x.fillStyle="rgba(20,12,6,.88)";x.fill();x.strokeStyle=`rgb(${col})`;x.lineWidth=2;x.stroke();
+      x.fillStyle=`rgb(${col})`;x.font="700 13px system-ui,-apple-system,sans-serif";x.textAlign="center";x.textBaseline="middle";x.fillText(String(A.n),m[0],m[1]+.5)}}
+  }
+  ACAD.raf=requestAnimationFrame(acDrawLoop)
+}
+
+/* ----- hooks into the game ----- */
+var _aNr=Nr;Nr=function(i,t){ACAD.starting||(ACAD.on&&acOff(),ACAD.on=!1,ACAD.mode=null);let r=_aNr.apply(this,arguments);try{acTick()}catch(e){console.error(e)}return r};
+var _aCb=cb;cb=function(){if(ACAD.on&&ACAD.mode==="lesson"&&ACAD.finished&&!D.over&&!(D.game&&D.game.result))return"Lesson complete";return _aCb.apply(this,arguments)};
+var _aUn=Un;Un=function(){let r=_aUn.apply(this,arguments);try{acTick()}catch(e){console.error(e)}return r};
+var _aPb=pb;pb=async function(r){return ACAD.on&&D.mode==="ai"?acAfter(r):_aPb.apply(this,arguments)};
+var _aGb=gb;gb=function(){if(ACAD.on&&ACAD.mode==="lesson")return acLessonOver();return _aGb.apply(this,arguments)};
+var _aHf=hf;hf=function(){ACAD.on&&acOff();for(let o of["academy","acTrack","acIntro","acDone"])je(o);return _aHf.apply(this,arguments)};
+var _aLr=Lr;Lr=function(){let r=_aLr.apply(this,arguments);let c=[...xt("lvl").children];c.slice(5).forEach(b=>b.remove());return r};
+{
+  let rq=is.request.bind(is);
+  is.request=function(m,...a){
+    if(m&&m.type==="think"&&ACAD.on&&ACAD.mode==="lesson"&&ACAD.L){
+      if(ACAD.finished)return Promise.resolve({type:"think",id:0,uci:null,score:0,depth:0,nodes:0,ms:0,book:!1});
+      if(ACAD.L.kind==="line"){let u=ACAD.pendingReply;ACAD.pendingReply=null;return Promise.resolve({type:"think",id:0,uci:u,score:0,depth:0,nodes:0,ms:0,book:!1})}
+      m={...m,level:ACAD.L.kind==="mate"?3:ACAD.L.replyLevel??AC_OPP[ACAD.t]}
+    }
+    return rq(m,...a)
+  };
+}
+{
+  let u0=xt("bUndo").onclick;xt("bUndo").onclick=()=>{ACAD.on&&ACAD.mode==="lesson"?(Xt("ui_click"),acRestart()):u0()};
+  let pn=xt("pNew").onclick;xt("pNew").onclick=()=>{ACAD.on?(Xt("ui_click"),je("pause"),acRestart()):pn()};
+  let oa=xt("oAgain").onclick;xt("oAgain").onclick=()=>{ACAD.on?(Xt("ui_click"),je("over"),acRestart()):oa()};
+  xt("mAcad").onclick=()=>{Xt("ui_click");acOpenAcademy()};
+  xt("academy").querySelector("[data-back]").onclick=()=>{Xt("ui_click");acShow(null);vn("menu")};
+  xt("acTrack").querySelector("[data-back]").onclick=()=>{Xt("ui_click");acLevels();acShow("academy")};
+  xt("acIntro").querySelector("[data-back]").onclick=()=>{Xt("ui_click");acOpenTrack(ACAD.t)};
+  xt("acIntroGo").onclick=()=>{Xt("ui_click");acStartLesson(ACAD.t,ACAD.l)};
+  xt("acSpar").onclick=()=>{Xt("ui_click");acStartSpar(ACAD.t)};
+  xt("acReset").onclick=()=>{Xt("ui_click");uf("Forget your progress in this track?",[["Forget it",()=>{let p=acProg();ACAD_TRACKS[ACAD.t].lessons.forEach(x=>delete p[x.id]);acSaveProg(p);Ro();acOpenTrack(ACAD.t)}],["Keep it",()=>Ro()]])};
+  let toTrack=()=>{Xt("ui_click");let t=ACAD.t;hf();je("menu");acOpenTrack(t)};
+  xt("acToTrack").onclick=toTrack;
+  xt("acNext").onclick=()=>{Xt("ui_click");je("acDone");let T=ACAD_TRACKS[ACAD.t];ACAD.l>=T.lessons.length-1?acStartSpar(ACAD.t):acIntro(ACAD.t,ACAD.l+1)};
+  xt("acPlayOn").onclick=()=>{Xt("ui_click");je("acDone");if(D.over)return;ACAD.mode="spar";ACAD.finished=!1;ACAD.L=null;acSay(`Carry on against ${tutEsc(acOppName(ACAD.t))}. I shall grade your moves as you go.`);acTick();Te()!==D.human&&!D.thinking&&Ul()};
+  let acG=f=>()=>{if(!ACAD.busy)f()};xt("acBest").onclick=acG(acBest);xt("acLook").onclick=acG(acLook);xt("acWeigh").onclick=acG(acWeigh);xt("acThreat").onclick=acG(acThreat);xt("acHint").onclick=acG(acHint);
+  xt("acRestart").onclick=()=>{Xt("ui_click");acRestart()};
+  xt("acGrade").onclick=()=>{Xt("ui_click");ACAD.grade=!ACAD.grade;acTick()};
+  xt("acMin").onclick=()=>{Xt("ui_click");ACAD.open=!ACAD.open;acTick()};
+  addEventListener("resize",()=>{ACAD.arrows.length&&!ACAD.raf&&(ACAD.raf=requestAnimationFrame(acDrawLoop))});
+}
+// controller: X on the board enters the coach panel; B or X leaves it
+window.__acPadEnter=()=>{if(!ACAD.on||D.mode!=="ai")return!1;let el=xt("acPanel");if(!el||el.classList.contains("hidden"))return!1;ACAD.open||(ACAD.open=!0,acTick());ACAD.padPanel=!0;return!0};
+window.__acPadExit=()=>{ACAD.padPanel=!1};
+window.__acPadLayer=()=>ACAD.padPanel&&ACAD.on&&D.mode==="ai"&&!xt("acPanel").classList.contains("hidden")?"acPanel":null;
+window.__acad={
+  raw(){return{await:ACAD.await,awaitLen:ACAD.awaitLen,hl:D.game.history.length,busy:!!D.busy,thinking:!!D.thinking,over:!!D.over,fin:ACAD.finished,pn:!!D.pendingNudge,doneHidden:xt("acDone").classList.contains("hidden"),L:ACAD.L&&ACAD.L.id}},
+  state(){return{on:ACAD.on,mode:ACAD.mode,track:ACAD.t,lesson:ACAD.l,step:ACAD.step,made:ACAD.made,done:ACAD.finished,lastSay:ACAD.lastSay,arrows:ACAD.arrows.length,padPanel:ACAD.padPanel,busy:ACAD.busy}},
+  tracks:ACAD_TRACKS,progress:acProg,startLesson:acStartLesson,startSpar:acStartSpar,analyze:acAnalyze,play:u=>{if(!Ei())return!1;let r=k0(Ze(u.slice(0,2)),Ze(u.slice(2,4)));if(r&&D.promoWait&&u[4]){let nm={q:"Queen",r:"Rook",b:"Bishop",n:"Knight"}[u[4]],b=[...xt("promo").querySelectorAll("button")].find(x=>(x.getAttribute("aria-label")||"").includes(nm));b&&b.click()}return r},fen:()=>D.game.pos.fen(),arrowsAt:()=>ACAD.arrows.map(a=>({from:gn(a.a),to:gn(a.b),kind:a.kind,n:a.n})),proj:acProj
+};
+/* ===== end v9 THE ACADEMY ===== */
+
+
 
 
 Lr();hf();
